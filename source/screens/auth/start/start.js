@@ -49,7 +49,7 @@ const Start = () => {
           <TouchableOpacity>
             <Text
               type={"Medium"}
-              style={{ color: Colors.gray, fontSize: RFValue(15) }}
+              style={{ color: "#595959", fontSize: RFValue(15) }}
             >
               Skip
             </Text>
@@ -112,7 +112,7 @@ const Start = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.deep_blue,
+    backgroundColor: Colors.secondary,
   },
   pagerView: {
     flex: 1,

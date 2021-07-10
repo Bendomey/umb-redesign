@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
   button: {
     ...Platform.select({
       ios: {
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.primary,
         borderRadius: RFValue(15),
         height: RFValue(50),
         paddingHorizontal: RFValue(10),
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
       },
       android: {
         elevation: 0,
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.primary,
         borderRadius: RFValue(15),
         height: RFValue(45),
         paddingHorizontal: RFValue(16),

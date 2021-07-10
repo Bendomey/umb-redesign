@@ -11,8 +11,7 @@ const Steps = ({ step, data }) => {
             key={dataIdx}
             style={{
               height: 6,
-              backgroundColor:
-                dataIdx === step ? Colors.white : Colors.light_blue,
+              backgroundColor: dataIdx === step ? Colors.white : "#1c1c1c",
               width: dataIdx === step ? 30 : 20,
               marginRight: 10,
               borderRadius: 50,

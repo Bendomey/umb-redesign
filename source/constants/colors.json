@@ -5,5 +5,7 @@
     "white":"#FFFFFF",
     "green":"#1CC7AC",
     "yellow":"#FFC344",
-    "gray":"#727793"
+    "gray":"#7a7979",
+    "primary":"#EAAA1D",
+    "secondary":"#000000"
 }
