@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     ...Platform.select({
       ios: {
         backgroundColor: Colors.primary,
-        borderRadius: RFValue(15),
+        borderRadius: RFValue(10),
         height: RFValue(50),
         paddingHorizontal: RFValue(10),
         alignItems: "center",
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
       android: {
         elevation: 0,
         backgroundColor: Colors.primary,
-        borderRadius: RFValue(15),
+        borderRadius: RFValue(10),
         height: RFValue(45),
         paddingHorizontal: RFValue(16),
         alignItems: "center",
