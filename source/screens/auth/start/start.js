@@ -30,7 +30,7 @@ const data = [
   },
 ];
 
-const Start = () => {
+const Start = ({ navigation }) => {
   const [pageEnabled, setPageEnabled] = useState(0);
   const pagerRef = useRef(null);
   return (
@@ -91,8 +91,9 @@ const Start = () => {
           <View>
             <Button
               onPress={() => {
-                if (pageEnabled >= data?.length) {
+                if (pageEnabled + 1 >= data?.length) {
                   //navigate to new screen
+                  navigation.push("login");
                 } else {
                   // increase it
                   pagerRef.current.setPage(pageEnabled + 1);
