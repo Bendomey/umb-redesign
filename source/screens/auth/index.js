@@ -11,6 +11,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 import StartScreen from "./start";
 import LoginScreen from "./login";
 import RegisterScreen from "./register";
+import VerifyScreen from "./verify";
 
 const Stack = createStackNavigator();
 
@@ -50,7 +51,7 @@ const AuthNavigator = () => {
                 >
                   <Text
                     type={"SemiBold"}
-                    style={{ color: Colors.white, fontSize: RFValue(15) }}
+                    style={{ color: Colors.white, fontSize: RFValue(13) }}
                   >
                     Register
                   </Text>
@@ -62,6 +63,23 @@ const AuthNavigator = () => {
         <Stack.Screen
           name={"register"}
           component={RegisterScreen}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+        <Stack.Screen
+          name={"verify-account"}
+          component={VerifyScreen}
           options={{
             headerBackTitleVisible: false,
             headerStyle: {

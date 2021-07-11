@@ -14,7 +14,7 @@ const Register = ({ navigation }) => {
         <View style={styles.header}>
           <Text
             type={"Bold"}
-            style={{ color: Colors.white, fontSize: RFValue(30) }}
+            style={{ color: Colors.white, fontSize: RFValue(25) }}
           >
             Register Here.
           </Text>
@@ -25,7 +25,7 @@ const Register = ({ navigation }) => {
         <View style={styles.textInputContainer}>
           <View>
             <Text
-              type={"Bold"}
+              type={"Light"}
               style={{
                 color: Colors.white,
                 fontSize: RFValue(12),
@@ -38,7 +38,7 @@ const Register = ({ navigation }) => {
           </View>
           <View style={{ marginTop: RFValue(15) }}>
             <Text
-              type={"Bold"}
+              type={"Light"}
               style={{
                 color: Colors.white,
                 fontSize: RFValue(12),
@@ -51,7 +51,7 @@ const Register = ({ navigation }) => {
           </View>
           <View style={{ marginTop: RFValue(15) }}>
             <Text
-              type={"Bold"}
+              type={"Light"}
               style={{
                 color: Colors.white,
                 fontSize: RFValue(12),
@@ -60,11 +60,15 @@ const Register = ({ navigation }) => {
             >
               Login Pin *
             </Text>
-            <TextInput placeholder={"Login Pin eg. * * * * * * * "} />
+            <TextInput
+              keyboardType={"number-pad"}
+              secureTextEntry
+              placeholder={"Login Pin eg. * * * * * * * "}
+            />
           </View>
           <View style={{ marginTop: RFValue(15) }}>
             <Text
-              type={"Bold"}
+              type={"Light"}
               style={{
                 color: Colors.white,
                 fontSize: RFValue(12),
@@ -73,7 +77,11 @@ const Register = ({ navigation }) => {
             >
               Transaction Pin *
             </Text>
-            <TextInput placeholder={"Transaction Pin eg. * * * * * * * "} />
+            <TextInput
+              keyboardType={"number-pad"}
+              secureTextEntry
+              placeholder={"Transaction Pin eg. * * * * * * * "}
+            />
           </View>
         </View>
         <View style={styles.forgotPasswordContainer}>
@@ -85,7 +93,10 @@ const Register = ({ navigation }) => {
         </View>
         <View style={styles.buttonContainer}>
           <View>
-            <Button title={"Register For Internet Banking"} />
+            <Button
+              onPress={() => navigation.push("verify-account")}
+              title={"Register For Internet Banking"}
+            />
           </View>
         </View>
       </KeyboardAwareScrollView>
@@ -100,7 +111,7 @@ const styles = StyleSheet.create({
   },
   header: {
     marginTop: RFValue(10),
-    marginLeft: RFValue(20),
+    marginHorizontal: RFValue(20),
   },
   textInputContainer: {
     marginTop: RFValue(30),

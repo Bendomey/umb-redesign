@@ -19,11 +19,14 @@ const TextInput = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 1,
-    borderColor: "#3d3d3d",
-    borderRadius: RFValue(10),
+    // borderWidth: 1,
+    // borderColor: "#3d3d3d",
+    borderRadius: RFValue(7),
     height: RFValue(50),
     paddingHorizontal: RFValue(15),
+    backgroundColor: "#1c1c1c",
+    color: Colors.white,
+    fontFamily: "Poppins-Regular",
   },
 });
 

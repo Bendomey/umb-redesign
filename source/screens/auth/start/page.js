@@ -34,7 +34,7 @@ const Page = ({ title, description, image }) => {
               style={{
                 color: Colors.gray,
                 textAlign: "center",
-                fontSize: RFValue(16),
+                fontSize: RFValue(15),
               }}
             >
               {description}

@@ -46,7 +46,7 @@ const Start = ({ navigation }) => {
             justifyContent: "flex-end",
           }}
         >
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.push("login")}>
             <Text
               type={"Medium"}
               style={{ color: "#595959", fontSize: RFValue(15) }}

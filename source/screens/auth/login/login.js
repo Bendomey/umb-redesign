@@ -15,18 +15,21 @@ const Login = () => {
         <View style={styles.header}>
           <Text
             type={"Bold"}
-            style={{ color: Colors.white, fontSize: RFValue(30) }}
+            style={{ color: Colors.white, fontSize: RFValue(25) }}
           >
             Hello, Welcome.
           </Text>
-          <Text style={{ color: Colors.gray, fontSize: RFValue(15) }}>
+          <Text
+            type={"Light"}
+            style={{ color: Colors.gray, fontSize: RFValue(15) }}
+          >
             Login to continue
           </Text>
         </View>
         <View style={styles.textInputContainer}>
           <View>
             <Text
-              type={"Bold"}
+              type={"Light"}
               style={{
                 color: Colors.white,
                 fontSize: RFValue(12),
@@ -39,7 +42,7 @@ const Login = () => {
           </View>
           <View style={{ marginTop: RFValue(15) }}>
             <Text
-              type={"Bold"}
+              type={"Light"}
               style={{
                 color: Colors.white,
                 fontSize: RFValue(12),
@@ -48,7 +51,11 @@ const Login = () => {
             >
               Pin *
             </Text>
-            <TextInput placeholder={"Pin eg. * * * * * * * "} />
+            <TextInput
+              secureTextEntry
+              keyboardType={"number-pad"}
+              placeholder={"Pin eg. * * * * * * * "}
+            />
           </View>
         </View>
         <View style={styles.forgotPasswordContainer}>
