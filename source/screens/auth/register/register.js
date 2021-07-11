@@ -5,10 +5,9 @@ import Text from "../../../components/Text";
 import Button from "../../../components/Button";
 import TextInput from "../../../components/TextInput";
 import Colors from "../../../constants/colors.json";
-import OpenServices from "./components/services";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
-const Login = () => {
+const Register = ({ navigation }) => {
   return (
     <>
       <KeyboardAwareScrollView style={styles.container}>
@@ -17,10 +16,10 @@ const Login = () => {
             type={"Bold"}
             style={{ color: Colors.white, fontSize: RFValue(30) }}
           >
-            Hello, Welcome.
+            Register Here.
           </Text>
-          <Text style={{ color: Colors.gray, fontSize: RFValue(15) }}>
-            Login to continue
+          <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
+            Hello, Fill in your details to register for internet banking
           </Text>
         </View>
         <View style={styles.textInputContainer}>
@@ -35,7 +34,7 @@ const Login = () => {
             >
               Account Number *
             </Text>
-            <TextInput placeholder={"Account Number eg. 35235242424"} />
+            <TextInput placeholder={"Account Number eg. 4543435353532"} />
           </View>
           <View style={{ marginTop: RFValue(15) }}>
             <Text
@@ -46,22 +45,47 @@ const Login = () => {
                 marginBottom: RFValue(5),
               }}
             >
-              Pin *
+              Email Address *
             </Text>
-            <TextInput placeholder={"Pin eg. * * * * * * * "} />
+            <TextInput placeholder={"Email Address eg. johndoe@gmail.com"} />
+          </View>
+          <View style={{ marginTop: RFValue(15) }}>
+            <Text
+              type={"Bold"}
+              style={{
+                color: Colors.white,
+                fontSize: RFValue(12),
+                marginBottom: RFValue(5),
+              }}
+            >
+              Login Pin *
+            </Text>
+            <TextInput placeholder={"Login Pin eg. * * * * * * * "} />
+          </View>
+          <View style={{ marginTop: RFValue(15) }}>
+            <Text
+              type={"Bold"}
+              style={{
+                color: Colors.white,
+                fontSize: RFValue(12),
+                marginBottom: RFValue(5),
+              }}
+            >
+              Transaction Pin *
+            </Text>
+            <TextInput placeholder={"Transaction Pin eg. * * * * * * * "} />
           </View>
         </View>
         <View style={styles.forgotPasswordContainer}>
-          <TouchableOpacity>
-            <Text style={{ color: Colors.primary }}>Forgot Password?</Text>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Text style={{ color: Colors.primary }}>
+              Already Have An Account?
+            </Text>
           </TouchableOpacity>
         </View>
         <View style={styles.buttonContainer}>
           <View>
-            <Button title={"Login to my Account"} />
-          </View>
-          <View style={{ marginTop: RFValue(10) }}>
-            <OpenServices />
+            <Button title={"Register For Internet Banking"} />
           </View>
         </View>
       </KeyboardAwareScrollView>
@@ -93,4 +117,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default Register;

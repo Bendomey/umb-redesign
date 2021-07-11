@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     borderColor: "#3d3d3d",
     borderRadius: RFValue(10),
     height: RFValue(50),
-    paddingHorizontal: RFValue(18),
+    paddingHorizontal: RFValue(15),
   },
 });
 
