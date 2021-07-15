@@ -2,9 +2,10 @@ import React, { Fragment } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-//import Navigatoris
+//import Navigators
 import AuthNavigator from "../screens/auth";
 import MainNavigator from "../screens/main";
+import TransactionsNavigator from "../screens/transactions";
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,13 @@ const Navigator = () => {
           <Stack.Screen
             name={"Main"}
             component={MainNavigator}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name={"Transactions"}
+            component={TransactionsNavigator}
             options={{
               headerShown: false,
             }}
