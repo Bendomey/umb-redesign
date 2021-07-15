@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Fragment, useRef } from "react";
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 import AppNavigator from "./source/navigation";
+import Toast from "react-native-toast-message";
+import { View } from "react-native";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -17,8 +19,19 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return (
+      <Fragment>
+        <AppLoading />
+      </Fragment>
+    );
   } else {
-    return <AppNavigator />;
+    return (
+      <Fragment>
+        <AppNavigator />
+        <View>
+          <Toast ref={(ref) => Toast.setRef(ref)} />
+        </View>
+      </Fragment>
+    );
   }
 }

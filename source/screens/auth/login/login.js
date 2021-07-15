@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import Text from "../../../components/Text";
@@ -7,8 +7,10 @@ import TextInput from "../../../components/TextInput";
 import Colors from "../../../constants/colors.json";
 import OpenServices from "./components/services";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-
-const Login = () => {
+import Toast from "react-native-toast-message";
+const Login = ({ navigation }) => {
+  const [accoutNumber, setAccountNumber] = useState("");
+  const [pin, setPin] = useState("");
   return (
     <>
       <KeyboardAwareScrollView style={styles.container}>
@@ -38,7 +40,11 @@ const Login = () => {
             >
               Account Number *
             </Text>
-            <TextInput placeholder={"Account Number eg. 35235242424"} />
+            <TextInput
+              onChange={(text) => setAccountNumber(text)}
+              defaultValue={accoutNumber}
+              placeholder={"Account Number eg. 35235242424"}
+            />
           </View>
           <View style={{ marginTop: RFValue(15) }}>
             <Text
@@ -54,6 +60,7 @@ const Login = () => {
             <TextInput
               secureTextEntry
               keyboardType={"number-pad"}
+              onChange={(text) => setPin(text)}
               placeholder={"Pin eg. * * * * * * * "}
             />
           </View>
@@ -65,7 +72,23 @@ const Login = () => {
         </View>
         <View style={styles.buttonContainer}>
           <View>
-            <Button title={"Login to my Account"} />
+            <Button
+              onPress={() => {
+                if (!accoutNumber && !pin) {
+                  return (
+                    Toast?.show({
+                      text1: "Empty fields",
+                      text2: "provide your account number and pin to login",
+                      type: "error",
+                      autoHide: true,
+                    }),
+                    []
+                  );
+                }
+                navigation?.push("Transactions");
+              }}
+              title={"Login to my Account"}
+            />
           </View>
           <View style={{ marginTop: RFValue(10) }}>
             <OpenServices />
