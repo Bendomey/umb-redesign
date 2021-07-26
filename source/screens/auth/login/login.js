@@ -7,10 +7,8 @@ import TextInput from "../../../components/TextInput";
 import Colors from "../../../constants/colors.json";
 import OpenServices from "./components/services";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import Toast from "react-native-toast-message";
 const Login = ({ navigation }) => {
   const [accoutNumber, setAccountNumber] = useState("");
-  const [pin, setPin] = useState("");
   return (
     <>
       <KeyboardAwareScrollView style={styles.container}>
@@ -42,7 +40,6 @@ const Login = ({ navigation }) => {
             </Text>
             <TextInput
               onChange={(text) => setAccountNumber(text)}
-              defaultValue={accoutNumber}
               placeholder={"Account Number eg. 35235242424"}
             />
           </View>
@@ -60,7 +57,6 @@ const Login = ({ navigation }) => {
             <TextInput
               secureTextEntry
               keyboardType={"number-pad"}
-              onChange={(text) => setPin(text)}
               placeholder={"Pin eg. * * * * * * * "}
             />
           </View>
@@ -74,18 +70,7 @@ const Login = ({ navigation }) => {
           <View>
             <Button
               onPress={() => {
-                if (!accoutNumber && !pin) {
-                  return (
-                    Toast?.show({
-                      text1: "Empty fields",
-                      text2: "provide your account number and pin to login",
-                      type: "error",
-                      autoHide: true,
-                    }),
-                    []
-                  );
-                }
-                navigation?.push("Transactions");
+                navigation?.push("Home");
               }}
               title={"Login to my Account"}
             />
