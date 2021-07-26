@@ -5,7 +5,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 //import Navigators
 import AuthNavigator from "../screens/auth";
 import MainNavigator from "../screens/main";
-import TransactionsNavigator from "../screens/transactions";
+import TransactionsNavigator from "../screens/Home";
+import Tabs from "./BotttomTab/tabs";
 
 const Stack = createStackNavigator();
 
@@ -29,11 +30,9 @@ const Navigator = () => {
             }}
           />
           <Stack.Screen
-            name={"Transactions"}
-            component={TransactionsNavigator}
-            options={{
-              headerShown: false,
-            }}
+            name={"Home"}
+            component={Tabs}
+            options={{ headerShown: false }}
           />
         </Stack.Navigator>
       </NavigationContainer>
