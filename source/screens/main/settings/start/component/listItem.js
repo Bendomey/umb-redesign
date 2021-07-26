@@ -10,7 +10,7 @@ const ListItem = ({ name, icon, alert, onPress }) => {
     <Fragment>
       <TouchableHighlight
         onPress={onPress}
-        underlayColor={Colors.green}
+        underlayColor={Colors.primary}
         style={styles.touchableContainer}
       >
         <View style={styles.container}>
@@ -18,7 +18,7 @@ const ListItem = ({ name, icon, alert, onPress }) => {
             <Ionicons
               name={icon}
               size={RFValue(20)}
-              color={alert ? Colors.red : Colors.green}
+              color={alert ? Colors.red : Colors.primary}
             />
           </View>
           <View style={{ marginLeft: RFValue(10) }}>

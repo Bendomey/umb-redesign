@@ -95,7 +95,7 @@ export default function Settings({ navigation }) {
               </Text>
               <Ionicons
                 name={"ios-checkmark-circle"}
-                color={Colors.green}
+                color={Colors.primary}
                 size={RFValue(17)}
               />
             </View>
