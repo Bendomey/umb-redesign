@@ -7,6 +7,7 @@ import {
   ScrollView,
   Alert,
   StatusBar,
+  Share,
 } from "react-native";
 import Colors from "../../../../constants/colors.json";
 import Text from "../../../../components/Text";
@@ -48,7 +49,25 @@ export default function Settings({ navigation }) {
       { cancelable: false }
     );
   }, [navigation]);
-  const referAFriend = async () => {};
+  const referAFriend = async () => {
+    try {
+      const result = await Share.share({
+        message:
+          "UMB Speed Add | A financial tech application that helps you to transact online with a registered umb account",
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  };
   return (
     <Fragment>
       <StatusBar barStyle={"light-content"} />

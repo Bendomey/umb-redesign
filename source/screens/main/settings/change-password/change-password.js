@@ -6,7 +6,6 @@ import Text from "../../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import TextInput from "../../../../components/TextInput";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 const ChangePassword = ({ show, setShow }) => {
   const goBack = useCallback(() => {
