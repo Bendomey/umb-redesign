@@ -1,14 +1,19 @@
-import React, { useState } from "react";
-import { View, StyleSheet, TouchableOpacity, SafeAreaView } from "react-native";
+import React from "react";
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  Switch,
+  SafeAreaView,
+} from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import Text from "../../../components/Text";
 import Button from "../../../components/Button";
 import TextInput from "../../../components/TextInput";
 import Colors from "../../../constants/colors.json";
-// import OpenServices from "./components/services";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-const Login = ({ navigation }) => {
-  const [accoutNumber, setAccountNumber] = useState("");
+
+const Register = ({ navigation }) => {
   return (
     <>
       <SafeAreaView style={styles.container}>
@@ -18,10 +23,10 @@ const Login = ({ navigation }) => {
               type={"Bold"}
               style={{ color: Colors.white, fontSize: RFValue(25) }}
             >
-              Login
+              Mobile Banking
             </Text>
-            <Text type={"Light"} style={{ color: Colors.gray }}>
-              Kindly enter your details below to be logged in
+            <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
+              Fill in your details to register for mobile banking
             </Text>
           </View>
           <View style={styles.textInputContainer}>
@@ -34,9 +39,9 @@ const Login = ({ navigation }) => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Account Number *
+                UMB Account Number
               </Text>
-              <TextInput onChange={(text) => setAccountNumber(text)} />
+              <TextInput />
             </View>
             <View style={{ marginTop: RFValue(20) }}>
               <Text
@@ -47,28 +52,45 @@ const Login = ({ navigation }) => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Pin *
+                Mobile Number
               </Text>
-              <TextInput secureTextEntry keyboardType={"number-pad"} />
+              <TextInput />
+            </View>
+            <View style={{ marginTop: RFValue(15) }}>
+              <Text
+                type={"Light"}
+                style={{
+                  color: Colors.white,
+                  fontSize: RFValue(12),
+                  marginBottom: RFValue(5),
+                }}
+              >
+                Email
+              </Text>
+              <TextInput keyboardType={"number-pad"} />
             </View>
           </View>
           <View style={styles.forgotPasswordContainer}>
-            <TouchableOpacity>
-              <Text style={{ color: Colors.primary }}>Forgot Password?</Text>
+            <Switch value={true} />
+            <TouchableOpacity
+              style={{ marginLeft: RFValue(10) }}
+              onPress={() => navigation.goBack()}
+            >
+              <Text style={{ color: Colors.white }}>
+                I agree to the{" "}
+                <Text style={{ color: Colors.primary }}>
+                  terms and conditions
+                </Text>
+              </Text>
             </TouchableOpacity>
           </View>
           <View style={styles.buttonContainer}>
             <View>
               <Button
-                onPress={() => {
-                  navigation?.push("Main");
-                }}
-                title={"Login"}
+                onPress={() => navigation.push("verify-account")}
+                title={"Register"}
               />
             </View>
-            {/* <View style={{ marginTop: RFValue(10) }}>
-            <OpenServices />
-          </View> */}
           </View>
         </KeyboardAwareScrollView>
         <View
@@ -78,10 +100,16 @@ const Login = ({ navigation }) => {
             marginBottom: RFValue(10),
           }}
         >
-          <TouchableOpacity onPress={() => navigation.push("register")}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("Auth", {
+                screen: "login",
+              });
+            }}
+          >
             <Text style={{ color: Colors.white }}>
               Don't have an account?{" "}
-              <Text style={{ color: Colors.primary }}>Register Here</Text>
+              <Text style={{ color: Colors.primary }}>Login Here</Text>
             </Text>
           </TouchableOpacity>
         </View>
@@ -97,7 +125,7 @@ const styles = StyleSheet.create({
   },
   header: {
     marginTop: RFValue(10),
-    marginLeft: RFValue(20),
+    marginHorizontal: RFValue(20),
   },
   textInputContainer: {
     marginTop: RFValue(30),
@@ -110,8 +138,9 @@ const styles = StyleSheet.create({
   forgotPasswordContainer: {
     marginTop: RFValue(15),
     marginHorizontal: RFValue(20),
-    alignItems: "flex-end",
+    flexDirection: "row",
+    alignItems: "center",
   },
 });
 
-export default Login;
+export default Register;

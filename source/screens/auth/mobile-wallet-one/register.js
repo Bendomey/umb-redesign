@@ -7,14 +7,12 @@ import { Ionicons } from "@expo/vector-icons";
 
 const data = [
   {
-    label: "Mobile Banking",
-    icon: "ios-phone-portrait",
-    page: "mobile-banking",
+    label: "UMB Customer",
+    page: "mobile-wallet-two",
   },
   {
-    label: "Mobile Wallet",
-    icon: "ios-wallet",
-    page: "mobile-wallet-type",
+    label: "Non UMB Customer",
+    page: "mobile-wallet-three",
   },
 ];
 
@@ -27,7 +25,7 @@ const Register = ({ navigation }) => {
             type={"Bold"}
             style={{ color: Colors.white, fontSize: RFValue(25) }}
           >
-            Self Registration
+            Mobile Wallet
           </Text>
           <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
             Choose your preferred option below
@@ -55,19 +53,12 @@ const Card = ({ data }) => {
   return (
     <Fragment>
       <View style={styles.card}>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Ionicons
-            name={data?.icon}
-            size={RFValue(20)}
-            color={Colors.primary}
-          />
-          <Text
-            type={"Bold"}
-            style={{ color: Colors.white, marginLeft: RFValue(5) }}
-          >
-            {data?.label}
-          </Text>
-        </View>
+        <Text
+          type={"Bold"}
+          style={{ color: Colors.white, marginLeft: RFValue(5) }}
+        >
+          {data?.label}
+        </Text>
         <View>
           <Ionicons
             name={"ios-chevron-forward"}

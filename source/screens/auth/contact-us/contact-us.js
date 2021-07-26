@@ -7,18 +7,23 @@ import { Ionicons } from "@expo/vector-icons";
 
 const data = [
   {
-    label: "Mobile Banking",
-    icon: "ios-phone-portrait",
-    page: "mobile-banking",
+    label: "Telephone Number",
+    description: "0302 633988",
+    icon: "ios-call",
   },
   {
-    label: "Mobile Wallet",
-    icon: "ios-wallet",
-    page: "mobile-wallet-type",
+    label: "Toll Free line (MTN / VODA / AIRTELTIGO)",
+    description: "0802 633988",
+    icon: "ios-call",
+  },
+  {
+    label: "Email",
+    description: "info@myumbbank.com",
+    icon: "ios-mail",
   },
 ];
 
-const Register = ({ navigation }) => {
+const ContactUs = ({ navigation }) => {
   return (
     <>
       <View style={styles.container}>
@@ -27,22 +32,16 @@ const Register = ({ navigation }) => {
             type={"Bold"}
             style={{ color: Colors.white, fontSize: RFValue(25) }}
           >
-            Self Registration
+            Contact Us
           </Text>
           <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
-            Choose your preferred option below
+            These are some contacts you can reach us on
           </Text>
         </View>
         <View style={styles.textInputContainer}>
           {data?.map((type, i) => (
             <Fragment key={i}>
-              <TouchableOpacity
-                onPress={() => {
-                  navigation.push(type?.page);
-                }}
-              >
-                <Card data={type} />
-              </TouchableOpacity>
+              <Card data={type} />
             </Fragment>
           ))}
         </View>
@@ -55,25 +54,33 @@ const Card = ({ data }) => {
   return (
     <Fragment>
       <View style={styles.card}>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <View
+          style={{
+            backgroundColor: "#1c1c1c",
+            padding: RFValue(12),
+            borderRadius: 50,
+            marginRight: RFValue(10),
+          }}
+        >
           <Ionicons
             name={data?.icon}
-            size={RFValue(20)}
+            size={RFValue(17)}
             color={Colors.primary}
           />
+        </View>
+        <View>
           <Text
-            type={"Bold"}
-            style={{ color: Colors.white, marginLeft: RFValue(5) }}
+            type={"Light"}
+            style={{ color: Colors.gray, fontSize: RFValue(10) }}
           >
             {data?.label}
           </Text>
-        </View>
-        <View>
-          <Ionicons
-            name={"ios-chevron-forward"}
-            size={RFValue(15)}
-            color={Colors.white}
-          />
+          <Text
+            type={"Bold"}
+            style={{ color: Colors.white, marginTop: RFValue(4) }}
+          >
+            {data?.description}
+          </Text>
         </View>
       </View>
     </Fragment>
@@ -103,14 +110,11 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
   },
   card: {
-    backgroundColor: "#1c1c1c",
     marginBottom: RFValue(20),
-    padding: RFValue(20),
     borderRadius: 10,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
   },
 });
 
-export default Register;
+export default ContactUs;

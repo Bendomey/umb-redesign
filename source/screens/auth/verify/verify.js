@@ -89,8 +89,9 @@ const VerifyAccount = ({ navigation }) => {
                 pinView.current.clear();
               }
               if (key === "custom_right") {
-                navigation.goBack();
-                navigation.goBack();
+                navigation.navigate("Auth", {
+                  screen: "login",
+                });
                 alert(
                   "Registration was successful. You can now use your credentials to login"
                 );

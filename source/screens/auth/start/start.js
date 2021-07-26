@@ -46,7 +46,7 @@ const Start = ({ navigation }) => {
             justifyContent: "flex-end",
           }}
         >
-          <TouchableOpacity onPress={() => navigation.push("login")}>
+          <TouchableOpacity onPress={() => navigation.push("welcome")}>
             <Text
               type={"Medium"}
               style={{ color: "#595959", fontSize: RFValue(15) }}
@@ -93,7 +93,7 @@ const Start = ({ navigation }) => {
               onPress={() => {
                 if (pageEnabled + 1 >= data?.length) {
                   //navigate to new screen
-                  navigation.push("login");
+                  navigation.push("welcome");
                 } else {
                   // increase it
                   pagerRef.current.setPage(pageEnabled + 1);
