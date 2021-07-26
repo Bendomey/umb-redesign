@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { View } from "react-native";
-import Colors from "../../../../constants/colors.json";
+import Colors from "../../../../../constants/colors.json";
 import { RFValue } from "react-native-responsive-fontsize";
 import { Feather } from "@expo/vector-icons";
 export default function NavBar({ navigation }) {

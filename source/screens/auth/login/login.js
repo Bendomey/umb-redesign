@@ -70,7 +70,7 @@ const Login = ({ navigation }) => {
           <View>
             <Button
               onPress={() => {
-                navigation?.push("Home");
+                navigation?.push("Main");
               }}
               title={"Login to my Account"}
             />

@@ -5,8 +5,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 //import Navigators
 import AuthNavigator from "../screens/auth";
 import MainNavigator from "../screens/main";
-import TransactionsNavigator from "../screens/Home";
-import Tabs from "./BotttomTab/tabs";
 
 const Stack = createStackNavigator();
 
@@ -28,11 +26,6 @@ const Navigator = () => {
             options={{
               headerShown: false,
             }}
-          />
-          <Stack.Screen
-            name={"Home"}
-            component={Tabs}
-            options={{ headerShown: false }}
           />
         </Stack.Navigator>
       </NavigationContainer>

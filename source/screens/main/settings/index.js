@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { StatusBar } from "react-native";
-import Colors from "../../constants/colors.json";
+import Colors from "../../../constants/colors.json";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import StartComponent from "./start";
@@ -22,11 +22,13 @@ export default function SettingsNav() {
               shadowOpacity: 0,
               elevation: 0,
             },
-            headerTitle: "",
-            headerTintColor: Colors.white,
-            headerLeftContainerStyle: {
-              marginLeft: RFValue(10),
+            headerTitleStyle: {
+              fontSize: RFValue(18),
             },
+            headerTitle: "Settings",
+            headerTintColor: Colors.white,
+
+            headerLeft: () => {},
           }}
         />
       </Stack.Navigator>

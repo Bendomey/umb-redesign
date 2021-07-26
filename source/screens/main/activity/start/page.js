@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 import { ScrollView, View } from "react-native";
-import Colors from "../../../constants/colors.json";
+import Colors from "../../../../constants/colors.json";
 import { StyleSheet } from "react-native";
-import Text from "../../../components/Text";
+import Text from "../../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
 import { Ionicons } from "@expo/vector-icons";
 import moment from "moment";
@@ -157,30 +157,10 @@ const trans = [
     ),
   },
 ];
-export default function Transaction({}) {
+export default function Activity({ navigation }) {
   return (
     <Fragment>
       <View style={style?.container}>
-        <View style={style.header}>
-          <View
-            style={{
-              display: "flex",
-              width: "100%",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Text
-              type={"Medium"}
-              style={{
-                fontSize: RFValue(18),
-                color: Colors?.white,
-              }}
-            >
-              Settings
-            </Text>
-          </View>
-        </View>
         <ScrollView style={style.transactionList}>
           {trans?.map((transaction, key) => (
             <Fragment key={key}>
@@ -257,6 +237,7 @@ const style = StyleSheet?.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingVertical: RFValue(12),
+    // borderWidth: 2,
     borderColor: "white",
     marginTop: RFValue(10),
     marginLeft: RFValue(10),
