@@ -12,6 +12,7 @@ import SettingsNav from "./settings";
 import { RFValue } from "react-native-responsive-fontsize";
 import { Image, View } from "react-native";
 import Colors from "../../constants/colors.json";
+
 export default function Tabs() {
   return (
     <Fragment>

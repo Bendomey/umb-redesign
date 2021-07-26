@@ -9,7 +9,10 @@ const TextInput = (props) => {
       <BaseTextInput
         {...props}
         placeholderTextColor={"#a19f9f"}
-        style={styles.container}
+        style={[
+          styles.container,
+          { backgroundColor: props.backgroundColor || "#1c1c1c" },
+        ]}
         keyboardAppearance={"dark"}
         selectionColor={Colors.primary}
       />
@@ -24,7 +27,7 @@ const styles = StyleSheet.create({
     borderRadius: RFValue(7),
     height: RFValue(50),
     paddingHorizontal: RFValue(15),
-    backgroundColor: "#1c1c1c",
+
     color: Colors.white,
     fontFamily: "Poppins-Regular",
   },

@@ -1,251 +1,207 @@
-import React, { Fragment } from "react";
-import { ScrollView, View } from "react-native";
+import React, { Fragment, useCallback, useState } from "react";
+import {
+  StyleSheet,
+  View,
+  SafeAreaView,
+  Image,
+  ScrollView,
+  Alert,
+  StatusBar,
+} from "react-native";
 import Colors from "../../../../constants/colors.json";
-import { StyleSheet } from "react-native";
 import Text from "../../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
 import { Ionicons } from "@expo/vector-icons";
-import moment from "moment";
-const trans = [
-  {
-    type: "Bill Payment",
-    date: new Date("2021-07-12T15:13:51.478Z"),
-    amount: 200,
-    svg: () => (
-      <View
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          borderColor: "#fff",
-          padding: RFValue(6),
-          backgroundColor: "rgba(255, 46, 98, 0.2)",
-          borderRadius: RFValue(10),
-        }}
-      >
-        <Ionicons name={"arrow-up"} color={Colors?.red} size={RFValue(14)} />
-      </View>
-    ),
-  },
-  {
-    type: "Airtime",
-    date: new Date("2021-07-15T15:12:51.478Z"),
-    amount: 100,
-    svg: () => (
-      <View
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          borderColor: "#fff",
-          padding: RFValue(6),
-          backgroundColor: "rgba(255, 46, 98, 0.2)",
-          borderRadius: RFValue(10),
-        }}
-      >
-        <Ionicons name={"arrow-up"} color={Colors?.red} size={RFValue(14)} />
-      </View>
-    ),
-  },
-  {
-    type: "Received",
-    date: new Date("2021-07-15T12:13:51.478Z"),
-    amount: 1200,
-    svg: () => (
-      <View
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          borderColor: "#fff",
-          padding: RFValue(6),
-          backgroundColor: "rgba(28, 199, 173, 0.2)",
-          borderRadius: RFValue(10),
-        }}
-      >
-        <Ionicons
-          name={"arrow-down"}
-          color={Colors?.green}
-          size={RFValue(14)}
-        />
-      </View>
-    ),
-  },
-  {
-    type: "Airtime",
-    date: new Date("2021-07-15T15:12:51.478Z"),
-    amount: 100,
-    svg: () => (
-      <View
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          borderColor: "#fff",
-          padding: RFValue(6),
-          backgroundColor: "rgba(255, 46, 98, 0.2)",
-          borderRadius: RFValue(10),
-        }}
-      >
-        <Ionicons name={"arrow-up"} color={Colors?.red} size={RFValue(14)} />
-      </View>
-    ),
-  },
+import userAvatar from "../../../../assets/images/male.jpeg";
+import ListItem from "./component/listItem";
 
-  {
-    type: "DSTV Bill",
-    date: new Date("2021-07-15T15:13:51.478Z"),
-    amount: 1203.12,
-    svg: () => (
-      <View
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          borderColor: "#fff",
-          padding: RFValue(6),
-          backgroundColor: "rgba(255, 46, 98, 0.2)",
-          borderRadius: RFValue(10),
-        }}
-      >
-        <Ionicons name={"arrow-up"} color={Colors?.red} size={RFValue(14)} />
-      </View>
-    ),
-  },
-  {
-    type: "Sent",
-    date: new Date("2021-07-13"),
-    amount: 5223.12,
-    svg: () => (
-      <View
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          borderColor: "#fff",
-          padding: RFValue(6),
-          backgroundColor: "rgba(255, 46, 98, 0.2)",
-          borderRadius: RFValue(10),
-        }}
-      >
-        <Ionicons name={"arrow-up"} color={Colors?.red} size={RFValue(14)} />
-      </View>
-    ),
-  },
-  {
-    type: "Received",
-    date: new Date("2021-07-15T12:13:51.478Z"),
-    amount: 500,
-    svg: () => (
-      <View
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          borderColor: "#fff",
-          padding: RFValue(6),
-          backgroundColor: "rgba(28, 199, 173, 0.2)",
-          borderRadius: RFValue(10),
-        }}
-      >
-        <Ionicons
-          name={"arrow-down"}
-          color={Colors?.green}
-          size={RFValue(14)}
-        />
-      </View>
-    ),
-  },
-];
-export default function Transaction({}) {
+import PrivacyPolicy from "../privacy-policy";
+import FrequentlyAskedQuestions from "../faq";
+import ChangePassword from "../change-password";
+import UpdatePersonalDetails from "../personal-details";
+
+export default function Settings({ navigation }) {
+  const [showTerms, setShowTerms] = useState(false);
+  const [showPrivacy, setShowPrivacy] = useState(false);
+  const [showFaq, setShowFaq] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
+
+  const requestLogout = useCallback(() => {
+    Alert.alert(
+      "Confirm",
+      "Are you sure you want to log out?",
+      [
+        {
+          text: "No",
+          onPress: () => {},
+          style: "cancel",
+        },
+        {
+          text: "Yes!",
+          onPress: () =>
+            navigation.navigate("Auth", {
+              screen: "login",
+            }),
+        },
+      ],
+      { cancelable: false }
+    );
+  }, [navigation]);
+  const referAFriend = async () => {};
   return (
     <Fragment>
-      <View style={style?.container}>
-        <ScrollView style={style.transactionList}>
-          {trans?.map((transaction, key) => (
-            <Fragment key={key}>
-              <View
+      <StatusBar barStyle={"light-content"} />
+      <View style={styles.container}>
+        <View style={styles.topContainer}>
+          <SafeAreaView style={styles.safeAreaView}>
+            <View style={{ marginBottom: RFValue(10) }}>
+              <Image source={userAvatar} style={styles.avatarPng} />
+            </View>
+            <View style={styles.row}>
+              <Text
+                type={"SemiBold"}
                 style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  marginVertical: RFValue(10),
-                  alignItems: "center",
-                  justifyContent: "space-between",
+                  color: Colors.white,
+                  fontSize: RFValue(17),
+                  marginRight: RFValue(5),
                 }}
               >
-                <View
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  }}
-                >
-                  {transaction?.svg()}
-                  <View
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      marginLeft: RFValue(12),
-                    }}
-                  >
-                    <Text type={"Bold"} style={{ color: Colors?.white }}>
-                      {transaction?.type}
-                    </Text>
-                    <Text
-                      type={"Light"}
-                      style={{ color: Colors?.gray, fontSize: RFValue(10) }}
-                    >
-                      {moment(transaction?.date)?.fromNow()}
-                    </Text>
-                  </View>
-                </View>
-                <View>
-                  <Text type={"Bold"} style={{ color: Colors?.white }}>
-                    GHS {transaction?.amount}
-                  </Text>
-                </View>
-              </View>
-            </Fragment>
-          ))}
+                John Malkovich
+              </Text>
+              <Ionicons
+                name={"ios-checkmark-circle"}
+                color={Colors.green}
+                size={RFValue(17)}
+              />
+            </View>
+            <Text
+              style={{
+                color: Colors.white,
+                fontSize: RFValue(11),
+                marginTop: RFValue(2),
+              }}
+            >
+              johnmalkovich@gmail.com
+            </Text>
+          </SafeAreaView>
+        </View>
+        <ScrollView style={styles.bottomContainer}>
+          <View style={styles.listHeader}>
+            <Text type={"Medium"} style={{ color: Colors.gray }}>
+              Account
+            </Text>
+          </View>
+
+          <View>
+            <ListItem
+              name={"Personal Details"}
+              icon={"ios-person-circle-outline"}
+              onPress={() => setShowDetails(true)}
+            />
+            <ListItem
+              name={"Refer A Friend"}
+              icon={"ios-gift-outline"}
+              onPress={referAFriend}
+            />
+            <ListItem name={"Manage My Card"} icon={"ios-card-outline"} />
+          </View>
+
+          <View style={styles.listHeader}>
+            <Text type={"Medium"} style={{ color: Colors.gray }}>
+              Security
+            </Text>
+          </View>
+          <View>
+            <ListItem
+              name={"Change Password"}
+              icon={"ios-lock-closed-outline"}
+              onPress={() => {
+                setShowPassword(true);
+              }}
+            />
+            <ListItem name={"Setup 2FA"} icon={"ios-lock-open-outline"} />
+          </View>
+
+          <View style={styles.listHeader}>
+            <Text type={"Medium"} style={{ color: Colors.gray }}>
+              Help
+            </Text>
+          </View>
+          <View>
+            <ListItem
+              name={"Terms And Conditions"}
+              icon={"ios-document-text-outline"}
+              onPress={() => {
+                setShowTerms(true);
+              }}
+            />
+            <ListItem
+              name={"Privacy Policy"}
+              icon={"ios-document-outline"}
+              onPress={() => {
+                setShowPrivacy(true);
+              }}
+            />
+            <ListItem
+              name={"Frequently Asked Questions (FAQs)"}
+              icon={"ios-help-outline"}
+              onPress={() => {
+                setShowFaq(true);
+              }}
+            />
+          </View>
+
+          <View style={styles.listHeader}>
+            <Text type={"Medium"} style={{ color: Colors.gray }}>
+              Other
+            </Text>
+          </View>
+          <View style={{ marginBottom: RFValue(50) }}>
+            <ListItem
+              name={"Log Out"}
+              icon={"ios-log-out-outline"}
+              alert
+              onPress={requestLogout}
+            />
+          </View>
         </ScrollView>
       </View>
+      <PrivacyPolicy show={showPrivacy} setShow={setShowPrivacy} />
+      <FrequentlyAskedQuestions show={showFaq} setShow={setShowFaq} />
+      {/* <TermsAndConditions show={showTerms} setShow={setShowTerms} />*/}
+
+      <ChangePassword show={showPassword} setShow={setShowPassword} />
+      <UpdatePersonalDetails show={showDetails} setShow={setShowDetails} />
     </Fragment>
   );
 }
 
-const style = StyleSheet?.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors?.secondary,
-    position: "relative",
+    backgroundColor: Colors.secondary,
   },
-  header: {
-    marginLeft: RFValue(10),
-    marginRight: RFValue(10),
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
+  topContainer: {
+    backgroundColor: Colors.secondary,
+    paddingTop: RFValue(30),
+    paddingBottom: RFValue(30),
   },
-  miniheader: {
-    marginTop: RFValue(12),
-    marginLeft: RFValue(10),
-    marginRight: RFValue(10),
+  bottomContainer: {
+    flex: 1,
+    backgroundColor: Colors.secondary,
+    maxHeight: "58%",
   },
-  buttonContainer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingVertical: RFValue(12),
-    borderColor: "white",
-    marginTop: RFValue(10),
-    marginLeft: RFValue(10),
-    marginRight: RFValue(10),
+  safeAreaView: { alignItems: "center", flexDirection: "column" },
+  avatarPng: {
+    height: RFValue(80),
+    width: RFValue(80),
+    borderRadius: 50,
   },
-  transactionList: {
+  row: { flexDirection: "row", alignItems: "center" },
+  listHeader: {
     marginTop: RFValue(20),
-    marginLeft: RFValue(10),
-    marginRight: RFValue(10),
-    maxHeight: "75%",
+    marginBottom: RFValue(5),
+    paddingHorizontal: RFValue(15),
   },
 });
