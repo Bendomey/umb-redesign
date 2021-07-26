@@ -1,9 +1,11 @@
 import React from "react";
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import Text from "../../../../components/Text";
 import { Ionicons } from "@expo/vector-icons";
 import Colors from "../../../../constants/colors.json";
+
+const { width } = Dimensions.get("window");
 
 const SingleCard = ({ data, onPress }) => {
   return (
@@ -36,8 +38,8 @@ const SingleCard = ({ data, onPress }) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: RFValue(80),
-    margin: RFValue(10),
+    width: width / 4,
+    margin: RFValue(5),
     backgroundColor: "#1c1c1c",
     alignItems: "center",
     padding: RFValue(5),

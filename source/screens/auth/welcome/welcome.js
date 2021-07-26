@@ -28,7 +28,7 @@ const services = [
     icon: "ios-albums",
   },
   {
-    label: "Terms & Conditions",
+    label: "Ts & Cs",
     icon: "ios-document",
   },
 ];
@@ -50,7 +50,7 @@ const Welcome = ({ navigation }) => {
               style={{
                 color: Colors.gray,
                 fontSize: RFValue(15),
-                marginTop: RFValue(10),
+                marginTop: RFValue(5),
               }}
             >
               Select any of the options to proceed

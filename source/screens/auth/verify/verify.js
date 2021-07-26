@@ -96,9 +96,6 @@ const VerifyAccount = ({ navigation }) => {
                   "Registration was successful. You can now use your credentials to login"
                 );
               }
-              if (key === "three") {
-                alert("You can't use 3");
-              }
             }}
             customLeftButton={
               showRemoveButton ? (
