@@ -18,7 +18,7 @@ const trans = [
           justifyContent: "center",
           alignItems: "center",
           borderColor: "#fff",
-          padding: RFValue(6),
+          padding: RFValue(12),
           backgroundColor: "rgba(255, 46, 98, 0.2)",
           borderRadius: RFValue(10),
         }}
@@ -38,7 +38,7 @@ const trans = [
           justifyContent: "center",
           alignItems: "center",
           borderColor: "#fff",
-          padding: RFValue(6),
+          padding: RFValue(12),
           backgroundColor: "rgba(255, 46, 98, 0.2)",
           borderRadius: RFValue(10),
         }}
@@ -58,7 +58,7 @@ const trans = [
           justifyContent: "center",
           alignItems: "center",
           borderColor: "#fff",
-          padding: RFValue(6),
+          padding: RFValue(12),
           backgroundColor: "rgba(28, 199, 173, 0.2)",
           borderRadius: RFValue(10),
         }}
@@ -82,7 +82,7 @@ const trans = [
           justifyContent: "center",
           alignItems: "center",
           borderColor: "#fff",
-          padding: RFValue(6),
+          padding: RFValue(12),
           backgroundColor: "rgba(255, 46, 98, 0.2)",
           borderRadius: RFValue(10),
         }}
@@ -103,7 +103,7 @@ const trans = [
           justifyContent: "center",
           alignItems: "center",
           borderColor: "#fff",
-          padding: RFValue(6),
+          padding: RFValue(12),
           backgroundColor: "rgba(255, 46, 98, 0.2)",
           borderRadius: RFValue(10),
         }}
@@ -123,7 +123,7 @@ const trans = [
           justifyContent: "center",
           alignItems: "center",
           borderColor: "#fff",
-          padding: RFValue(6),
+          padding: RFValue(12),
           backgroundColor: "rgba(255, 46, 98, 0.2)",
           borderRadius: RFValue(10),
         }}
@@ -143,7 +143,7 @@ const trans = [
           justifyContent: "center",
           alignItems: "center",
           borderColor: "#fff",
-          padding: RFValue(6),
+          padding: RFValue(12),
           backgroundColor: "rgba(28, 199, 173, 0.2)",
           borderRadius: RFValue(10),
         }}
@@ -192,8 +192,7 @@ export default function Transaction({ navigation }) {
                       {transaction?.type}
                     </Text>
                     <Text
-                      type={"Light"}
-                      style={{ color: Colors?.gray, fontSize: RFValue(10) }}
+                      style={{ color: Colors?.gray, fontSize: RFValue(11) }}
                     >
                       {moment(transaction?.date)?.fromNow()}
                     </Text>

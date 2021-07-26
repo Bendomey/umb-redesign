@@ -19,6 +19,7 @@ import ListItem from "./component/listItem";
 import PrivacyPolicy from "../privacy-policy";
 import FrequentlyAskedQuestions from "../faq";
 import ChangePassword from "../change-password";
+import ChangeTPassword from "../change-password-transact";
 import UpdatePersonalDetails from "../personal-details";
 
 export default function Settings({ navigation }) {
@@ -26,6 +27,7 @@ export default function Settings({ navigation }) {
   const [showPrivacy, setShowPrivacy] = useState(false);
   const [showFaq, setShowFaq] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [showTPassword, setShowTPassword] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 
   const requestLogout = useCallback(() => {
@@ -128,7 +130,7 @@ export default function Settings({ navigation }) {
               icon={"ios-gift-outline"}
               onPress={referAFriend}
             />
-            <ListItem name={"Manage My Card"} icon={"ios-card-outline"} />
+            {/* <ListItem name={"Manage My Card"} icon={"ios-card-outline"} /> */}
           </View>
 
           <View style={styles.listHeader}>
@@ -138,13 +140,19 @@ export default function Settings({ navigation }) {
           </View>
           <View>
             <ListItem
-              name={"Change Password"}
-              icon={"ios-lock-closed-outline"}
+              name={"Change Login Pin"}
+              icon={"ios-lock-open-outline"}
               onPress={() => {
                 setShowPassword(true);
               }}
             />
-            <ListItem name={"Setup 2FA"} icon={"ios-lock-open-outline"} />
+            <ListItem
+              name={"Change Transaction Pin"}
+              icon={"ios-lock-closed-outline"}
+              onPress={() => {
+                setShowTPassword(true);
+              }}
+            />
           </View>
 
           <View style={styles.listHeader}>
@@ -196,6 +204,7 @@ export default function Settings({ navigation }) {
       {/* <TermsAndConditions show={showTerms} setShow={setShowTerms} />*/}
 
       <ChangePassword show={showPassword} setShow={setShowPassword} />
+      <ChangeTPassword show={showTPassword} setShow={setShowTPassword} />
       <UpdatePersonalDetails show={showDetails} setShow={setShowDetails} />
     </Fragment>
   );

@@ -30,7 +30,7 @@ const ChangePassword = ({ show, setShow }) => {
             </View>
             <View>
               <Text style={{ color: Colors.white, fontSize: RFValue(15) }}>
-                Change Login Pin
+                Change Transaction Pin
               </Text>
             </View>
             <View />
@@ -62,7 +62,7 @@ const ChangePassword = ({ show, setShow }) => {
             >
               <View style={{ marginBottom: RFValue(20) }}>
                 <Text style={{ marginBottom: RFValue(1), color: Colors.white }}>
-                  Login Pin *
+                  Transaction Pin *
                 </Text>
                 <View style={{ marginTop: RFValue(5) }}>
                   <TextInput secureTextEntry backgroundColor="#0f0f0f" />

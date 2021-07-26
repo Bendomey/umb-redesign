@@ -55,9 +55,10 @@ export default function Tabs() {
                     borderRadius: RFValue(10),
                   }}
                 >
-                  <Image
-                    source={require("../../assets/images/grid.png")}
-                    style={{ tintColor: focused ? Colors?.red : Colors?.gray }}
+                  <Ionicons
+                    name={"ios-pie-chart-outline"}
+                    color={focused ? Colors?.red : Colors?.gray}
+                    size={RFValue(22)}
                   />
                 </View>
               );
@@ -66,80 +67,7 @@ export default function Tabs() {
           name={"Dashboard"}
           component={TransactionNavigator}
         />
-        <Tab.Screen
-          options={{
-            tabBarIcon: ({ focused }) => {
-              return (
-                <View
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    borderColor: "#fff",
-                    top: 15,
-                    borderRadius: RFValue(10),
-                  }}
-                >
-                  <Ionicons
-                    name={"document-text-outline"}
-                    color={focused ? Colors?.red : Colors?.gray}
-                    size={RFValue(20)}
-                  />
-                </View>
-              );
-            },
-          }}
-          name={"Transactions"}
-          component={TransactionListNav}
-        />
-        <Tab.Screen
-          options={{
-            tabBarIcon: ({}) => {
-              return (
-                <View
-                  style={{
-                    top: -30,
-                    position: "absolute",
-                    backgroundColor: "black",
-                    zIndex: 2,
-                    padding: 10,
-                    borderRadius: RFValue(50),
-                    borderWidth: 0,
-                    borderColor: "#000",
-                    shadowColor: "#000",
-                    shadowOffset: {
-                      width: 0,
-                      height: 2,
-                    },
-                    shadowOpacity: 0.25,
-                    shadowRadius: 3.84,
 
-                    elevation: 5,
-                  }}
-                >
-                  <View
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      backgroundColor: Colors?.red,
-                      padding: 12,
-                      borderRadius: RFValue(50),
-                    }}
-                  >
-                    <Ionicons
-                      name={"flash-outline"}
-                      color={Colors?.white}
-                      size={RFValue(25)}
-                    />
-                  </View>
-                </View>
-              );
-            },
-          }}
-          name={"Send"}
-          component={ActivityNavigator}
-        />
         <Tab.Screen
           options={{
             tabBarIcon: ({ focused }) => {
@@ -155,9 +83,9 @@ export default function Tabs() {
                   }}
                 >
                   <Ionicons
-                    name={"time-outline"}
+                    name={"ios-grid-outline"}
                     color={focused ? Colors?.red : Colors?.gray}
-                    size={RFValue(20)}
+                    size={RFValue(25)}
                   />
                 </View>
               );
@@ -180,10 +108,36 @@ export default function Tabs() {
                     borderRadius: RFValue(10),
                   }}
                 >
+                  <Ionicons
+                    name={"ios-time-outline"}
+                    color={focused ? Colors?.red : Colors?.gray}
+                    size={RFValue(25)}
+                  />
+                </View>
+              );
+            },
+          }}
+          name={"Transactions"}
+          component={TransactionListNav}
+        />
+        <Tab.Screen
+          options={{
+            tabBarIcon: ({ focused }) => {
+              return (
+                <View
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    borderColor: "#fff",
+                    top: 15,
+                    borderRadius: RFValue(10),
+                  }}
+                >
                   <AntDesign
                     name={"setting"}
                     color={focused ? Colors?.red : Colors?.gray}
-                    size={RFValue(20)}
+                    size={RFValue(25)}
                   />
                 </View>
               );

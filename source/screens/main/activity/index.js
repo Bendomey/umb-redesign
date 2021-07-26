@@ -25,7 +25,7 @@ export default function ActivityNavigator() {
             headerTitleStyle: {
               fontSize: RFValue(18),
             },
-            headerTitle: "Activity",
+            headerTitle: "Services",
             headerTintColor: Colors.white,
 
             headerLeft: () => {},

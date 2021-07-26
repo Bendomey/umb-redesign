@@ -25,8 +25,8 @@ const trans = [
           justifyContent: "center",
           alignItems: "center",
           borderColor: "#fff",
-          padding: RFValue(6),
-          backgroundColor: "rgba(255, 46, 98, 0.2)",
+          padding: RFValue(12),
+          backgroundColor: "rgba(255, 46, 98, 0.15)",
           borderRadius: RFValue(10),
         }}
       >
@@ -45,7 +45,7 @@ const trans = [
           justifyContent: "center",
           alignItems: "center",
           borderColor: "#fff",
-          padding: RFValue(6),
+          padding: RFValue(12),
           backgroundColor: "rgba(255, 46, 98, 0.2)",
           borderRadius: RFValue(10),
         }}
@@ -65,7 +65,7 @@ const trans = [
           justifyContent: "center",
           alignItems: "center",
           borderColor: "#fff",
-          padding: RFValue(6),
+          padding: RFValue(12),
           backgroundColor: "rgba(28, 199, 173, 0.2)",
           borderRadius: RFValue(10),
         }}
@@ -89,7 +89,7 @@ const trans = [
           justifyContent: "center",
           alignItems: "center",
           borderColor: "#fff",
-          padding: RFValue(6),
+          padding: RFValue(12),
           backgroundColor: "rgba(255, 46, 98, 0.2)",
           borderRadius: RFValue(10),
         }}
@@ -110,7 +110,7 @@ const trans = [
           justifyContent: "center",
           alignItems: "center",
           borderColor: "#fff",
-          padding: RFValue(6),
+          padding: RFValue(12),
           backgroundColor: "rgba(255, 46, 98, 0.2)",
           borderRadius: RFValue(10),
         }}
@@ -130,7 +130,7 @@ const trans = [
           justifyContent: "center",
           alignItems: "center",
           borderColor: "#fff",
-          padding: RFValue(6),
+          padding: RFValue(12),
           backgroundColor: "rgba(255, 46, 98, 0.2)",
           borderRadius: RFValue(10),
         }}
@@ -150,7 +150,7 @@ const trans = [
           justifyContent: "center",
           alignItems: "center",
           borderColor: "#fff",
-          padding: RFValue(6),
+          padding: RFValue(12),
           backgroundColor: "rgba(28, 199, 173, 0.2)",
           borderRadius: RFValue(10),
         }}
@@ -328,12 +328,13 @@ export default function Transaction({ navigation }) {
             alignItems: "center",
           }}
         >
-          <Text type={"Bold"} style={{ color: "#fff" }}>
+          <Text
+            type={"Medium"}
+            style={{ color: Colors.white, fontSize: RFValue(15) }}
+          >
             Recents Transactions
           </Text>
-          <Text type={"Light"} style={{ color: "#fff", fontSize: RFValue(10) }}>
-            View all
-          </Text>
+          <Text style={{ color: Colors.gray }}>View all</Text>
         </View>
         <ScrollView style={style.transactionList}>
           {trans?.map((transaction, key) => (
@@ -345,7 +346,7 @@ export default function Transaction({ navigation }) {
                   paddingVertical: RFValue(12),
                   alignItems: "center",
                   justifyContent: "space-between",
-                  borderBottomWidth: 2,
+                  borderBottomWidth: 1,
                   borderBottomColor: rgbaColor(102, 102, 102, 0.2),
                 }}
               >
@@ -368,11 +369,10 @@ export default function Transaction({ navigation }) {
                       {transaction?.type}
                     </Text>
                     <Text
-                      type={"Medium"}
                       style={{
                         color: Colors?.gray,
                         marginTop: RFValue(2),
-                        fontSize: RFValue(10),
+                        fontSize: RFValue(11),
                       }}
                     >
                       {moment(transaction?.date)?.fromNow()}
