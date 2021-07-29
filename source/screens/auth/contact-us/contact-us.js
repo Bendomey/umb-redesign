@@ -52,7 +52,7 @@ const ContactUs = ({ navigation }) => {
           </View>
           <View style={styles.socialRow}>
             <View style={[styles.circle, { backgroundColor: "#18ACFE" }]} >
-              <EvilIcons name="sc-facebook" size={64} color="black" />
+              <EvilIcons name="sc-facebook" size={54} color="#fff" />
             </View>
             <View style={[styles.circle, { backgroundColor: "#1275B1" }]} />
             <View style={[styles.circle, { backgroundColor: "#47ACDF" }]} />
@@ -149,6 +149,7 @@ const styles = StyleSheet.create({
     width: RFValue(40),
     borderRadius: RFValue(25),
     backgroundColor: Colors.gray,
+    display: "flex",
     justifyContent: "center",
     alignItems: "center"
   },
