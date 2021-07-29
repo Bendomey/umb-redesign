@@ -4,6 +4,8 @@ import { RFValue } from "react-native-responsive-fontsize";
 import Text from "../../../components/Text";
 import Colors from "../../../constants/colors.json";
 import { Ionicons } from "@expo/vector-icons";
+import { Feather } from '@expo/vector-icons';
+
 
 const data = [
   {
@@ -50,7 +52,9 @@ const ContactUs = ({ navigation }) => {
             <Text style={{ color: Colors.gray, fontSize: RFValue(13) }}>Follow us on</Text>
           </View>
           <View style={styles.socialRow}>
-            <View style={[styles.circle, { backgroundColor: "#18ACFE" }]} />
+            <View style={[styles.circle, { backgroundColor: "#18ACFE" }]} >
+              <Feather name="facebook" size={24} color="black" />
+            </View>
             <View style={[styles.circle, { backgroundColor: "#1275B1" }]} />
             <View style={[styles.circle, { backgroundColor: "#47ACDF" }]} />
             <View style={[styles.circle, { backgroundColor: "#FAB917" }]} />
