@@ -82,7 +82,7 @@ const InvestResquest = () => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Current Net Salary *
+                Enter Investment Amount *
               </Text>
               <TextInput onChange={(text) => setAccountNumber(text)} />
             </View>
@@ -93,7 +93,7 @@ const InvestResquest = () => {
                 onPress={() => {
                   // navigation?.push("Main");
                 }}
-                title={"Request Loan"}
+                title={"Request Investment"}
               />
             </View>
           </PageWrapper>
