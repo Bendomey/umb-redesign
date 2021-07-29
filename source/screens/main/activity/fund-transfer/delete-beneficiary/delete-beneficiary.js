@@ -12,6 +12,8 @@ import Text from "../../../../../components/Text";
 import BottomSheet from "../../../../../components/BottomSheet";
 import { RFValue } from "react-native-responsive-fontsize";
 import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome } from '@expo/vector-icons';
+
 
 const { height } = Dimensions.get("window");
 const DeleteBeneficiary = ({ refRBSheet, onDelete }) => {
@@ -67,7 +69,7 @@ const DeleteBeneficiary = ({ refRBSheet, onDelete }) => {
                                     del
                                     data={{
                                         label: "No, Don't Delete",
-                                        icon: "ios-arrow-forward-outline",
+                                        icon: "ios-close",
                                     }}
                                 />
                             </TouchableOpacity>
@@ -78,7 +80,7 @@ const DeleteBeneficiary = ({ refRBSheet, onDelete }) => {
                                 <Card
                                     data={{
                                         label: "Salary Advance",
-                                        icon: "ios-arrow-forward-outline",
+                                        icon: "ios-checkmark",
                                     }}
                                 />
                             </TouchableOpacity>
