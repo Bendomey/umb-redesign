@@ -17,7 +17,9 @@ export default function Services({ navigation }) {
     {
       label: "Loan",
       icon: "ios-document-text",
-      navigation: () => { },
+      navigation: () => {
+        navigation.push("loan-main");
+      },
     },
     {
       label: "Investment",
