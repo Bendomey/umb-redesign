@@ -21,7 +21,7 @@ const Investment = ({ navigation }) => {
       label: "Investment Request",
       icon: "ios-cash",
       onPress: () => {
-        alert("hello");
+        navigation.push("investment-request")
       },
     },
   ];
