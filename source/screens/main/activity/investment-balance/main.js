@@ -1,7 +1,8 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import PageHader from '../../../../components/PageHeader/PageHader';
+import Text from '../../../../components/Text';
 import PageWrapper from '../../../../components/PageWrapper/PageWrapper';
 import Colors from '../../../../constants/colors.json'
 
@@ -11,7 +12,9 @@ const InvestmentBalance = () => {
             <PageHader title="Investment Account Balance" description="Your investment account balance is shown below" />
 
             <PageWrapper>
-                <View style={styles.alert}></View>
+                <View style={styles.alert}>
+                    <Text>Your investment account balance as at {new Date().toDateString()} stands at { }</Text>
+                </View>
             </PageWrapper>
         </View>
     )
@@ -24,6 +27,7 @@ const styles = StyleSheet.create({
     alert: {
         marginVertical: RFValue(25),
         backgroundColor: Colors.green,
-        height: 120
+        padding: RFValue(20)
+        // height: 120
     }
 })
