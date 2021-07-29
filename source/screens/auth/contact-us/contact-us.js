@@ -136,8 +136,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   cirlce: {
-    height: RFValue(50),
-    width: RFValue(50),
+    height: RFValue(120),
+    width: RFValue(120),
     borderRadius: 25,
     backgroundColor: Colors.green
   },
