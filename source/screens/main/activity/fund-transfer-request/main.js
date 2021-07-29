@@ -11,6 +11,7 @@ import ChooseAccount from "./choose-account";
 import TypeOfLoan from "./type-of-loan";
 import Period from "./period";
 import { useRoute } from "@react-navigation/native";
+import PageHader from "../../../../components/PageHeader/PageHader";
 
 const Loan = () => {
 
@@ -19,17 +20,8 @@ const Loan = () => {
   return (
     <Fragment>
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Text
-            type={"Bold"}
-            style={{ color: Colors.white, fontSize: RFValue(25) }}
-          >
-            Transfer {params?.tile}
-          </Text>
-          <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
-            Request loan by filling the form below
-          </Text>
-        </View>
+        <PageHader title={`Transfer ${params?.tile}`} description="Transfer funds by filling the form below" />
+
         <KeyboardAwareScrollView style={{ flex: 1 }}>
           <View style={styles.textInputContainer}>
             <View>
