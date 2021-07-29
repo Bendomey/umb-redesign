@@ -24,7 +24,9 @@ export default function Services({ navigation }) {
     {
       label: "Investment",
       icon: "pie-chart-sharp",
-      navigation: () => { navigation.push("investment-main"); },
+      navigation: () => {
+        navigation.push("investment-main");
+      },
     },
     {
       label: "Cardless W.",
@@ -36,7 +38,9 @@ export default function Services({ navigation }) {
     {
       label: "Fund Transfer",
       icon: "ios-cash",
-      navigation: () => { navigation.push("fund-transfer"); },
+      navigation: () => {
+        navigation.push("fund-transfer");
+      },
     },
     {
       label: "Request",
@@ -48,37 +52,39 @@ export default function Services({ navigation }) {
     {
       label: "Standing Order",
       icon: "ios-document",
-      navigation: () => { },
+      navigation: () => {
+        navigation.push("standing-order-main");
+      },
     },
     {
       label: "Forex Rates",
       icon: "ios-document",
-      navigation: () => { },
+      navigation: () => {},
     },
     {
       label: "Bill Payment",
       icon: "ios-document",
-      navigation: () => { },
+      navigation: () => {},
     },
     {
       label: "Bancassurance",
       icon: "ios-document",
-      navigation: () => { },
+      navigation: () => {},
     },
     {
       label: "Airtime Top-up",
       icon: "ios-document",
-      navigation: () => { },
+      navigation: () => {},
     },
     {
       label: "Feedback",
       icon: "ios-document",
-      navigation: () => { },
+      navigation: () => {},
     },
     {
       label: "Micro Savings",
       icon: "ios-document",
-      navigation: () => { },
+      navigation: () => {},
     },
   ];
 

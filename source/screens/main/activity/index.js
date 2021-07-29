@@ -7,14 +7,17 @@ import { RFValue } from "react-native-responsive-fontsize";
 import StartComponent from "./start";
 import LoanMainComponent from "./loan";
 import LoanDescriptionComponent from "./loan-description";
-import InvestmentMainComponent from './investment';
-import FundTransfer from './fund-transfer';
+import InvestmentMainComponent from "./investment";
+import FundTransfer from "./fund-transfer";
 import LoanRequestComponent from "./loan-request";
 
 import CardlessWithdrawalComponent from "./cardless-withdrawal";
 import CardlessWithdrawalAgentComponent from "./cash-withdrawal-agent";
 import CardlessWithdrawalAtmComponent from "./cash-withdrawal-atm";
+
 import RequestComponent from "./request";
+
+import StandingOrderComponent from "./standing-order";
 
 const Stack = createStackNavigator();
 
@@ -39,7 +42,7 @@ export default function ActivityNavigator() {
             headerTitle: "Services",
             headerTintColor: Colors.white,
 
-            headerLeft: () => { },
+            headerLeft: () => {},
           }}
         />
         <Stack.Screen
@@ -187,6 +190,24 @@ export default function ActivityNavigator() {
         <Stack.Screen
           name={"request-main"}
           component={RequestComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+
+        <Stack.Screen
+          name={"standing-order-main"}
+          component={StandingOrderComponent}
           options={{
             headerBackTitleVisible: false,
             headerStyle: {
