@@ -47,7 +47,7 @@ const ContactUs = ({ navigation }) => {
         </View>
         <View style={styles.socialGroup}>
           <View style={styles.socialText}>
-            <Text>Follow us on</Text>
+            <Text style={{ color: Colors.gray }}>Follow us on</Text>
           </View>
           <View style={styles.socialRow}></View>
         </View>
@@ -101,7 +101,8 @@ const styles = StyleSheet.create({
   socialText: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    color: Colors.gray
   },
   header: {
     marginTop: RFValue(10),
