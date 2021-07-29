@@ -12,69 +12,67 @@ export default function Services({ navigation }) {
     {
       label: "My Account",
       icon: "ios-person",
-      navigation: () => {
-        alert("hello world");
-      },
+      navigation: () => navigation.navigate("account"),
     },
     {
       label: "Loan",
       icon: "ios-document-text",
-      navigation: () => {},
+      navigation: () => { },
     },
     {
       label: "Investment",
       icon: "ios-call",
-      navigation: () => {},
+      navigation: () => { },
     },
     {
       label: "Cardless W.",
       icon: "ios-calculator",
-      navigation: () => {},
+      navigation: () => { },
     },
     {
       label: "Request",
       icon: "ios-location",
-      navigation: () => {},
+      navigation: () => { },
     },
     {
       label: "Request",
       icon: "ios-albums",
-      navigation: () => {},
+      navigation: () => { },
     },
     {
       label: "Standing Order",
       icon: "ios-document",
-      navigation: () => {},
+      navigation: () => { },
     },
     {
       label: "Forex Rates",
       icon: "ios-document",
-      navigation: () => {},
+      navigation: () => { },
     },
     {
       label: "Bill Payment",
       icon: "ios-document",
-      navigation: () => {},
+      navigation: () => { },
     },
     {
       label: "Bancassurance",
       icon: "ios-document",
-      navigation: () => {},
+      navigation: () => { },
     },
     {
       label: "Airtime Top-up",
       icon: "ios-document",
-      navigation: () => {},
+      navigation: () => { },
     },
     {
       label: "Feedback",
       icon: "ios-document",
-      navigation: () => {},
+      navigation: () => { },
     },
     {
       label: "Micro Savings",
       icon: "ios-document",
-      navigation: () => {},
+      navigation: () => { },
     },
   ];
 

@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import StartComponent from "./start";
 import { RFValue } from "react-native-responsive-fontsize";
+import Account from "../account";
 
 const Stack = createStackNavigator();
 export default function ActivityNavigator() {
@@ -28,9 +29,24 @@ export default function ActivityNavigator() {
             headerTitle: "Services",
             headerTintColor: Colors.white,
 
-            headerLeft: () => {},
+            headerLeft: () => { },
           }}
         />
+        <Stack.Screen name="account" component={Account} options={{
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: Colors.secondary,
+            shadowOpacity: 0,
+            elevation: 0,
+          },
+          headerTitleStyle: {
+            fontSize: RFValue(18),
+          },
+          headerTitle: "Services",
+          headerTintColor: Colors.white,
+
+          headerLeft: () => { },
+        }} />
       </Stack.Navigator>
     </Fragment>
   );
