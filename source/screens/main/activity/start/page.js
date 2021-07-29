@@ -9,11 +9,11 @@ import { ScrollView } from "react-native-gesture-handler";
 
 export default function Services({ navigation }) {
   const services = [
-    {
-      label: "My Account",
-      icon: "ios-person",
-      navigation: () => navigation.navigate("account"),
-    },
+    // {
+    //   label: "My Account",
+    //   icon: "ios-person",
+    //   navigation: () => navigation.navigate("account"),
+    // },
     {
       label: "Loan",
       icon: "ios-document-text",
