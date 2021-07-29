@@ -4,6 +4,9 @@ import { RFValue } from "react-native-responsive-fontsize";
 import Text from "../../../components/Text";
 import Colors from "../../../constants/colors.json";
 import { Ionicons } from "@expo/vector-icons";
+import { EvilIcons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const data = [
   {
@@ -44,6 +47,25 @@ const ContactUs = ({ navigation }) => {
               <Card data={type} />
             </Fragment>
           ))}
+        </View>
+        <View style={styles.socialGroup}>
+          <View style={styles.socialText}>
+            <Text style={{ color: Colors.gray, fontSize: RFValue(13) }}>Follow us on</Text>
+          </View>
+          <View style={styles.socialRow}>
+            <View style={[styles.circle, { backgroundColor: "#18ACFE" }]} >
+              <EvilIcons name="sc-facebook" size={54} color="#fff" />
+            </View>
+            <View style={[styles.circle, { backgroundColor: "#1275B1" }]} >
+              <Entypo name="linkedin" size={24} color="#fff" />
+            </View>
+            <View style={[styles.circle, { backgroundColor: "#47ACDF" }]} >
+              <Entypo name="twitter" size={24} color="#fff" />
+            </View>
+            <View style={[styles.circle, { backgroundColor: "#FAB917" }]} >
+              <FontAwesome5 name="globe" size={24} color="#fff" />
+            </View>
+          </View>
         </View>
       </View>
     </>
@@ -92,6 +114,21 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.secondary,
     flex: 1,
   },
+  socialText: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: Colors.gray
+  },
+  socialRow: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+    width: "70%",
+    alignSelf: "center",
+    marginVertical: RFValue(20)
+  },
   header: {
     marginTop: RFValue(10),
     marginHorizontal: RFValue(20),
@@ -111,10 +148,28 @@ const styles = StyleSheet.create({
   },
   card: {
     marginBottom: RFValue(20),
-    borderRadius: 10,
+    borderRadius: RFValue(10),
     flexDirection: "row",
     alignItems: "center",
   },
+  circle: {
+    height: RFValue(40),
+    width: RFValue(40),
+    borderRadius: RFValue(25),
+    backgroundColor: Colors.gray,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  socialGroup: {
+    display: "flex",
+    position: "absolute",
+    height: RFValue(90),
+    width: "90%",
+    bottom: RFValue(20),
+    // backgroundColor: "red",
+    alignSelf: "center"
+  }
 });
 
 export default ContactUs;
