@@ -7,6 +7,8 @@ const InvestmentBalance = () => {
     return (
         <View style={styles.container}>
             <PageHader title="Investment Account Balance" description="Your investment account balance is shown below" />
+
+
         </View>
     )
 }
