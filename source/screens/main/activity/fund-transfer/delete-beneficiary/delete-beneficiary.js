@@ -52,46 +52,13 @@ const DeleteBeneficiary = ({ refRBSheet, onDelete }) => {
                                     fontSize: RFValue(12),
                                 }}
                             >
-                                Please select your loan type from these options listed below
+                                This action cannot be reverted. Your current Beneficiary would be deleted permanently from our system
                             </Text>
                         </View>
                         <ScrollView style={{ flex: 1, marginHorizontal: RFValue(20) }}>
-                            <TouchableOpacity
-                                onPress={() => {
-                                    refRBSheet.current.close();
-                                }}
-                                style={{ marginBottom: RFValue(10) }}
-                            >
-                                <Card
-                                    data={{
-                                        label: "Scheme",
-                                        icon: "ios-arrow-forward-outline",
-                                    }}
-                                />
-                            </TouchableOpacity>
 
-                            <TouchableOpacity
-                                style={{ marginBottom: RFValue(10) }}
-                                onPress={() => refRBSheet.current.close()}
-                            >
-                                <Card
-                                    data={{
-                                        label: "Personal",
-                                        icon: "ios-arrow-forward-outline",
-                                    }}
-                                />
-                            </TouchableOpacity>
-                            <TouchableOpacity
-                                style={{ marginBottom: RFValue(10) }}
-                                onPress={() => refRBSheet.current.close()}
-                            >
-                                <Card
-                                    data={{
-                                        label: "Auto",
-                                        icon: "ios-arrow-forward-outline",
-                                    }}
-                                />
-                            </TouchableOpacity>
+
+
                             <TouchableOpacity
                                 style={{ marginBottom: RFValue(10) }}
                                 onPress={() => refRBSheet.current.close()}
