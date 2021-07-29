@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native';
 import PageHader from '../../../../components/PageHeader/PageHader';
+import PageWrapper from '../../../../components/PageWrapper/PageWrapper';
 import Colors from '../../../../constants/colors.json'
 
 const InvestmentBalance = () => {
@@ -8,7 +9,9 @@ const InvestmentBalance = () => {
         <View style={styles.container}>
             <PageHader title="Investment Account Balance" description="Your investment account balance is shown below" />
 
+            <PageWrapper>
 
+            </PageWrapper>
         </View>
     )
 }
