@@ -51,6 +51,9 @@ const ContactUs = ({ navigation }) => {
           </View>
           <View style={styles.socialRow}>
             <View style={[styles.circle]} />
+            <View style={[styles.circle]} />
+            <View style={[styles.circle]} />
+            <View style={[styles.circle]} />
           </View>
         </View>
       </View>
@@ -128,6 +131,11 @@ const styles = StyleSheet.create({
     borderRadius: RFValue(10),
     flexDirection: "row",
     alignItems: "center",
+  },
+  cirlce: {
+    height: RFValue(50),
+    width: RFValue(50),
+    borderRadius: RFValue(25)
   },
   socialGroup: {
     display: "flex",
