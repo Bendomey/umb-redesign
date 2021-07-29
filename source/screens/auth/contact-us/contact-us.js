@@ -45,7 +45,10 @@ const ContactUs = ({ navigation }) => {
             </Fragment>
           ))}
         </View>
-        <View style={styles.socialGroup}></View>
+        <View style={styles.socialGroup}>
+          <View></View>
+          <View style={styles.socialRow}></View>
+        </View>
       </View>
     </>
   );
@@ -119,9 +122,9 @@ const styles = StyleSheet.create({
   socialGroup: {
     display: "flex",
     position: "absolute",
-    height: 60,
+    height: 90,
     width: "90%",
-    bottom: 10,
+    bottom: 20,
     backgroundColor: "red",
     alignSelf: "center"
   }
