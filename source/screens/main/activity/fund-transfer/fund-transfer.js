@@ -65,7 +65,7 @@ const Investment = ({ navigation }) => {
         setTile(a)
         refRBSheet.current.open();
       },
-    }
+    },
   ];
 
   return (
@@ -147,6 +147,7 @@ const styles = StyleSheet.create({
   },
   textInputContainer: {
     marginTop: RFValue(30),
+    marginBottom: RFValue(100),
     marginHorizontal: RFValue(20),
   },
   card: {
