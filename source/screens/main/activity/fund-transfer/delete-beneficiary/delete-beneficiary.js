@@ -64,6 +64,7 @@ const DeleteBeneficiary = ({ refRBSheet, onDelete }) => {
                                 onPress={() => refRBSheet.current.close()}
                             >
                                 <Card
+                                    del
                                     data={{
                                         label: "Auto",
                                         icon: "ios-arrow-forward-outline",
@@ -89,10 +90,10 @@ const DeleteBeneficiary = ({ refRBSheet, onDelete }) => {
     );
 };
 
-const Card = ({ data }) => {
+const Card = ({ data, del }) => {
     return (
         <Fragment>
-            <View style={styles.card}>
+            <View style={del ? styles.cardx : styles.card}>
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
                     <Ionicons
                         name={data?.icon}
@@ -137,6 +138,16 @@ const styles = StyleSheet.create({
         backgroundColor: "#1c1c1c",
         padding: RFValue(15),
         borderRadius: 10,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+    },
+    cardx: {
+        backgroundColor: "transparent",
+        padding: RFValue(15),
+        borderRadius: 10,
+        borderWidth: 2,
+        borderColor: "#1c1c1c",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
