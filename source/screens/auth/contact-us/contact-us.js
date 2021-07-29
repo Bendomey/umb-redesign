@@ -51,9 +51,9 @@ const ContactUs = ({ navigation }) => {
           </View>
           <View style={styles.socialRow}>
             <View style={[styles.circle, { backgroundColor: "#18ACFE" }]} />
-            <View style={[styles.circle]} />
-            <View style={[styles.circle]} />
-            <View style={[styles.circle]} />
+            <View style={[styles.circle, { backgroundColor: "#1275B1" }]} />
+            <View style={[styles.circle, { backgroundColor: "#47ACDF" }]} />
+            <View style={[styles.circle, { backgroundColor: "#FAB917" }]} />
           </View>
         </View>
       </View>
