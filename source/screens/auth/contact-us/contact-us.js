@@ -135,7 +135,8 @@ const styles = StyleSheet.create({
   cirlce: {
     height: RFValue(50),
     width: RFValue(50),
-    borderRadius: RFValue(25)
+    borderRadius: RFValue(25),
+    backgroundColor: Colors.gray
   },
   socialGroup: {
     display: "flex",
