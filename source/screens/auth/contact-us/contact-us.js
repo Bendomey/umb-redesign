@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   circle: {
     height: RFValue(50),
     width: RFValue(50),
-    borderRadius: 25,
+    borderRadius: RFValue(25),
     backgroundColor: Colors.green
   },
   socialGroup: {
