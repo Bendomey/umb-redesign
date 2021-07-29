@@ -164,34 +164,39 @@ const trans = [
     ),
   },
 ];
-const buttons = [
-  {
-    label: "Send",
-    color: Colors?.primary,
-    svg: () => (
-      <Ionicons name={"md-send"} color={Colors?.white} size={RFValue(14)} />
-    ),
-  },
-  {
-    label: "Withdraw",
-    color: Colors?.green,
-    svg: () => (
-      <Ionicons
-        name={"md-arrow-down"}
-        color={Colors?.white}
-        size={RFValue(14)}
-      />
-    ),
-  },
-  {
-    label: "More",
-    color: Colors?.red,
-    svg: () => (
-      <Ionicons name={"md-cog"} color={Colors?.white} size={RFValue(14)} />
-    ),
-  },
-];
+
 export default function Transaction({ navigation }) {
+  const buttons = [
+    {
+      label: "Send",
+      color: Colors?.primary,
+      svg: () => (
+        <Ionicons name={"md-send"} color={Colors?.white} size={RFValue(14)} />
+      ),
+      onPress: () =>
+        navigation.navigate("Activity", {
+          screen: "fund-transfer",
+        }),
+    },
+    {
+      label: "Withdraw",
+      color: Colors?.green,
+      svg: () => (
+        <Ionicons
+          name={"md-arrow-down"}
+          color={Colors?.white}
+          size={RFValue(14)}
+        />
+      ),
+    },
+    {
+      label: "More",
+      color: Colors?.red,
+      svg: () => (
+        <Ionicons name={"md-cog"} color={Colors?.white} size={RFValue(14)} />
+      ),
+    },
+  ];
   return (
     <Fragment>
       <SafeAreaView style={style?.container}>
@@ -281,6 +286,7 @@ export default function Transaction({ navigation }) {
           {buttons?.map((but, key) => (
             <Fragment key={key}>
               <TouchableOpacity
+                onPress={but.onPress}
                 activeOpacity={0.8}
                 style={{
                   zIndex: 50,
