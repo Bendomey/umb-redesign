@@ -43,7 +43,9 @@ export default function Services({ navigation }) {
     {
       label: "Request",
       icon: "ios-albums",
-      navigation: () => {},
+      navigation: () => {
+        navigation.push("request-main");
+      },
     },
     {
       label: "Standing Order",
@@ -85,7 +87,9 @@ export default function Services({ navigation }) {
   return (
     <Fragment>
       <View style={styles.container}>
-        <View style={{ flexDirection: "column", alignItems: "center" }}>
+        <View
+          style={{ flexDirection: "column", alignItems: "center", flex: 1 }}
+        >
           <Text
             type={"Light"}
             style={{
@@ -96,7 +100,7 @@ export default function Services({ navigation }) {
           >
             Select any of these services to proceed
           </Text>
-          <ScrollView>
+          <ScrollView style={{ flex: 1 }}>
             <View style={styles.servicesContainer}>
               {services.map((service, serviceIdx) => (
                 <ServiceCard

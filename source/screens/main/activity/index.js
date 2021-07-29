@@ -13,6 +13,8 @@ import CardlessWithdrawalComponent from "./cardless-withdrawal";
 import CardlessWithdrawalAgentComponent from "./cash-withdrawal-agent";
 import CardlessWithdrawalAtmComponent from "./cash-withdrawal-atm";
 
+import RequestComponent from "./request";
+
 const Stack = createStackNavigator();
 export default function ActivityNavigator() {
   return (
@@ -129,6 +131,23 @@ export default function ActivityNavigator() {
         <Stack.Screen
           name={"cardless-withdrawal-atm"}
           component={CardlessWithdrawalAtmComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+        <Stack.Screen
+          name={"request-main"}
+          component={RequestComponent}
           options={{
             headerBackTitleVisible: false,
             headerStyle: {
