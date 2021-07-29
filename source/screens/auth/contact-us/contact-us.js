@@ -113,7 +113,9 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "space-around",
+    width: "70%",
+    alignSelf: "center"
   },
   header: {
     marginTop: RFValue(10),
@@ -142,7 +144,7 @@ const styles = StyleSheet.create({
     height: RFValue(50),
     width: RFValue(50),
     borderRadius: RFValue(25),
-    backgroundColor: Colors.green
+    backgroundColor: Colors.gray
   },
   socialGroup: {
     display: "flex",
