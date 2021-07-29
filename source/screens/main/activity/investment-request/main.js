@@ -11,7 +11,7 @@ import ChooseAccount from "./choose-account";
 import TypeOfLoan from "./type-of-loan";
 import Period from "./period";
 
-const Loan = () => {
+const InvestResquest = () => {
   return (
     <Fragment>
       <View style={styles.container}>
@@ -173,4 +173,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Loan;
+export default InvestResquest;
