@@ -59,7 +59,9 @@ const ContactUs = ({ navigation }) => {
             <View style={[styles.circle, { backgroundColor: "#1275B1" }]} >
               <Entypo name="linkedin" size={24} color="#fff" />
             </View>
-            <View style={[styles.circle, { backgroundColor: "#47ACDF" }]} />
+            <View style={[styles.circle, { backgroundColor: "#47ACDF" }]} >
+              <Entypo name="twitter" size={24} color="#fff" />
+            </View>
             <View style={[styles.circle, { backgroundColor: "#FAB917" }]} />
           </View>
         </View>
