@@ -43,7 +43,7 @@ const InvestResquest = () => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Type of Loan *
+                Type of Investment *
               </Text>
               <TypeOfLoan />
             </View>
