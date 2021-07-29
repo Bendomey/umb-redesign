@@ -115,7 +115,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-around",
     width: "70%",
-    alignSelf: "center"
+    alignSelf: "center",
+    marginVertical: RFValue(20)
   },
   header: {
     marginTop: RFValue(10),
@@ -141,8 +142,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   circle: {
-    height: RFValue(50),
-    width: RFValue(50),
+    height: RFValue(40),
+    width: RFValue(40),
     borderRadius: RFValue(25),
     backgroundColor: Colors.gray
   },
