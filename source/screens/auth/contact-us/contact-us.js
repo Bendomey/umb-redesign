@@ -122,16 +122,16 @@ const styles = StyleSheet.create({
   },
   card: {
     marginBottom: RFValue(20),
-    borderRadius: 10,
+    borderRadius: RFValue(10),
     flexDirection: "row",
     alignItems: "center",
   },
   socialGroup: {
     display: "flex",
     position: "absolute",
-    height: 90,
+    height: RFValue(90),
     width: "90%",
-    bottom: 20,
+    bottom: RFValue(20),
     // backgroundColor: "red",
     alignSelf: "center"
   }
