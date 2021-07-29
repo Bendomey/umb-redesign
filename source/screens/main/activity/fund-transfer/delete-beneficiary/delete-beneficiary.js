@@ -66,7 +66,7 @@ const DeleteBeneficiary = ({ refRBSheet, onDelete }) => {
                                 <Card
                                     del
                                     data={{
-                                        label: "Auto",
+                                        label: "No, Don't Delete",
                                         icon: "ios-arrow-forward-outline",
                                     }}
                                 />
