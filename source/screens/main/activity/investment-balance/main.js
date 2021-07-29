@@ -21,5 +21,9 @@ export default InvestmentBalance
 
 const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: Colors.secondary },
-    alert: { marginVertical: RFValue(25) }
+    alert: {
+        marginVertical: RFValue(25),
+        backgroundColor: Colors.green,
+        height: 120
+    }
 })
