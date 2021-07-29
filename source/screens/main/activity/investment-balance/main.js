@@ -1,11 +1,12 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native';
+import PageHader from '../../../../components/PageHeader/PageHader';
 import Colors from '../../../../constants/colors.json'
 
 const InvestmentBalance = () => {
     return (
         <View style={styles.container}>
-            <Text></Text>
+            <PageHader title="Investment Account Balance" />
         </View>
     )
 }
