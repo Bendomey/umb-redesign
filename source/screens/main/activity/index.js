@@ -7,12 +7,10 @@ import { RFValue } from "react-native-responsive-fontsize";
 import StartComponent from "./start";
 import LoanMainComponent from "./loan";
 import LoanDescriptionComponent from "./loan-description";
-import InvestmentMainComponent from './investment';
-import FundTransfer from './fund-transfer';
-import FundTransferRequest from './fund-transfer-request';
-
 import InvestmentMainComponent from "./investment";
 import FundTransfer from "./fund-transfer";
+import FundTransferRequest from "./fund-transfer-request";
+
 import LoanRequestComponent from "./loan-request";
 
 import CardlessWithdrawalComponent from "./cardless-withdrawal";
@@ -46,7 +44,7 @@ export default function ActivityNavigator() {
             headerTitle: "Services",
             headerTintColor: Colors.white,
 
-            headerLeft: () => {  },
+            headerLeft: () => {},
           }}
         />
         <Stack.Screen
