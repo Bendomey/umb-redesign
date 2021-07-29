@@ -9,6 +9,8 @@ import LoanMainComponent from "./loan";
 import LoanDescriptionComponent from "./loan-description";
 import InvestmentMainComponent from './investment';
 import FundTransfer from './fund-transfer';
+import FundTransferRequest from './fund-transfer-request';
+
 import LoanRequestComponent from "./loan-request";
 
 import CardlessWithdrawalComponent from "./cardless-withdrawal";
@@ -99,6 +101,24 @@ export default function ActivityNavigator() {
         <Stack.Screen
           name={"fund-transfer"}
           component={FundTransfer}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+
+        <Stack.Screen
+          name={"fund-transfer-request"}
+          component={FundTransferRequest}
           options={{
             headerBackTitleVisible: false,
             headerStyle: {

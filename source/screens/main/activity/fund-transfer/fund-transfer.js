@@ -1,4 +1,4 @@
-import React, { Fragment, useRef } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import { View, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import Text from "../../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
@@ -8,54 +8,61 @@ import ChooseAccount from "../components/choose-account";
 
 const Investment = ({ navigation }) => {
   const refRBSheet = useRef(null);
-
+  const [tile, setTile] = useState("");
   const data = [
     {
       label: "To own UMB Account",
       icon: "ios-cash",
-      onPress: () => {
+      onPress: (a) => {
+        setTile(a)
         refRBSheet.current.open();
       },
     },
     {
       label: "To other UMB Account",
       icon: "ios-cash",
-      onPress: () => {
+      onPress: (a) => {
+        setTile(a)
         refRBSheet.current.open();
       },
     },
     {
       label: "Other Bank Account",
       icon: "ios-cash",
-      onPress: () => {
+      onPress: (a) => {
+        setTile(a)
         refRBSheet.current.open();
       },
     },
     {
       label: "To Wallet",
       icon: "ios-cash",
-      onPress: () => {
+      onPress: (a) => {
+        setTile(a)
         refRBSheet.current.open();
       },
     },
     {
       label: "Telco Wallet to UMB Account",
       icon: "ios-cash",
-      onPress: () => {
+      onPress: (a) => {
+        setTile(a)
         refRBSheet.current.open();
       },
     },
     {
       label: "Add Beneficiary",
       icon: "ios-cash",
-      onPress: () => {
+      onPress: (a) => {
+        setTile(a)
         refRBSheet.current.open();
       },
     },
     {
       label: "Delete Beneficiary",
       icon: "ios-cash",
-      onPress: () => {
+      onPress: (a) => {
+        setTile(a)
         refRBSheet.current.open();
       },
     }
@@ -78,7 +85,7 @@ const Investment = ({ navigation }) => {
         <ScrollView style={styles.textInputContainer}>
           {data?.map((type, i) => (
             <Fragment key={i}>
-              <TouchableOpacity onPress={type.onPress}>
+              <TouchableOpacity onPress={() => type.onPress(type.label)}>
                 <Card data={type} />
               </TouchableOpacity>
             </Fragment>
@@ -89,7 +96,7 @@ const Investment = ({ navigation }) => {
         refRBSheet={refRBSheet}
         onNavigate={() => {
           refRBSheet.current.close();
-          navigation.push("Investment-description");
+          navigation.push("fund-transfer-request", { tile });
         }}
       />
     </Fragment>
