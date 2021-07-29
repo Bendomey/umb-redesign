@@ -14,18 +14,10 @@ import { RFValue } from "react-native-responsive-fontsize";
 import { Ionicons } from "@expo/vector-icons";
 
 const { height } = Dimensions.get("window");
-const DeleteBeneficiary = ({ }) => {
-    const refRBSheet = useRef(null);
+const DeleteBeneficiary = ({ refRBSheet, onDelete }) => {
+    // const refRBSheet = useRef(null);
     return (
         <>
-            <TouchableOpacity onPress={() => refRBSheet.current.open()}>
-                <Card
-                    data={{
-                        label: "Select An Option",
-                        icon: "ios-document-text",
-                    }}
-                />
-            </TouchableOpacity>
             <BottomSheet
                 ref={refRBSheet}
                 closeOnDragDown={true}
