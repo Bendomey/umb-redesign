@@ -46,7 +46,7 @@ const Loan = () => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Type of Loan *
+                Select Destination Account *
               </Text>
               <TypeOfLoan />
             </View>
@@ -63,6 +63,7 @@ const Loan = () => {
               </Text>
               <TextInput onChange={(text) => setAccountNumber(text)} />
             </View>
+
             <View style={{ marginTop: RFValue(20) }}>
               <Text
                 type={"Light"}
@@ -72,20 +73,7 @@ const Loan = () => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Select Period *
-              </Text>
-              <Period />
-            </View>
-            <View style={{ marginTop: RFValue(20) }}>
-              <Text
-                type={"Light"}
-                style={{
-                  color: Colors.white,
-                  fontSize: RFValue(12),
-                  marginBottom: RFValue(5),
-                }}
-              >
-                Current Net Salary *
+                Enter amount *
               </Text>
               <TextInput onChange={(text) => setAccountNumber(text)} />
             </View>
@@ -96,7 +84,7 @@ const Loan = () => {
                 onPress={() => {
                   // navigation?.push("Main");
                 }}
-                title={"Request Loan"}
+                title={"Transfer Funds"}
               />
             </View>
           </View>
