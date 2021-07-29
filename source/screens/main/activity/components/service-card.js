@@ -39,10 +39,11 @@ const SingleCard = ({ data, onPress }) => {
 const styles = StyleSheet.create({
   container: {
     width: width / 4,
-    margin: RFValue(7),
+    height: width / 4,
+    margin: RFValue(8),
     backgroundColor: "#1c1c1c",
     alignItems: "center",
-    padding: RFValue(5),
+    justifyContent: "center",
     borderRadius: RFValue(10),
   },
   iconContainer: {
