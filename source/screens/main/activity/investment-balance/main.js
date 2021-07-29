@@ -13,7 +13,7 @@ const InvestmentBalance = () => {
 
             <PageWrapper>
                 <View style={styles.alert}>
-                    <Text>Your investment account balance as at {new Date().toDateString()} stands at { }</Text>
+                    <Text style={styles.alertText}>Your investment account balance as at {new Date().toDateString()} stands at { }</Text>
                 </View>
             </PageWrapper>
         </View>
@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
     alert: {
         marginVertical: RFValue(25),
         backgroundColor: Colors.green,
-        padding: RFValue(20)
+        padding: RFValue(13)
         // height: 120
-    }
+    },
+    alertText: { fontSize: RFValue(23) }
 })
