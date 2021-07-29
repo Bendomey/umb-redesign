@@ -10,22 +10,14 @@ import { Ionicons } from "@expo/vector-icons";
 import ChooseAccount from "./choose-account";
 import TypeOfLoan from "./type-of-loan";
 import Period from "./period";
+import PageHader from "../../../../components/PageHeader/PageHader";
 
 const InvestResquest = () => {
   return (
     <Fragment>
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Text
-            type={"Bold"}
-            style={{ color: Colors.white, fontSize: RFValue(25) }}
-          >
-            Loan Request
-          </Text>
-          <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
-            Request loan by filling the form below
-          </Text>
-        </View>
+        <PageHader title="Investment Request" description="Request investment by filling the form below" />
+
         <KeyboardAwareScrollView style={{ flex: 1 }}>
           <View style={styles.textInputContainer}>
             <View>
