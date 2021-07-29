@@ -47,7 +47,7 @@ const ContactUs = ({ navigation }) => {
         </View>
         <View style={styles.socialGroup}>
           <View style={styles.socialText}>
-            <Text style={{ color: Colors.gray }}>Follow us on</Text>
+            <Text style={{ color: Colors.gray, fontSize: RFValue(13) }}>Follow us on</Text>
           </View>
           <View style={styles.socialRow}></View>
         </View>
