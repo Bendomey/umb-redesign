@@ -43,7 +43,7 @@ const DeleteBeneficiary = ({ refRBSheet, onDelete }) => {
                                 fontSize: RFValue(17),
                             }}
                         >
-                            Loan Types
+                            Delete Beneficiary
                         </Text>
                         <View style={{ margin: RFValue(20) }}>
                             <Text
