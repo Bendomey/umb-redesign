@@ -54,7 +54,7 @@ const Investment = ({ navigation }) => {
         refRBSheet={refRBSheet}
         onNavigate={() => {
           refRBSheet.current.close();
-          navigation.push("Investment-description");
+          navigation.push("investment-account-balance");
         }}
       />
     </Fragment>

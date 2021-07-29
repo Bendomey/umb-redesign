@@ -22,6 +22,7 @@ import CardlessWithdrawalAtmComponent from "./cash-withdrawal-atm";
 import RequestComponent from "./request";
 
 import StandingOrderComponent from "./standing-order";
+import InvestmentBalance from "./investment-balance/main";
 
 const Stack = createStackNavigator();
 
@@ -87,6 +88,24 @@ export default function ActivityNavigator() {
         <Stack.Screen
           name={"investment-main"}
           component={InvestmentMainComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+
+        <Stack.Screen
+          name={"investment-account-balance"}
+          component={InvestmentBalance}
           options={{
             headerBackTitleVisible: false,
             headerStyle: {
