@@ -31,7 +31,9 @@ export default function Services({ navigation }) {
     {
       label: "Cardless W.",
       icon: "ios-calculator",
-      navigation: () => {},
+      navigation: () => {
+        navigation.push("cardless-withdrawal-main");
+      },
     },
     {
       label: "Request",

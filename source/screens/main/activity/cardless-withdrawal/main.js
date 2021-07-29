@@ -4,24 +4,21 @@ import Text from "../../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
 import Colors from "../../../../constants/colors.json";
 import { Ionicons } from "@expo/vector-icons";
-import ChooseAccount from "../components/choose-account";
 
 const Loan = ({ navigation }) => {
-  const refRBSheet = useRef(null);
-
   const data = [
     {
-      label: "Check Loan Account Balance",
+      label: "Cash Withdrawal at Agent Outlet",
       icon: "ios-cash",
       onPress: () => {
-        refRBSheet.current.open();
+        navigation.push("cardless-withdrawal-agent");
       },
     },
     {
-      label: "Loan Request",
+      label: "Cash Withdrawal as ATMs",
       icon: "ios-cash",
       onPress: () => {
-        navigation.push("loan-request");
+        navigation.push("cardless-withdrawal-atm");
       },
     },
   ];
@@ -34,7 +31,7 @@ const Loan = ({ navigation }) => {
             type={"Bold"}
             style={{ color: Colors.white, fontSize: RFValue(25) }}
           >
-            Loan
+            Cardless Withdrawal
           </Text>
           <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
             Select any of the options to proceed
@@ -50,13 +47,6 @@ const Loan = ({ navigation }) => {
           ))}
         </View>
       </View>
-      <ChooseAccount
-        refRBSheet={refRBSheet}
-        onNavigate={() => {
-          refRBSheet.current.close();
-          navigation.push("loan-description");
-        }}
-      />
     </Fragment>
   );
 };
