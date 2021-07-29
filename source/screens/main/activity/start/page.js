@@ -23,8 +23,8 @@ export default function Services({ navigation }) {
     },
     {
       label: "Investment",
-      icon: "ios-call",
-      navigation: () => { },
+      icon: "pie-chart-sharp",
+      navigation: () => { navigation.push("investment-main"); },
     },
     {
       label: "Cardless W.",
@@ -32,9 +32,9 @@ export default function Services({ navigation }) {
       navigation: () => { },
     },
     {
-      label: "Request",
-      icon: "ios-location",
-      navigation: () => { },
+      label: "Fund Transfer",
+      icon: "ios-cash",
+      navigation: () => { navigation.push("fund-transfer"); },
     },
     {
       label: "Request",

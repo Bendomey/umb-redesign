@@ -7,6 +7,8 @@ import { RFValue } from "react-native-responsive-fontsize";
 import StartComponent from "./start";
 import LoanMainComponent from "./loan";
 import LoanDescriptionComponent from "./loan-description";
+import InvestmentMainComponent from './investment';
+import FundTransfer from './fund-transfer';
 
 const Stack = createStackNavigator();
 
@@ -53,8 +55,44 @@ export default function ActivityNavigator() {
         />
 
         <Stack.Screen
+          name={"investment-main"}
+          component={InvestmentMainComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+
+        <Stack.Screen
           name={"loan-description"}
           component={LoanDescriptionComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+
+        <Stack.Screen
+          name={"fund-transfer"}
+          component={FundTransfer}
           options={{
             headerBackTitleVisible: false,
             headerStyle: {
