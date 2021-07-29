@@ -100,7 +100,7 @@ const Card = ({ data, del }) => {
                     <Ionicons
                         name={data?.icon}
                         size={RFValue(20)}
-                        color={del ? Colors.red : Colors.primary}
+                        color={del ? Colors.red : Colors.green}
                     />
                     <Text
                         type={"Light"}
