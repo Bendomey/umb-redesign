@@ -110,7 +110,10 @@ const styles = StyleSheet.create({
     color: Colors.gray
   },
   socialRow: {
-    display: "flex"
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center"
   },
   header: {
     marginTop: RFValue(10),
@@ -136,8 +139,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   circle: {
-    height: RFValue(120),
-    width: RFValue(120),
+    height: RFValue(50),
+    width: RFValue(50),
     borderRadius: 25,
     backgroundColor: Colors.green
   },
