@@ -26,18 +26,7 @@ export default function Tabs() {
             right: RFValue(8),
             borderRadius: RFValue(20),
             borderTopWidth: 0,
-            backgroundColor: "rgba(0, 0, 0,0.4)",
-            shadowColor: "#fff",
-            borderColor: "#404040",
-            borderWidth: 0,
-            shadowOffset: {
-              width: 0,
-              height: 1,
-            },
-            shadowOpacity: 0.4,
-            shadowRadius: 1.41,
-            elevation: 5,
-            height: RFValue(60),
+            backgroundColor: "#1e1e1e",
           },
         }}
       >
@@ -57,7 +46,7 @@ export default function Tabs() {
                 >
                   <Ionicons
                     name={"ios-pie-chart-outline"}
-                    color={focused ? Colors?.red : Colors?.gray}
+                    color={focused ? Colors?.primary : Colors?.gray}
                     size={RFValue(22)}
                   />
                 </View>
@@ -84,7 +73,7 @@ export default function Tabs() {
                 >
                   <Ionicons
                     name={"ios-grid-outline"}
-                    color={focused ? Colors?.red : Colors?.gray}
+                    color={focused ? Colors?.primary : Colors?.gray}
                     size={RFValue(25)}
                   />
                 </View>
@@ -110,7 +99,7 @@ export default function Tabs() {
                 >
                   <Ionicons
                     name={"ios-time-outline"}
-                    color={focused ? Colors?.red : Colors?.gray}
+                    color={focused ? Colors?.primary : Colors?.gray}
                     size={RFValue(25)}
                   />
                 </View>
@@ -136,7 +125,7 @@ export default function Tabs() {
                 >
                   <AntDesign
                     name={"setting"}
-                    color={focused ? Colors?.red : Colors?.gray}
+                    color={focused ? Colors?.primary : Colors?.gray}
                     size={RFValue(25)}
                   />
                 </View>

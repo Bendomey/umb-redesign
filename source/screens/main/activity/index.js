@@ -9,6 +9,12 @@ import LoanMainComponent from "./loan";
 import LoanDescriptionComponent from "./loan-description";
 import InvestmentMainComponent from './investment';
 import FundTransfer from './fund-transfer';
+import LoanRequestComponent from "./loan-request";
+
+import CardlessWithdrawalComponent from "./cardless-withdrawal";
+import CardlessWithdrawalAgentComponent from "./cash-withdrawal-agent";
+import CardlessWithdrawalAtmComponent from "./cash-withdrawal-atm";
+import RequestComponent from "./request";
 
 const Stack = createStackNavigator();
 
@@ -93,6 +99,94 @@ export default function ActivityNavigator() {
         <Stack.Screen
           name={"fund-transfer"}
           component={FundTransfer}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+
+        <Stack.Screen
+          name={"loan-request"}
+          component={LoanRequestComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+
+        <Stack.Screen
+          name={"cardless-withdrawal-main"}
+          component={CardlessWithdrawalComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+
+        <Stack.Screen
+          name={"cardless-withdrawal-agent"}
+          component={CardlessWithdrawalAgentComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+        <Stack.Screen
+          name={"cardless-withdrawal-atm"}
+          component={CardlessWithdrawalAtmComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+        <Stack.Screen
+          name={"request-main"}
+          component={RequestComponent}
           options={{
             headerBackTitleVisible: false,
             headerStyle: {
