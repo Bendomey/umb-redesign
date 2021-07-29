@@ -10,20 +10,17 @@ import { Ionicons } from "@expo/vector-icons";
 import ChooseAccount from "./choose-account";
 import TypeOfLoan from "./type-of-loan";
 import Period from "./period";
-import { useRoute } from "@react-navigation/native";
 import PageHader from "../../../../components/PageHeader/PageHader";
+import PageWrapper from "../../../../components/PageWrapper/PageWrapper";
 
-const Loan = () => {
-
-  const { params } = useRoute()
-
+const InvestResquest = () => {
   return (
     <Fragment>
       <View style={styles.container}>
-        <PageHader title={`Transfer ${params?.tile}`} description="Transfer funds by filling the form below" />
+        <PageHader title="Investment Request" description="Request investment by filling the form below" />
 
         <KeyboardAwareScrollView style={{ flex: 1 }}>
-          <View style={styles.textInputContainer}>
+          <PageWrapper>
             <View>
               <Text
                 type={"Light"}
@@ -46,7 +43,7 @@ const Loan = () => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Select Destination Account *
+                Type of Investment *
               </Text>
               <TypeOfLoan />
             </View>
@@ -63,7 +60,6 @@ const Loan = () => {
               </Text>
               <TextInput onChange={(text) => setAccountNumber(text)} />
             </View>
-
             <View style={{ marginTop: RFValue(20) }}>
               <Text
                 type={"Light"}
@@ -73,7 +69,20 @@ const Loan = () => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Enter amount *
+                Select Period *
+              </Text>
+              <Period />
+            </View>
+            <View style={{ marginTop: RFValue(20) }}>
+              <Text
+                type={"Light"}
+                style={{
+                  color: Colors.white,
+                  fontSize: RFValue(12),
+                  marginBottom: RFValue(5),
+                }}
+              >
+                Enter Investment Amount *
               </Text>
               <TextInput onChange={(text) => setAccountNumber(text)} />
             </View>
@@ -84,10 +93,10 @@ const Loan = () => {
                 onPress={() => {
                   // navigation?.push("Main");
                 }}
-                title={"Transfer Funds"}
+                title={"Request Investment"}
               />
             </View>
-          </View>
+          </PageWrapper>
         </KeyboardAwareScrollView>
       </View>
     </Fragment>
@@ -157,4 +166,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Loan;
+export default InvestResquest;
