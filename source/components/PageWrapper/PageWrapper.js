@@ -12,6 +12,7 @@ export default PageWrapper
 
 const styles = StyleSheet.create({
     pageWrapper: {
-        marginHorizontal: RFValue(25)
+        marginTop: RFValue(30),
+        marginHorizontal: RFValue(20),
     }
 })

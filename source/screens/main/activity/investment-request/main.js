@@ -11,6 +11,7 @@ import ChooseAccount from "./choose-account";
 import TypeOfLoan from "./type-of-loan";
 import Period from "./period";
 import PageHader from "../../../../components/PageHeader/PageHader";
+import PageWrapper from "../../../../components/PageWrapper/PageWrapper";
 
 const InvestResquest = () => {
   return (
@@ -19,7 +20,7 @@ const InvestResquest = () => {
         <PageHader title="Investment Request" description="Request investment by filling the form below" />
 
         <KeyboardAwareScrollView style={{ flex: 1 }}>
-          <View style={styles.textInputContainer}>
+          <PageWrapper>
             <View>
               <Text
                 type={"Light"}
@@ -95,7 +96,7 @@ const InvestResquest = () => {
                 title={"Request Loan"}
               />
             </View>
-          </View>
+          </PageWrapper>
         </KeyboardAwareScrollView>
       </View>
     </Fragment>
