@@ -50,10 +50,10 @@ const ContactUs = ({ navigation }) => {
             <Text style={{ color: Colors.gray, fontSize: RFValue(13) }}>Follow us on</Text>
           </View>
           <View style={styles.socialRow}>
-            <View style={[styles.circle]} />
-            <View style={[styles.circle]} />
-            <View style={[styles.circle]} />
-            <View style={[styles.circle]} />
+            <View style={styles.circle} ></View>
+            <View style={styles.circle} ></View>
+            <View style={styles.circle} ></View>
+            <View style={styles.circle} ></View>
           </View>
         </View>
       </View>
