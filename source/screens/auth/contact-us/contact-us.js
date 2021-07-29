@@ -6,7 +6,7 @@ import Colors from "../../../constants/colors.json";
 import { Ionicons } from "@expo/vector-icons";
 import { EvilIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
-
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const data = [
   {
@@ -62,7 +62,9 @@ const ContactUs = ({ navigation }) => {
             <View style={[styles.circle, { backgroundColor: "#47ACDF" }]} >
               <Entypo name="twitter" size={24} color="#fff" />
             </View>
-            <View style={[styles.circle, { backgroundColor: "#FAB917" }]} />
+            <View style={[styles.circle, { backgroundColor: "#FAB917" }]} >
+              <FontAwesome5 name="globe" size={24} color="#fff" />
+            </View>
           </View>
         </View>
       </View>
