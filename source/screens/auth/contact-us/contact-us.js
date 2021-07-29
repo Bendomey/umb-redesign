@@ -109,6 +109,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     color: Colors.gray
   },
+  socialRow: {
+    display: "flex"
+  },
   header: {
     marginTop: RFValue(10),
     marginHorizontal: RFValue(20),
@@ -135,8 +138,8 @@ const styles = StyleSheet.create({
   cirlce: {
     height: RFValue(50),
     width: RFValue(50),
-    borderRadius: RFValue(25),
-    backgroundColor: Colors.gray
+    borderRadius: 25,
+    backgroundColor: Colors.green
   },
   socialGroup: {
     display: "flex",
