@@ -5,9 +5,11 @@ import { RFValue } from "react-native-responsive-fontsize";
 import Colors from "../../../../constants/colors.json";
 import { Ionicons } from "@expo/vector-icons";
 import ChooseAccount from "../components/choose-account";
+import DeleteBeneficiary from "./delete-beneficiary";
 
 const Investment = ({ navigation }) => {
   const refRBSheet = useRef(null);
+  const refRBSheetDel = useRef(null);
   const [tile, setTile] = useState("");
   const data = [
     {
@@ -64,7 +66,7 @@ const Investment = ({ navigation }) => {
       icon: "ios-cash",
       onPress: (a) => {
         setTile(a)
-        // refRBSheet.current.open();
+        refRBSheetDel.current.open();
       },
     },
   ];
@@ -100,6 +102,7 @@ const Investment = ({ navigation }) => {
           navigation.push("fund-transfer-request", { tile });
         }}
       />
+      <DeleteBeneficiary refRBSheet={refRBSheetDel} />
     </Fragment>
   );
 };
