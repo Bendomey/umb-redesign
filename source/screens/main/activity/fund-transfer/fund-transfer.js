@@ -55,7 +55,8 @@ const Investment = ({ navigation }) => {
       icon: "ios-cash",
       onPress: (a) => {
         setTile(a)
-        refRBSheet.current.open();
+        // refRBSheet.current.open();
+        navigation.push("add-beneficiary")
       },
     },
     {
@@ -63,7 +64,7 @@ const Investment = ({ navigation }) => {
       icon: "ios-cash",
       onPress: (a) => {
         setTile(a)
-        refRBSheet.current.open();
+        // refRBSheet.current.open();
       },
     },
   ];

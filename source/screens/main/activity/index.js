@@ -11,8 +11,8 @@ import InvestmentMainComponent from './investment';
 import FundTransfer from './fund-transfer';
 import FundTransferRequest from './fund-transfer-request';
 
-import InvestmentMainComponent from "./investment";
-import FundTransfer from "./fund-transfer";
+// import InvestmentMainComponent from "./investment";
+import AddBeneficiary from "./fund-transfer/add-beneficiary";
 import LoanRequestComponent from "./loan-request";
 
 import CardlessWithdrawalComponent from "./cardless-withdrawal";
@@ -46,7 +46,24 @@ export default function ActivityNavigator() {
             headerTitle: "Services",
             headerTintColor: Colors.white,
 
-            headerLeft: () => {  },
+            headerLeft: () => { },
+          }}
+        />
+        <Stack.Screen
+          name={"add-beneficiary"}
+          component={AddBeneficiary}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
           }}
         />
         <Stack.Screen
