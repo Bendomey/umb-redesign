@@ -7,19 +7,12 @@ import { RFValue } from "react-native-responsive-fontsize";
 import StartComponent from "./start";
 import LoanMainComponent from "./loan";
 import LoanDescriptionComponent from "./loan-description";
-<<<<<<< HEAD
 import InvestmentMainComponent from './investment';
 import FundTransfer from './fund-transfer';
 import FundTransferRequest from './fund-transfer-request';
 
 // import InvestmentMainComponent from "./investment";
 import AddBeneficiary from "./fund-transfer/add-beneficiary";
-=======
-import InvestmentMainComponent from "./investment";
-import FundTransfer from "./fund-transfer";
-import FundTransferRequest from "./fund-transfer-request";
-
->>>>>>> d79bd5cb4b62a12c8d35057fcab71c44c7f46ab0
 import LoanRequestComponent from "./loan-request";
 
 import CardlessWithdrawalComponent from "./cardless-withdrawal";

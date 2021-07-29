@@ -12,6 +12,8 @@ import Text from "../../../../../components/Text";
 import BottomSheet from "../../../../../components/BottomSheet";
 import { RFValue } from "react-native-responsive-fontsize";
 import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome } from '@expo/vector-icons';
+
 
 const { height } = Dimensions.get("window");
 const DeleteBeneficiary = ({ refRBSheet, onDelete }) => {
@@ -64,9 +66,10 @@ const DeleteBeneficiary = ({ refRBSheet, onDelete }) => {
                                 onPress={() => refRBSheet.current.close()}
                             >
                                 <Card
+                                    del
                                     data={{
-                                        label: "Auto",
-                                        icon: "ios-arrow-forward-outline",
+                                        label: "No, Don't Delete",
+                                        icon: "ios-close",
                                     }}
                                 />
                             </TouchableOpacity>
@@ -77,7 +80,7 @@ const DeleteBeneficiary = ({ refRBSheet, onDelete }) => {
                                 <Card
                                     data={{
                                         label: "Salary Advance",
-                                        icon: "ios-arrow-forward-outline",
+                                        icon: "ios-checkmark",
                                     }}
                                 />
                             </TouchableOpacity>
@@ -89,15 +92,15 @@ const DeleteBeneficiary = ({ refRBSheet, onDelete }) => {
     );
 };
 
-const Card = ({ data }) => {
+const Card = ({ data, del }) => {
     return (
         <Fragment>
-            <View style={styles.card}>
+            <View style={del ? styles.cardx : styles.card}>
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
                     <Ionicons
                         name={data?.icon}
                         size={RFValue(20)}
-                        color={Colors.primary}
+                        color={del ? Colors.red : Colors.green}
                     />
                     <Text
                         type={"Light"}
@@ -137,6 +140,16 @@ const styles = StyleSheet.create({
         backgroundColor: "#1c1c1c",
         padding: RFValue(15),
         borderRadius: 10,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+    },
+    cardx: {
+        backgroundColor: "transparent",
+        padding: RFValue(15),
+        borderRadius: 10,
+        borderWidth: 2,
+        borderColor: "#1c1c1c",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
