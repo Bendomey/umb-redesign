@@ -7,9 +7,9 @@ import { RFValue } from "react-native-responsive-fontsize";
 import StartComponent from "./start";
 import LoanMainComponent from "./loan";
 import LoanDescriptionComponent from "./loan-description";
-import InvestmentMainComponent from './investment';
-import FundTransfer from './fund-transfer';
-import FundTransferRequest from './fund-transfer-request';
+import InvestmentMainComponent from "./investment";
+import FundTransfer from "./fund-transfer";
+import FundTransferRequest from "./fund-transfer-request";
 import AddBeneficiary from "./fund-transfer/add-beneficiary";
 import LoanRequestComponent from "./loan-request";
 import CardlessWithdrawalComponent from "./cardless-withdrawal";
@@ -21,6 +21,7 @@ import InvestmentBalance from "./investment-balance/main";
 import InvestResquest from "./investment-request/main";
 import Feedback from "./feedback/main";
 import MicroSavings from "./micro-savings/micro-savings";
+import ForexRates from "./forex-rates";
 
 const Stack = createStackNavigator();
 
@@ -45,7 +46,7 @@ export default function ActivityNavigator() {
             headerTitle: "Services",
             headerTintColor: Colors.white,
 
-            headerLeft: () => { },
+            headerLeft: () => {},
           }}
         />
         <Stack.Screen
@@ -318,6 +319,24 @@ export default function ActivityNavigator() {
         <Stack.Screen
           name={"standing-order-main"}
           component={StandingOrderComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+
+        <Stack.Screen
+          name={"forex-rates-main"}
+          component={ForexRates}
           options={{
             headerBackTitleVisible: false,
             headerStyle: {

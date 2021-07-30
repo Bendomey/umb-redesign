@@ -3,15 +3,15 @@ import { View, StyleSheet } from "react-native";
 import Text from "../../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
 import Colors from "../../../../constants/colors.json";
-import Button from "../../../../components/Button";
-import TextInput from "../../../../components/TextInput";
+import Currency from "../components/currency";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import ChooseAccount from "./choose-account";
-import TypeOfLoan from "./type-of-loan";
-import Period from "./period";
+import TypeOfForex from "../components/type-of-forex";
+import TextInput from "../../../../components/TextInput";
+import Button from "../../../../components/Button";
 
-const Loan = () => {
+const Forex = ({}) => {
   const [, setAmount] = React.useState("");
+
   return (
     <Fragment>
       <View style={styles.container}>
@@ -20,10 +20,7 @@ const Loan = () => {
             type={"Bold"}
             style={{ color: Colors.white, fontSize: RFValue(25) }}
           >
-            Loan Request
-          </Text>
-          <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
-            Request loan by filling the form below
+            Forex Rates
           </Text>
         </View>
         <KeyboardAwareScrollView style={{ flex: 1 }}>
@@ -37,9 +34,9 @@ const Loan = () => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Select Source Account *
+                Select Type of Forex *
               </Text>
-              <ChooseAccount />
+              <TypeOfForex />
             </View>
             <View style={{ marginTop: RFValue(20) }}>
               <Text
@@ -50,9 +47,9 @@ const Loan = () => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Type of Loan *
+                Source Currency *
               </Text>
-              <TypeOfLoan />
+              <Currency />
             </View>
             <View style={{ marginTop: RFValue(20) }}>
               <Text
@@ -79,22 +76,9 @@ const Loan = () => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Select Period *
+                Target Currency *
               </Text>
-              <Period />
-            </View>
-            <View style={{ marginTop: RFValue(20) }}>
-              <Text
-                type={"Light"}
-                style={{
-                  color: Colors.white,
-                  fontSize: RFValue(12),
-                  marginBottom: RFValue(5),
-                }}
-              >
-                Current Net Salary *
-              </Text>
-              <TextInput onChange={(text) => setAccountNumber(text)} />
+              <Currency />
             </View>
             <View
               style={{ marginTop: RFValue(20), marginBottom: RFValue(120) }}
@@ -103,7 +87,7 @@ const Loan = () => {
                 onPress={() => {
                   // navigation?.push("Main");
                 }}
-                title={"Request Loan"}
+                title={"Request Forex Rate"}
               />
             </View>
           </View>
@@ -122,25 +106,19 @@ const styles = StyleSheet.create({
     marginTop: RFValue(10),
     marginHorizontal: RFValue(20),
   },
-  // textInputContainer: {
-  //   marginTop: RFValue(30),
-  //   marginHorizontal: RFValue(20),
-  //   backgroundColor: "#1e1e1f",
-  //   borderRadius: 10,
-  // },
-  card: {
-    backgroundColor: "#1c1c1c",
-    paddingHorizontal: RFValue(15),
-    paddingVertical: RFValue(14),
-    borderRadius: 7,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
   textInputContainer: {
     marginTop: RFValue(30),
     marginHorizontal: RFValue(20),
   },
+  card: {
+    backgroundColor: "#1c1c1c",
+    marginBottom: RFValue(20),
+    padding: RFValue(20),
+    borderRadius: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
 });
 
-export default Loan;
+export default Forex;

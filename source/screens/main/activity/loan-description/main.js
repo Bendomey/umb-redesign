@@ -1,4 +1,4 @@
-import React, { Fragment, useRef } from "react";
+import React, { Fragment } from "react";
 import { View, StyleSheet } from "react-native";
 import Text from "../../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
@@ -6,9 +6,9 @@ import Colors from "../../../../constants/colors.json";
 import { ScrollView } from "react-native-gesture-handler";
 
 const data = [
-  { title: "Loan 1", description: "Not Specified" },
-  { title: "Loan Type", description: "Not Specified" },
-  { title: "Loan Amount", description: "Not Specified" },
+  { title: "Forex 1", description: "Not Specified" },
+  { title: "Forex Type", description: "Not Specified" },
+  { title: "Forex Amount", description: "Not Specified" },
   { title: "Start Date", description: "Not Specified" },
   { title: "Maturity Date", description: "Not Specified" },
   { title: "Outstanding Amount", description: "Not Specified" },
@@ -16,7 +16,7 @@ const data = [
   { title: "Due Amount", description: "Not Specified" },
 ];
 
-const Loan = ({ navigation }) => {
+const Loan = ({}) => {
   return (
     <Fragment>
       <View style={styles.container}>
