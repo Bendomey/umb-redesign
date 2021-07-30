@@ -188,6 +188,10 @@ export default function Transaction({ navigation }) {
           size={RFValue(14)}
         />
       ),
+      onPress: () =>
+        navigation.navigate("Activity", {
+          screen: "cardless-withdrawal-main",
+        }),
     },
     {
       label: "More",
@@ -195,6 +199,10 @@ export default function Transaction({ navigation }) {
       svg: () => (
         <Ionicons name={"md-cog"} color={Colors?.white} size={RFValue(14)} />
       ),
+      onPress: () =>
+        navigation.navigate("Activity", {
+          screen: "transaction",
+        }),
     },
   ];
   return (

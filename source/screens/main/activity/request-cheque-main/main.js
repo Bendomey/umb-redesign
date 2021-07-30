@@ -4,45 +4,21 @@ import Text from "../../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
 import Colors from "../../../../constants/colors.json";
 import { Ionicons } from "@expo/vector-icons";
-import ChooseAccount from "../components/choose-account";
 
 const Loan = ({ navigation }) => {
-  const refRBSheet = useRef(null);
-
   const data = [
     {
-      label: "Stop Cheque",
-      icon: "ios-cash",
+      label: "Single Cheque",
+      icon: "ios-alert-circle-outline",
       onPress: () => {
-        navigation.push("loan-stop-cheque-main");
+        navigation.push("request-stop-cheque-single", { page: "Single" });
       },
     },
     {
-      label: "Full Statement",
-      icon: "ios-cash",
+      label: "Multiple Cheques",
+      icon: "ios-alert-circle-outline",
       onPress: () => {
-        // navigation.push("request-atm");
-      },
-    },
-    {
-      label: "Cheque Book Request",
-      icon: "ios-book-outline",
-      onPress: () => {
-        refRBSheet.current.open();
-      },
-    },
-    {
-      label: "Reset Internet Banking Password",
-      icon: "ios-lock-open",
-      onPress: () => {
-        navigation.push("request-reset-internet");
-      },
-    },
-    {
-      label: "Debit Card Request",
-      icon: "ios-information-outline",
-      onPress: () => {
-        navigation.push("request-card-request");
+        navigation.push("request-stop-cheque-multiple", { page: "Multiple" });
       },
     },
   ];
@@ -55,7 +31,7 @@ const Loan = ({ navigation }) => {
             type={"Bold"}
             style={{ color: Colors.white, fontSize: RFValue(25) }}
           >
-            Request
+            Stop Cheque
           </Text>
           <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
             Select any of the options to proceed
@@ -71,12 +47,6 @@ const Loan = ({ navigation }) => {
           ))}
         </View>
       </View>
-      <ChooseAccount
-        refRBSheet={refRBSheet}
-        onNavigate={() => {
-          refRBSheet.current.close();
-        }}
-      />
     </Fragment>
   );
 };
