@@ -4,31 +4,10 @@ import { RFValue } from "react-native-responsive-fontsize";
 import Text from "../../../components/Text";
 import Colors from "../../../constants/colors.json";
 import { Ionicons } from "@expo/vector-icons";
-
-const data = [
-  {
-    label: "UMB ABC Account",
-    page: "mobile-wallet-two",
-  },
-  {
-    label: "UMB Young Adult Account",
-    page: "mobile-wallet-three",
-  },
-  {
-    label: "UMB Saver Plus",
-    page: "mobile-wallet-three",
-  },
-  {
-    label: "UMB Direct Saver",
-    page: "mobile-wallet-three",
-  },
-  {
-    label: "UMB Zion Account",
-    page: "mobile-wallet-three",
-  },
-];
+import { useRoute } from "@react-navigation/native";
 
 const Register = ({ navigation }) => {
+  const { params } = useRoute();
   return (
     <>
       <View style={styles.container}>
@@ -37,24 +16,22 @@ const Register = ({ navigation }) => {
             type={"Bold"}
             style={{ color: Colors.white, fontSize: RFValue(25) }}
           >
-            Product Offerings
+            {params?.page}
           </Text>
           <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
-            Choose your option below to know more about our products
+            Below is the description of this product
           </Text>
         </View>
         <View style={styles.textInputContainer}>
-          {data?.map((type, i) => (
-            <Fragment key={i}>
-              <TouchableOpacity
-                onPress={() => {
-                  navigation.push(type?.page);
-                }}
-              >
-                <Card data={type} />
-              </TouchableOpacity>
-            </Fragment>
-          ))}
+          <Text style={{ color: Colors.white }}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </Text>
         </View>
       </View>
     </>

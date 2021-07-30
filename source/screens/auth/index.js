@@ -12,6 +12,7 @@ import ContactUsScreen from "./contact-us";
 import LoginScreen from "./login";
 import LocationsScreen from "./locations";
 import ProductsScreen from "./products";
+import ProductsDescriptionScreen from "./products-details";
 
 import RegisterScreen from "./register";
 import MobileBankingScreen from "./mobile-banking";
@@ -75,6 +76,23 @@ const AuthNavigator = () => {
         <Stack.Screen
           name={"products"}
           component={ProductsScreen}
+          options={{
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerBackTitle: "Back",
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+        <Stack.Screen
+          name={"products-description"}
+          component={ProductsDescriptionScreen}
           options={{
             headerStyle: {
               backgroundColor: Colors.secondary,

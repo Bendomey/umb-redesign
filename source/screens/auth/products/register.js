@@ -8,23 +8,23 @@ import { Ionicons } from "@expo/vector-icons";
 const data = [
   {
     label: "UMB ABC Account",
-    page: "mobile-wallet-two",
+    page: "products-description",
   },
   {
     label: "UMB Young Adult Account",
-    page: "mobile-wallet-three",
+    page: "products-description",
   },
   {
     label: "UMB Saver Plus",
-    page: "mobile-wallet-three",
+    page: "products-description",
   },
   {
     label: "UMB Direct Saver",
-    page: "mobile-wallet-three",
+    page: "products-description",
   },
   {
     label: "UMB Zion Account",
-    page: "mobile-wallet-three",
+    page: "products-description",
   },
 ];
 
@@ -48,7 +48,9 @@ const Register = ({ navigation }) => {
             <Fragment key={i}>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.push(type?.page);
+                  navigation.push(type?.page, {
+                    page: type?.label,
+                  });
                 }}
               >
                 <Card data={type} />
