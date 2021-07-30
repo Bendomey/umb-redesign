@@ -1,6 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Fragment } from "react";
+import { Platform } from 'react-native'
 
 import { Ionicons, AntDesign } from "@expo/vector-icons";
 
@@ -21,7 +22,7 @@ export default function Tabs() {
           showLabel: false,
           style: {
             position: "absolute",
-            bottom: RFValue(25),
+            bottom: Platform.OS === "android" ? RFValue(6) : RFValue(25),
             left: RFValue(8),
             right: RFValue(8),
             borderRadius: RFValue(20),
