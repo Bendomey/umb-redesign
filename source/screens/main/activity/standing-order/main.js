@@ -4,8 +4,10 @@ import Text from "../../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
 import Colors from "../../../../constants/colors.json";
 import { Ionicons } from "@expo/vector-icons";
+import ChooseAccount from "../components/choose-account";
 
 const Loan = ({ navigation }) => {
+  const refRBSheet = useRef(null);
   const data = [
     {
       label: "Standing Order - Create",
@@ -18,7 +20,7 @@ const Loan = ({ navigation }) => {
       label: "Standing Order - Delete",
       icon: "ios-cash",
       onPress: () => {
-        navigation.push("standing-order-delete");
+        refRBSheet.current.open();
       },
     },
   ];
@@ -47,6 +49,12 @@ const Loan = ({ navigation }) => {
           ))}
         </View>
       </View>
+      <ChooseAccount
+        refRBSheet={refRBSheet}
+        onNavigate={() => {
+          refRBSheet.current.close();
+        }}
+      />
     </Fragment>
   );
 };
