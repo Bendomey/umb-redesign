@@ -1,17 +1,22 @@
-import React, { Fragment, useRef } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { View, StyleSheet } from "react-native";
 import Text from "../../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
 import Colors from "../../../../constants/colors.json";
 import Button from "../../../../components/Button";
 import TextInput from "../../../../components/TextInput";
-import DatePicker from "../../../../components/Datepicker";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Ionicons } from "@expo/vector-icons";
-import ChooseAccount from "./choose-account";
-import Period from "./period";
-
+import { Camera } from "expo-camera";
 const Loan = () => {
+  const [hasPermission, setHasPermission] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      const { status } = await Camera.requestPermissionsAsync();
+      setHasPermission(status === "granted");
+    })();
+  }, []);
   return (
     <Fragment>
       <View style={styles.container}>
@@ -20,28 +25,26 @@ const Loan = () => {
             type={"Bold"}
             style={{ color: Colors.white, fontSize: RFValue(25) }}
           >
-            Standing order - Create
+            Scan And Pay
           </Text>
           <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
-            Create standing order by filling the form below
+            Pay by scanning the qr code
           </Text>
         </View>
+        {[null, false].includes(hasPermission) ? (
+          <Fragment>
+            <View>
+              <Text>No access to camera</Text>
+            </View>
+          </Fragment>
+        ) : (
+          <Fragment>
+            <Camera style={styles.camera} type={Camera.Constants.Type.back} />
+          </Fragment>
+        )}
+
         <KeyboardAwareScrollView style={{ flex: 1 }}>
           <View style={styles.textInputContainer}>
-            <View>
-              <Text
-                type={"Light"}
-                style={{
-                  color: Colors.white,
-                  fontSize: RFValue(12),
-                  marginBottom: RFValue(5),
-                }}
-              >
-                Select Source Account *
-              </Text>
-              <ChooseAccount />
-            </View>
-
             <View style={{ marginTop: RFValue(20) }}>
               <Text
                 type={"Light"}
@@ -51,74 +54,7 @@ const Loan = () => {
                   marginBottom: RFValue(5),
                 }}
               >
-                To Account Number *
-              </Text>
-              <TextInput onChange={(text) => setAccountNumber(text)} />
-            </View>
-
-            <View style={{ marginTop: RFValue(20) }}>
-              <Text
-                type={"Light"}
-                style={{
-                  color: Colors.white,
-                  fontSize: RFValue(12),
-                  marginBottom: RFValue(5),
-                }}
-              >
-                Transfer Amount *
-              </Text>
-              <TextInput onChange={(text) => setAccountNumber(text)} />
-            </View>
-
-            <View style={{ marginTop: RFValue(20) }}>
-              <Text
-                type={"Light"}
-                style={{
-                  color: Colors.white,
-                  fontSize: RFValue(12),
-                  marginBottom: RFValue(5),
-                }}
-              >
-                Frequency *
-              </Text>
-              <Period />
-            </View>
-            <View style={{ marginTop: RFValue(20) }}>
-              <Text
-                type={"Light"}
-                style={{
-                  color: Colors.white,
-                  fontSize: RFValue(12),
-                  marginBottom: RFValue(5),
-                }}
-              >
-                Start Date *
-              </Text>
-              <DatePicker />
-            </View>
-            <View style={{ marginTop: RFValue(20) }}>
-              <Text
-                type={"Light"}
-                style={{
-                  color: Colors.white,
-                  fontSize: RFValue(12),
-                  marginBottom: RFValue(5),
-                }}
-              >
-                End Date *
-              </Text>
-              <DatePicker />
-            </View>
-            <View style={{ marginTop: RFValue(20) }}>
-              <Text
-                type={"Light"}
-                style={{
-                  color: Colors.white,
-                  fontSize: RFValue(12),
-                  marginBottom: RFValue(5),
-                }}
-              >
-                State Reason *
+                Account Number *
               </Text>
               <TextInput onChange={(text) => setAccountNumber(text)} />
             </View>
@@ -129,7 +65,7 @@ const Loan = () => {
                 onPress={() => {
                   // navigation?.push("Main");
                 }}
-                title={"Create"}
+                title={"Submit"}
               />
             </View>
           </View>
@@ -179,6 +115,11 @@ const styles = StyleSheet.create({
   },
   header: {
     marginTop: RFValue(10),
+    marginHorizontal: RFValue(20),
+  },
+  camera: {
+    height: RFValue(200),
+    marginTop: RFValue(20),
     marginHorizontal: RFValue(20),
   },
   textInputContainer: {
