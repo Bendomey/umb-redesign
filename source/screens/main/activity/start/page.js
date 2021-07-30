@@ -59,32 +59,32 @@ export default function Services({ navigation }) {
     {
       label: "Forex Rates",
       icon: "ios-document",
-      navigation: () => {},
+      navigation: () => { },
     },
     {
       label: "Bill Payment",
       icon: "ios-document",
-      navigation: () => {},
+      navigation: () => { },
     },
     {
       label: "Bancassurance",
       icon: "ios-document",
-      navigation: () => {},
+      navigation: () => { },
     },
     {
       label: "Airtime Top-up",
       icon: "ios-document",
-      navigation: () => {},
+      navigation: () => { },
     },
     {
       label: "Feedback",
       icon: "ios-document",
-      navigation: () => {},
+      navigation: () => navigation.push("feeback"),
     },
     {
       label: "Micro Savings",
       icon: "ios-document",
-      navigation: () => {},
+      navigation: () => navigation.push("micro-savings"),
     },
   ];
 
