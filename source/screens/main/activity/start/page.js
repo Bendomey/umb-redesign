@@ -67,9 +67,11 @@ export default function Services({ navigation }) {
       navigation: () => {},
     },
     {
-      label: "Bancassurance",
+      label: "Bank Assurance",
       icon: "ios-document",
-      navigation: () => {},
+      navigation: () => {
+        navigation.push("bank-assurance-main")
+      },
     },
     {
       label: "Airtime Top-up",
