@@ -59,6 +59,13 @@ export default function Services({ navigation }) {
     {
       label: "Forex Rates",
       icon: "ios-swap-vertical",
+      navigation: () => {
+        navigation?.push("forex-rates-main");
+      },
+    },
+    {
+      label: "Bill Payment",
+      icon: "ios-swap-vertical",
       navigation: () => {},
     },
     {

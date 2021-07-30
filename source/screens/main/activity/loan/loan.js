@@ -11,7 +11,7 @@ const Loan = ({ navigation }) => {
 
   const data = [
     {
-      label: "Check Loan Account Balance",
+      label: "Check Forex Account Balance",
       icon: "ios-cash",
       onPress: () => {
         refRBSheet.current.open();

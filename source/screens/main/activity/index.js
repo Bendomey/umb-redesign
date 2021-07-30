@@ -28,6 +28,7 @@ import Feedback from "./feedback/main";
 import Airtime from "./airtime-topup";
 import ScanAndpay from "./scan-and-pay";
 import MicroSavings from "./micro-savings/micro-savings";
+import ForexRates from "./forex-rates";
 
 const Stack = createStackNavigator();
 
@@ -426,6 +427,24 @@ export default function ActivityNavigator() {
             },
           }}
         />
+
+        <Stack.Screen
+          name={"forex-rates-main"}
+          component={ForexRates}
+            options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
         <Stack.Screen
           name={"standing-order-create"}
           component={StandingOrderCreateComponent}
@@ -464,6 +483,7 @@ export default function ActivityNavigator() {
         <Stack.Screen
           name={"scan-and-pay"}
           component={ScanAndpay}
+
           options={{
             headerBackTitleVisible: false,
             headerStyle: {
