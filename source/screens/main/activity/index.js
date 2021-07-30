@@ -16,10 +16,17 @@ import CardlessWithdrawalComponent from "./cardless-withdrawal";
 import CardlessWithdrawalAgentComponent from "./cash-withdrawal-agent";
 import CardlessWithdrawalAtmComponent from "./cash-withdrawal-atm";
 import RequestComponent from "./request";
+import RequestStopChequeMainComponent from "./request-cheque-main";
+import RequestStopChequeFormComponent from "./request-stop-cheque-form";
+import RequestCardComponent from "./request-card-request";
+import RequestResetPasswordComponent from "./request-reset-password";
 import StandingOrderComponent from "./standing-order";
+import StandingOrderCreateComponent from "./standing-order-create";
 import InvestmentBalance from "./investment-balance/main";
 import InvestResquest from "./investment-request/main";
 import Feedback from "./feedback/main";
+import Airtime from "./airtime-topup";
+import ScanAndpay from "./scan-and-pay";
 import MicroSavings from "./micro-savings/micro-savings";
 import ForexRates from "./forex-rates";
 import BillPayment from "./bill-payment";
@@ -246,6 +253,93 @@ export default function ActivityNavigator() {
             },
           }}
         />
+        <Stack.Screen
+          name={"loan-stop-cheque-main"}
+          component={RequestStopChequeMainComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+        <Stack.Screen
+          name={"request-stop-cheque-single"}
+          component={RequestStopChequeFormComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+
+        <Stack.Screen
+          name={"request-stop-cheque-multiple"}
+          component={RequestStopChequeFormComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+        <Stack.Screen
+          name={"request-card-request"}
+          component={RequestCardComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+
+        <Stack.Screen
+          name={"request-reset-internet"}
+          component={RequestResetPasswordComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
 
         <Stack.Screen
           name={"cardless-withdrawal-main"}
@@ -338,6 +432,59 @@ export default function ActivityNavigator() {
         <Stack.Screen
           name={"forex-rates-main"}
           component={ForexRates}
+            options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+        <Stack.Screen
+          name={"standing-order-create"}
+          component={StandingOrderCreateComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+        <Stack.Screen
+          name={"airtime-topup"}
+          component={Airtime}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+
+        <Stack.Screen
+          name={"scan-and-pay"}
+          component={ScanAndpay}
+
           options={{
             headerBackTitleVisible: false,
             headerStyle: {
