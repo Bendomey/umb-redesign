@@ -15,6 +15,7 @@ import { Image, View } from "react-native";
 import Colors from "../../constants/colors.json";
 
 export default function Tabs() {
+  const top = Platform.OS === "android" ? 0 : 15
   return (
     <Fragment>
       <Tab.Navigator
@@ -43,7 +44,7 @@ export default function Tabs() {
                     justifyContent: "center",
                     alignItems: "center",
                     borderColor: "#fff",
-                    // top: RFValue(15),
+                    top: RFValue(top),
                     borderRadius: RFValue(10),
                   }}
                 >
@@ -70,7 +71,7 @@ export default function Tabs() {
                     justifyContent: "center",
                     alignItems: "center",
                     borderColor: "#fff",
-                    top: RFValue(15),
+                    top: RFValue(top),
                     borderRadius: RFValue(10),
                   }}
                 >
@@ -96,7 +97,7 @@ export default function Tabs() {
                     justifyContent: "center",
                     alignItems: "center",
                     borderColor: "#fff",
-                    top: RFValue(15),
+                    top: RFValue(top),
                     borderRadius: RFValue(10),
                   }}
                 >
