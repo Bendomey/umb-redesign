@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
     alert: {
         display: "flex",
         backgroundColor: Colors.red,
-        marginVertical: RFValue(25)
+        marginVertical: RFValue(25),
+        padding: RFValue(20)
     },
     alertText: {
         fontSize: RFValue(13)
