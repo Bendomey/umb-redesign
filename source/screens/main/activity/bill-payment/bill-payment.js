@@ -4,7 +4,7 @@ import Text from "../../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
 import Colors from "../../../../constants/colors.json";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import ChooseAccount from "../components/choose-account";
+import ChooseAccount from "./choose-account";
 import ChooseService from "../components/choose-service";
 import ChooseMerchant from "../components/choose-merchant";
 import TextInput from "../../../../components/TextInput";

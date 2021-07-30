@@ -10,6 +10,8 @@ import StartScreen from "./start";
 import WelcomeScreen from "./welcome";
 import ContactUsScreen from "./contact-us";
 import LoginScreen from "./login";
+import LocationsScreen from "./locations";
+import ProductsScreen from "./products";
 
 import RegisterScreen from "./register";
 import MobileBankingScreen from "./mobile-banking";
@@ -39,6 +41,40 @@ const AuthNavigator = () => {
         <Stack.Screen
           name={"contact-us"}
           component={ContactUsScreen}
+          options={{
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerBackTitle: "Back",
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+        <Stack.Screen
+          name={"locations"}
+          component={LocationsScreen}
+          options={{
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerBackTitle: "Back",
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+        <Stack.Screen
+          name={"products"}
+          component={ProductsScreen}
           options={{
             headerStyle: {
               backgroundColor: Colors.secondary,

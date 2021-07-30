@@ -1,63 +1,55 @@
-import React, { Fragment, useRef } from "react";
+import React, { Fragment } from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
-import Text from "../../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
-import Colors from "../../../../constants/colors.json";
+import Text from "../../../components/Text";
+import Colors from "../../../constants/colors.json";
 import { Ionicons } from "@expo/vector-icons";
-import ChooseAccount from "../components/choose-account";
 
-const Loan = ({ navigation }) => {
-  const refRBSheet = useRef(null);
+const data = [
+  {
+    label: "Search By Branch",
+    page: "mobile-wallet-two",
+  },
+  {
+    label: "Search By ATM",
+    page: "mobile-wallet-three",
+  },
+  {
+    label: "Search Near Me",
+    page: "mobile-wallet-three",
+  },
+];
 
-  const data = [
-    {
-      label: "Check Loan Account Balance",
-      icon: "ios-cash",
-      onPress: () => {
-        refRBSheet.current.open();
-      },
-    },
-    {
-      label: "Loan Request",
-      icon: "ios-cash",
-      onPress: () => {
-        navigation.push("loan-request");
-      },
-    },
-  ];
-
+const Register = ({ navigation }) => {
   return (
-    <Fragment>
+    <>
       <View style={styles.container}>
         <View style={styles.header}>
           <Text
             type={"Bold"}
             style={{ color: Colors.white, fontSize: RFValue(25) }}
           >
-            Loan
+            Locate Us
           </Text>
           <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
-            Select any of the options to proceed
+            Choose your option below to locate us
           </Text>
         </View>
         <View style={styles.textInputContainer}>
           {data?.map((type, i) => (
             <Fragment key={i}>
-              <TouchableOpacity onPress={type.onPress}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.push(type?.page);
+                }}
+              >
                 <Card data={type} />
               </TouchableOpacity>
             </Fragment>
           ))}
         </View>
       </View>
-      <ChooseAccount
-        refRBSheet={refRBSheet}
-        onNavigate={() => {
-          refRBSheet.current.close();
-          navigation.push("loan-description");
-        }}
-      />
-    </Fragment>
+    </>
   );
 };
 
@@ -65,23 +57,12 @@ const Card = ({ data }) => {
   return (
     <Fragment>
       <View style={styles.card}>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Ionicons
-            name={data?.icon}
-            size={RFValue(20)}
-            color={Colors.primary}
-          />
-          <Text
-            type={"Light"}
-            style={{
-              color: Colors.white,
-              marginLeft: RFValue(5),
-              fontSize: RFValue(13),
-            }}
-          >
-            {data?.label}
-          </Text>
-        </View>
+        <Text
+          type={"Bold"}
+          style={{ color: Colors.white, marginLeft: RFValue(5) }}
+        >
+          {data?.label}
+        </Text>
         <View>
           <Ionicons
             name={"ios-chevron-forward"}
@@ -96,8 +77,8 @@ const Card = ({ data }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: Colors.secondary,
+    flex: 1,
   },
   header: {
     marginTop: RFValue(10),
@@ -106,6 +87,15 @@ const styles = StyleSheet.create({
   textInputContainer: {
     marginTop: RFValue(30),
     marginHorizontal: RFValue(20),
+  },
+  buttonContainer: {
+    marginTop: RFValue(30),
+    marginHorizontal: RFValue(20),
+  },
+  forgotPasswordContainer: {
+    marginTop: RFValue(15),
+    marginHorizontal: RFValue(20),
+    alignItems: "flex-end",
   },
   card: {
     backgroundColor: "#1c1c1c",
@@ -118,4 +108,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Loan;
+export default Register;

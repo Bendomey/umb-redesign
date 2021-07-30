@@ -14,9 +14,18 @@ import { RFValue } from "react-native-responsive-fontsize";
 import { Ionicons } from "@expo/vector-icons";
 
 const { height } = Dimensions.get("window");
-const Services = ({ refRBSheet, onNavigate }) => {
+const Services = ({}) => {
+  const refRBSheet = useRef(null);
   return (
     <>
+      <TouchableOpacity onPress={() => refRBSheet.current.open()}>
+        <Card
+          data={{
+            label: "Select An Option",
+            icon: "ios-document-text",
+          }}
+        />
+      </TouchableOpacity>
       <BottomSheet
         ref={refRBSheet}
         closeOnDragDown={true}
@@ -55,8 +64,13 @@ const Services = ({ refRBSheet, onNavigate }) => {
                 below
               </Text>
             </View>
-            <ScrollView style={{ flex: 1 }}>
-              <TouchableOpacity onPress={onNavigate}>
+            <ScrollView style={{ flex: 1, marginHorizontal: RFValue(20) }}>
+              <TouchableOpacity
+                onPress={() => {
+                  refRBSheet.current.close();
+                }}
+                style={{ marginBottom: RFValue(10) }}
+              >
                 <Card
                   data={{
                     label: "SavUMB_1_YYYYY5019",
@@ -65,7 +79,7 @@ const Services = ({ refRBSheet, onNavigate }) => {
                 />
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={onNavigate}>
+              <TouchableOpacity onPress={() => refRBSheet.current.close()}>
                 <Card
                   data={{
                     label: "SavUMB_1_YYYYY5019",
@@ -127,9 +141,7 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: "#1c1c1c",
-    marginBottom: RFValue(10),
-    marginHorizontal: RFValue(20),
-    padding: RFValue(20),
+    padding: RFValue(15),
     borderRadius: 10,
     flexDirection: "row",
     alignItems: "center",

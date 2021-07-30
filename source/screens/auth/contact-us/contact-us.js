@@ -1,69 +1,64 @@
 import React, { Fragment } from "react";
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Linking } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import Text from "../../../components/Text";
 import Colors from "../../../constants/colors.json";
 import { Ionicons } from "@expo/vector-icons";
-import { EvilIcons } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
-
-const data = [
-  {
-    label: "Telephone Number",
-    description: "0302 633988",
-    icon: "ios-call",
-  },
-  {
-    label: "Toll Free line (MTN / VODA / AIRTELTIGO)",
-    description: "0802 633988",
-    icon: "ios-call",
-  },
-  {
-    label: "Email",
-    description: "info@myumbbank.com",
-    icon: "ios-mail",
-  },
-];
+import { EvilIcons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 const ContactUs = ({ navigation }) => {
+  const data = [
+    {
+      label: "Telephone Number",
+      description: "0302 633988",
+      icon: "ios-call",
+      onPress: () => Linking.openURL("tel:0302633988"),
+    },
+    {
+      label: "Toll Free line (MTN / VODA / AIRTELTIGO)",
+      description: "0802 633988",
+      icon: "ios-call",
+      onPress: () => Linking.openURL("tel:0802633988"),
+    },
+    {
+      label: "Email",
+      description: "info@myumbbank.com",
+      icon: "ios-mail",
+      onPress: () => Linking.openURL("mailto:info@myumbbank.com"),
+    },
+  ];
   return (
     <>
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Text
-            type={"Bold"}
-            style={{ color: Colors.white, fontSize: RFValue(25) }}
-          >
-            Contact Us
-          </Text>
-          <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
-            These are some contacts you can reach us on
-          </Text>
-        </View>
         <View style={styles.textInputContainer}>
           {data?.map((type, i) => (
             <Fragment key={i}>
-              <Card data={type} />
+              <TouchableOpacity onPress={type.onPress}>
+                <Card data={type} />
+              </TouchableOpacity>
             </Fragment>
           ))}
         </View>
         <View style={styles.socialGroup}>
           <View style={styles.socialText}>
-            <Text style={{ color: Colors.gray, fontSize: RFValue(13) }}>Follow us on</Text>
+            <Text style={{ color: Colors.gray, fontSize: RFValue(13) }}>
+              Follow us on
+            </Text>
           </View>
           <View style={styles.socialRow}>
-            <View style={[styles.circle, { backgroundColor: "#18ACFE" }]} >
-              <EvilIcons name="sc-facebook" size={54} color="#fff" />
+            <View style={[styles.circle, { backgroundColor: "#18ACFE" }]}>
+              <EvilIcons name="sc-facebook" size={20} color="#fff" />
             </View>
-            <View style={[styles.circle, { backgroundColor: "#1275B1" }]} >
-              <Entypo name="linkedin" size={24} color="#fff" />
+            <View style={[styles.circle, { backgroundColor: "#1275B1" }]}>
+              <Entypo name="linkedin" size={20} color="#fff" />
             </View>
-            <View style={[styles.circle, { backgroundColor: "#47ACDF" }]} >
-              <Entypo name="twitter" size={24} color="#fff" />
+            <View style={[styles.circle, { backgroundColor: "#47ACDF" }]}>
+              <Entypo name="twitter" size={20} color="#fff" />
             </View>
-            <View style={[styles.circle, { backgroundColor: "#FAB917" }]} >
-              <FontAwesome5 name="globe" size={24} color="#fff" />
+            <View style={[styles.circle, { backgroundColor: "#FAB917" }]}>
+              <FontAwesome5 name="globe" size={20} color="#fff" />
             </View>
           </View>
         </View>
@@ -118,16 +113,16 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    color: Colors.gray
+    color: Colors.gray,
   },
   socialRow: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-around",
-    width: "70%",
+    width: "60%",
     alignSelf: "center",
-    marginVertical: RFValue(20)
+    marginVertical: RFValue(20),
   },
   header: {
     marginTop: RFValue(10),
@@ -153,13 +148,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   circle: {
-    height: RFValue(40),
-    width: RFValue(40),
+    height: RFValue(30),
+    width: RFValue(30),
     borderRadius: RFValue(25),
     backgroundColor: Colors.gray,
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   socialGroup: {
     display: "flex",
@@ -168,8 +163,8 @@ const styles = StyleSheet.create({
     width: "90%",
     bottom: RFValue(20),
     // backgroundColor: "red",
-    alignSelf: "center"
-  }
+    alignSelf: "center",
+  },
 });
 
 export default ContactUs;
