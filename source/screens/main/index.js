@@ -40,7 +40,7 @@ export default function Tabs() {
                     justifyContent: "center",
                     alignItems: "center",
                     borderColor: "#fff",
-                    top: 15,
+                    top: RFValue(15),
                     borderRadius: RFValue(10),
                   }}
                 >
@@ -67,7 +67,7 @@ export default function Tabs() {
                     justifyContent: "center",
                     alignItems: "center",
                     borderColor: "#fff",
-                    top: 15,
+                    top: RFValue(15),
                     borderRadius: RFValue(10),
                   }}
                 >
@@ -93,7 +93,7 @@ export default function Tabs() {
                     justifyContent: "center",
                     alignItems: "center",
                     borderColor: "#fff",
-                    top: 15,
+                    top: RFValue(15),
                     borderRadius: RFValue(10),
                   }}
                 >
@@ -119,7 +119,7 @@ export default function Tabs() {
                     justifyContent: "center",
                     alignItems: "center",
                     borderColor: "#fff",
-                    top: 15,
+                    top: RFValue(15),
                     borderRadius: RFValue(10),
                   }}
                 >
