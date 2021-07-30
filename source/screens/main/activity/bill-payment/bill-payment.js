@@ -80,7 +80,7 @@ const BillPayment = () => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Reference No | Account No | Student ID | Remarks *
+                Reference No | Account No | Student ID | Remarks
               </Text>
               <TextInput
                 keyboardType={"decimal-pad"}
