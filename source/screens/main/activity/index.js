@@ -19,6 +19,8 @@ import RequestComponent from "./request";
 import StandingOrderComponent from "./standing-order";
 import InvestmentBalance from "./investment-balance/main";
 import InvestResquest from "./investment-request/main";
+import Feedback from "./feedback/main";
+import MicroSavings from "./micro-savings/micro-savings";
 
 const Stack = createStackNavigator();
 
@@ -66,6 +68,42 @@ export default function ActivityNavigator() {
         <Stack.Screen
           name={"loan-main"}
           component={LoanMainComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+
+        <Stack.Screen
+          name={"feeback"}
+          component={Feedback}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+
+        <Stack.Screen
+          name={"micro-savings"}
+          component={MicroSavings}
           options={{
             headerBackTitleVisible: false,
             headerStyle: {
