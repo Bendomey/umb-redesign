@@ -3,10 +3,12 @@ import { View, StyleSheet } from "react-native";
 import Text from "../../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
 import Colors from "../../../../constants/colors.json";
+import Button from "../../../../components/Button";
+import TextInput from "../../../../components/TextInput";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Ionicons } from "@expo/vector-icons";
-
-import QuotationItems from "./quotation-items";
+import ChooseAccount from "./choose-account";
+import TypeOfPolicy from "./type-of-policy";
 
 const BankAssurance = () => {
   return (
@@ -17,16 +19,79 @@ const BankAssurance = () => {
             type={"Bold"}
             style={{ color: Colors.white, fontSize: RFValue(25) }}
           >
-            Request For Quotation
+            Make Payment
           </Text>
           <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
-            Fill the form below to request for quotation
+            Fill the form below to make payment
           </Text>
         </View>
         <KeyboardAwareScrollView style={{ flex: 1 }}>
           <View style={styles.textInputContainer}>
             <View>
-              <QuotationItems />
+              <Text
+                type={"Light"}
+                style={{
+                  color: Colors.white,
+                  fontSize: RFValue(12),
+                  marginBottom: RFValue(5),
+                }}
+              >
+                Select Source Account *
+              </Text>
+              <ChooseAccount />
+            </View>
+            <View style={{ marginTop: RFValue(20) }}>
+              <Text
+                type={"Light"}
+                style={{
+                  color: Colors.white,
+                  fontSize: RFValue(12),
+                  marginBottom: RFValue(5),
+                }}
+              >
+                Type of Policy *
+              </Text>
+              <TypeOfPolicy />
+            </View>
+            <View style={{ marginTop: RFValue(20) }}>
+              <Text
+                type={"Light"}
+                style={{
+                  color: Colors.white,
+                  fontSize: RFValue(12),
+                  marginBottom: RFValue(5),
+                }}
+              >
+                Policy Number *
+              </Text>
+              <TextInput onChange={(text) => setAccountNumber(text)} />
+            </View>
+
+            <View style={{ marginTop: RFValue(20) }}>
+              <Text
+                type={"Light"}
+                style={{
+                  color: Colors.white,
+                  fontSize: RFValue(12),
+                  marginBottom: RFValue(5),
+                }}
+              >
+                Enter Amount *
+              </Text>
+              <TextInput onChange={(text) => setAccountNumber(text)} />
+            </View>
+
+
+            
+            <View
+              style={{ marginTop: RFValue(20)}}
+            >
+              <Button
+                onPress={() => {
+                  // navigation?.push("Main");
+                }}
+                title={"Submit"}
+              />
             </View>
           </View>
         </KeyboardAwareScrollView>

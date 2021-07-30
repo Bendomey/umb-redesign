@@ -13,6 +13,7 @@ import FundTransferRequest from "./fund-transfer-request";
 
 import BankAssuranceComponent from "./bank-assurance";
 import BankAssuranceQuotationComponent from './request-quotation';
+import BankAssuranceMakePaymentComponent from './make-payment-assurance';
 
 import LoanRequestComponent from "./loan-request";
 
@@ -90,6 +91,24 @@ export default function ActivityNavigator() {
 <Stack.Screen
                   name={"request-quotation"}
                   component={BankAssuranceQuotationComponent}
+                  options={{
+                    headerBackTitleVisible: false,
+                    headerStyle: {
+                      backgroundColor: Colors.secondary,
+                      shadowOpacity: 0,
+                      elevation: 0,
+                    },
+                    headerTitle: "",
+                    headerTintColor: Colors.white,
+                    headerLeftContainerStyle: {
+                      marginLeft: RFValue(10),
+                    },
+                  }}
+                />
+
+<Stack.Screen
+                  name={"make-payment-assurance"}
+                  component={BankAssuranceMakePaymentComponent}
                   options={{
                     headerBackTitleVisible: false,
                     headerStyle: {

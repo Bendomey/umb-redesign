@@ -21,7 +21,7 @@ const BankAssurance = ({ navigation }) => {
       label: "Make Payment",
       icon: "ios-cash",
       onPress: () => {
-        navigation.push("make-payment");
+        navigation.push("make-payment-assurance");
       },
     },
   ];
