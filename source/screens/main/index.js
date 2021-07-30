@@ -22,12 +22,14 @@ export default function Tabs() {
           showLabel: false,
           style: {
             position: "absolute",
-            bottom: Platform.OS === "android" ? RFValue(6) : RFValue(25),
+            bottom: Platform.OS === "android" ? RFValue(10) : RFValue(25),
             left: RFValue(8),
             right: RFValue(8),
             borderRadius: RFValue(20),
             borderTopWidth: 0,
             backgroundColor: "#1e1e1e",
+            // justifyContent: "center",
+            // alignItems: "center"
           },
         }}
       >
@@ -41,7 +43,7 @@ export default function Tabs() {
                     justifyContent: "center",
                     alignItems: "center",
                     borderColor: "#fff",
-                    top: RFValue(15),
+                    // top: RFValue(15),
                     borderRadius: RFValue(10),
                   }}
                 >
