@@ -12,7 +12,7 @@ const Page = ({ title, description, image }) => {
           <Image
             source={image}
             resizeMode={"contain"}
-            style={{ height: RFValue(200), width: RFValue(200) }}
+            style={{ height: RFValue(150), width: RFValue(150) }}
           />
         </View>
         <View style={styles.textView}>

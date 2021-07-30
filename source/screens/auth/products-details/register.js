@@ -6,7 +6,7 @@ import Colors from "../../../constants/colors.json";
 import { Ionicons } from "@expo/vector-icons";
 import { useRoute } from "@react-navigation/native";
 
-const Register = ({ navigation }) => {
+const Register = ({}) => {
   const { params } = useRoute();
   return (
     <>

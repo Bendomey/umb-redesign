@@ -1,5 +1,11 @@
 import React, { Fragment } from "react";
-import { View, StyleSheet, TouchableOpacity, Linking } from "react-native";
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  Linking,
+  Touchable,
+} from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import Text from "../../../components/Text";
 import Colors from "../../../constants/colors.json";
@@ -48,18 +54,34 @@ const ContactUs = ({ navigation }) => {
             </Text>
           </View>
           <View style={styles.socialRow}>
-            <View style={[styles.circle, { backgroundColor: "#18ACFE" }]}>
-              <EvilIcons name="sc-facebook" size={20} color="#fff" />
-            </View>
-            <View style={[styles.circle, { backgroundColor: "#1275B1" }]}>
-              <Entypo name="linkedin" size={20} color="#fff" />
-            </View>
-            <View style={[styles.circle, { backgroundColor: "#47ACDF" }]}>
-              <Entypo name="twitter" size={20} color="#fff" />
-            </View>
-            <View style={[styles.circle, { backgroundColor: "#FAB917" }]}>
-              <FontAwesome5 name="globe" size={20} color="#fff" />
-            </View>
+            <TouchableOpacity
+              onPress={() => Linking.openURL("https://facebook.com")}
+            >
+              <View style={[styles.circle, { backgroundColor: "#18ACFE" }]}>
+                <EvilIcons name="sc-facebook" size={20} color="#fff" />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => Linking.openURL("https://linkedin.com")}
+            >
+              <View style={[styles.circle, { backgroundColor: "#1275B1" }]}>
+                <Entypo name="linkedin" size={20} color="#fff" />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => Linking.openURL("https://twitter.com")}
+            >
+              <View style={[styles.circle, { backgroundColor: "#47ACDF" }]}>
+                <Entypo name="twitter" size={20} color="#fff" />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => Linking.openURL("https://globe.com")}
+            >
+              <View style={[styles.circle, { backgroundColor: "#FAB917" }]}>
+                <FontAwesome5 name="globe" size={20} color="#fff" />
+              </View>
+            </TouchableOpacity>
           </View>
         </View>
       </View>

@@ -14,6 +14,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 import Steps from "./steps";
 import Page from "./page";
 import image from "../../../assets/images/secure-icon.png";
+import image2 from "../../../assets/images/secure.png";
 
 const data = [
   {
@@ -23,10 +24,10 @@ const data = [
     image: image,
   },
   {
-    title: "Track your monthly expenses",
+    title: "Secure payment platform",
     description:
-      "Keep track of what you're spending your money on and where it's going",
-    image: image,
+      "Before any payment is transacted, we make sure to confirm if its really you",
+    image: image2,
   },
 ];
 
