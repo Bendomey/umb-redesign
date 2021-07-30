@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Image,
   SafeAreaView,
+  Dimensions,
 } from "react-native";
 import Colors from "../../../../constants/colors.json";
 import { StyleSheet } from "react-native";
@@ -13,6 +14,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 import { Ionicons } from "@expo/vector-icons";
 import moment from "moment";
 import { rgbaColor } from "react-native-reanimated/src/reanimated2/Colors";
+const { width } = Dimensions.get("window");
 const trans = [
   {
     type: "Bill Payment",
@@ -245,50 +247,64 @@ export default function Transaction({ navigation }) {
           </View>
         </View>
         <View style={style.miniheader}>
-          <View
-            style={{
-              backgroundColor: "rgba(48, 48, 48,0.3)",
-              borderRadius: RFValue(20),
-              height: RFValue(110),
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              shadowColor: "#fff",
-              borderColor: "#404040",
-              shadowOffset: {
-                width: 0,
-                height: 1,
-              },
-              shadowOpacity: 0.3,
-              shadowRadius: 1.41,
-
-              elevation: 2,
-            }}
+          <ScrollView
+            horizontal
+            pagingEnabled
+            showsHorizontalScrollIndicator={false}
           >
-            <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Ionicons name="md-wallet" size={18} color={Colors?.gray} />
-              <Text style={{ color: Colors?.gray, marginLeft: RFValue(3) }}>
-                Your Balance
-              </Text>
-            </View>
-            <Text
-              type={"Medium"}
-              style={{
-                color: "#fff",
-                fontSize: RFValue(24),
-                marginTop: RFValue(4),
-              }}
-            >
-              GHS 45,000
-            </Text>
-          </View>
+            {[...new Array(2)].map((_, i) => (
+              <Fragment key={i}>
+                <View
+                  style={{
+                    backgroundColor: "rgba(48, 48, 48,0.3)",
+                    borderRadius: RFValue(20),
+                    height: RFValue(110),
+                    width: width - RFValue(20),
+                    marginRight: RFValue(5),
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    shadowColor: "#fff",
+                    borderColor: "#404040",
+                    shadowOffset: {
+                      width: 0,
+                      height: 1,
+                    },
+                    shadowOpacity: 0.3,
+                    shadowRadius: 1.41,
+
+                    elevation: 2,
+                  }}
+                >
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Ionicons name="md-wallet" size={18} color={Colors?.gray} />
+                    <Text
+                      style={{ color: Colors?.gray, marginLeft: RFValue(3) }}
+                    >
+                      Your Balance - {i === 0 ? "2038339447" : "20383394432"}
+                    </Text>
+                  </View>
+                  <Text
+                    type={"Medium"}
+                    style={{
+                      color: "#fff",
+                      fontSize: RFValue(24),
+                      marginTop: RFValue(4),
+                    }}
+                  >
+                    GHS {i === 0 ? "45,000" : "1,000"}
+                  </Text>
+                </View>
+              </Fragment>
+            ))}
+          </ScrollView>
         </View>
         <View style={style.buttonContainer}>
           {buttons?.map((but, key) => (
