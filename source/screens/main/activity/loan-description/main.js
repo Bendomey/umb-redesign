@@ -6,9 +6,9 @@ import Colors from "../../../../constants/colors.json";
 import { ScrollView } from "react-native-gesture-handler";
 
 const data = [
-  { title: "Forex 1", description: "Not Specified" },
-  { title: "Forex Type", description: "Not Specified" },
-  { title: "Forex Amount", description: "Not Specified" },
+  { title: "BillPayment 1", description: "Not Specified" },
+  { title: "BillPayment Type", description: "Not Specified" },
+  { title: "BillPayment Amount", description: "Not Specified" },
   { title: "Start Date", description: "Not Specified" },
   { title: "Maturity Date", description: "Not Specified" },
   { title: "Outstanding Amount", description: "Not Specified" },

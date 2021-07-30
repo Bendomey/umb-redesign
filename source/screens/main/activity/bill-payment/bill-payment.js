@@ -3,14 +3,17 @@ import { View, StyleSheet } from "react-native";
 import Text from "../../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
 import Colors from "../../../../constants/colors.json";
-import Currency from "../components/currency";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import TypeOfForex from "../components/type-of-forex";
+import ChooseAccount from "../components/choose-account";
+import ChooseService from "../components/choose-service";
+import ChooseMerchant from "../components/choose-merchant";
 import TextInput from "../../../../components/TextInput";
 import Button from "../../../../components/Button";
 
-const Forex = ({}) => {
+const BillPayment = () => {
+  //states
   const [, setAmount] = React.useState("");
+  const [, setRef] = React.useState("");
 
   return (
     <Fragment>
@@ -20,7 +23,10 @@ const Forex = ({}) => {
             type={"Bold"}
             style={{ color: Colors.white, fontSize: RFValue(25) }}
           >
-            Forex Rates
+            Bill Payment
+          </Text>
+          <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
+            Settle all your bills by filling the form below
           </Text>
         </View>
         <KeyboardAwareScrollView style={{ flex: 1 }}>
@@ -34,9 +40,23 @@ const Forex = ({}) => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Select Type of Forex *
+                Select Merchant *
               </Text>
-              <TypeOfForex />
+              <ChooseMerchant />
+            </View>
+
+            <View style={{ marginTop: RFValue(20) }}>
+              <Text
+                type={"Light"}
+                style={{
+                  color: Colors.white,
+                  fontSize: RFValue(12),
+                  marginBottom: RFValue(5),
+                }}
+              >
+                Select Source Account *
+              </Text>
+              <ChooseAccount />
             </View>
             <View style={{ marginTop: RFValue(20) }}>
               <Text
@@ -47,9 +67,9 @@ const Forex = ({}) => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Source Currency *
+                Select Service *
               </Text>
-              <Currency />
+              <ChooseService />
             </View>
             <View style={{ marginTop: RFValue(20) }}>
               <Text
@@ -60,35 +80,34 @@ const Forex = ({}) => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Enter Amount *
+                Reference No | Account No | Student ID | Remarks *
+              </Text>
+              <TextInput
+                keyboardType={"decimal-pad"}
+                onChange={(text) => setRef(text)}
+              />
+            </View>
+
+            <View style={{ marginTop: RFValue(20) }}>
+              <Text
+                type={"Light"}
+                style={{
+                  color: Colors.white,
+                  fontSize: RFValue(12),
+                  marginBottom: RFValue(5),
+                }}
+              >
+                Transfer Amount *
               </Text>
               <TextInput
                 keyboardType={"decimal-pad"}
                 onChange={(text) => setAmount(text)}
               />
             </View>
-            <View style={{ marginTop: RFValue(20) }}>
-              <Text
-                type={"Light"}
-                style={{
-                  color: Colors.white,
-                  fontSize: RFValue(12),
-                  marginBottom: RFValue(5),
-                }}
-              >
-                Target Currency *
-              </Text>
-              <Currency />
-            </View>
             <View
               style={{ marginTop: RFValue(20), marginBottom: RFValue(120) }}
             >
-              <Button
-                onPress={() => {
-                  // navigation?.push("Main");
-                }}
-                title={"Request BillPayment Rate"}
-              />
+              <Button onPress={() => {}} title={"Submit"} />
             </View>
           </View>
         </KeyboardAwareScrollView>
@@ -121,4 +140,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Forex;
+export default BillPayment;

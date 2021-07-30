@@ -14,13 +14,15 @@ import { Ionicons } from "@expo/vector-icons";
 
 const { height } = Dimensions.get("window");
 const Services = ({}) => {
+  const [selected, setSelected] = React.useState("");
+
   const refRBSheet = useRef(null);
   return (
     <>
       <TouchableOpacity onPress={() => refRBSheet.current.open()}>
         <Card
           data={{
-            label: "Select An Option",
+            label: selected || "Select An Option",
             icon: "ios-document-text",
           }}
         />
@@ -66,6 +68,7 @@ const Services = ({}) => {
               <TouchableOpacity
                 onPress={() => {
                   refRBSheet.current.close();
+                  setSelected("British Pound");
                 }}
                 style={{ marginBottom: RFValue(10) }}
               >
@@ -78,7 +81,10 @@ const Services = ({}) => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={{ marginBottom: RFValue(10) }}
-                onPress={() => refRBSheet.current.close()}
+                onPress={() => {
+                  refRBSheet.current.close();
+                  setSelected("British Pound");
+                }}
               >
                 <Card
                   data={{
@@ -89,7 +95,10 @@ const Services = ({}) => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={{ marginBottom: RFValue(10) }}
-                onPress={() => refRBSheet.current.close()}
+                onPress={() => {
+                  refRBSheet.current.close();
+                  setSelected("British Pound");
+                }}
               >
                 <Card
                   data={{
@@ -100,7 +109,10 @@ const Services = ({}) => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={{ marginBottom: RFValue(10) }}
-                onPress={() => refRBSheet.current.close()}
+                onPress={() => {
+                  refRBSheet.current.close();
+                  setSelected("British Pound");
+                }}
               >
                 <Card
                   data={{
@@ -111,7 +123,10 @@ const Services = ({}) => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={{ marginBottom: RFValue(10) }}
-                onPress={() => refRBSheet.current.close()}
+                onPress={() => {
+                  refRBSheet.current.close();
+                  setSelected("British Pound");
+                }}
               >
                 <Card
                   data={{
@@ -122,7 +137,10 @@ const Services = ({}) => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={{ marginBottom: RFValue(10) }}
-                onPress={() => refRBSheet.current.close()}
+                onPress={() => {
+                  refRBSheet.current.close();
+                  setSelected("British Pound");
+                }}
               >
                 <Card
                   data={{
@@ -134,7 +152,10 @@ const Services = ({}) => {
 
               <TouchableOpacity
                 style={{ marginBottom: RFValue(10) }}
-                onPress={() => refRBSheet.current.close()}
+                onPress={() => {
+                  refRBSheet.current.close();
+                  setSelected("British Pound");
+                }}
               >
                 <Card
                   data={{

@@ -67,7 +67,9 @@ export default function Services({ navigation }) {
     {
       label: "Bill Payment",
       icon: "ios-card",
-      navigation: () => {},
+      navigation: () => {
+        navigation?.push("bill-payment");
+      },
     },
     {
       label: "Bancassurance",

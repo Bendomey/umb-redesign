@@ -29,6 +29,7 @@ import Airtime from "./airtime-topup";
 import ScanAndpay from "./scan-and-pay";
 import MicroSavings from "./micro-savings/micro-savings";
 import ForexRates from "./forex-rates";
+import BillPayment from "./bill-payment";
 
 const Stack = createStackNavigator();
 
@@ -484,6 +485,24 @@ export default function ActivityNavigator() {
           name={"scan-and-pay"}
           component={ScanAndpay}
 
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+
+        <Stack.Screen
+          name={"bill-payment"}
+          component={BillPayment}
           options={{
             headerBackTitleVisible: false,
             headerStyle: {
