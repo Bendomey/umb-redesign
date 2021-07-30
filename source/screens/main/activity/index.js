@@ -22,6 +22,7 @@ import InvestResquest from "./investment-request/main";
 import Feedback from "./feedback/main";
 import MicroSavings from "./micro-savings/micro-savings";
 import ForexRates from "./forex-rates";
+import BillPayment from "./bill-payment";
 
 const Stack = createStackNavigator();
 
@@ -337,6 +338,24 @@ export default function ActivityNavigator() {
         <Stack.Screen
           name={"forex-rates-main"}
           component={ForexRates}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+
+        <Stack.Screen
+          name={"bill-payment"}
+          component={BillPayment}
           options={{
             headerBackTitleVisible: false,
             headerStyle: {

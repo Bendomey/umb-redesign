@@ -15,6 +15,7 @@ import { Ionicons } from "@expo/vector-icons";
 const { height } = Dimensions.get("window");
 const Services = ({}) => {
   const [selected, setSelected] = React.useState("");
+
   const refRBSheet = useRef(null);
   return (
     <>
@@ -51,7 +52,7 @@ const Services = ({}) => {
                 fontSize: RFValue(17),
               }}
             >
-              Source Account
+              Service Type
             </Text>
             <View style={{ margin: RFValue(20) }}>
               <Text
@@ -60,36 +61,91 @@ const Services = ({}) => {
                   fontSize: RFValue(12),
                 }}
               >
-                Please select your source account from these options listed
-                below
+                Please select currency from these options listed below
               </Text>
             </View>
             <ScrollView style={{ flex: 1, marginHorizontal: RFValue(20) }}>
               <TouchableOpacity
                 onPress={() => {
                   refRBSheet.current.close();
-                  setSelected("SavUMB_1_YYYYY5019");
+                  setSelected("Bill Settlement");
                 }}
                 style={{ marginBottom: RFValue(10) }}
               >
                 <Card
                   data={{
-                    label: "SavUMB_1_YYYYY5019",
-                    icon: "ios-person",
+                    label: "Bill Settlement",
+                    icon: "ios-arrow-forward-outline",
                   }}
                 />
               </TouchableOpacity>
-
               <TouchableOpacity
+                style={{ marginBottom: RFValue(10) }}
                 onPress={() => {
                   refRBSheet.current.close();
-                  setSelected("SavUMB_1_YYYYY5021");
+                  setSelected("Bill Settlement");
                 }}
               >
                 <Card
                   data={{
-                    label: "SavUMB_1_YYYYY5021",
-                    icon: "ios-person",
+                    label: "Debt Settlement",
+                    icon: "ios-arrow-forward-outline",
+                  }}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{ marginBottom: RFValue(10) }}
+                onPress={() => {
+                  refRBSheet.current.close();
+                  setSelected("Bill Settlement");
+                }}
+              >
+                <Card
+                  data={{
+                    label: "Fees Payment",
+                    icon: "ios-arrow-forward-outline",
+                  }}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{ marginBottom: RFValue(10) }}
+                onPress={() => {
+                  refRBSheet.current.close();
+                  setSelected("Bill Settlement");
+                }}
+              >
+                <Card
+                  data={{
+                    label: "Deposit",
+                    icon: "ios-arrow-forward-outline",
+                  }}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{ marginBottom: RFValue(10) }}
+                onPress={() => {
+                  refRBSheet.current.close();
+                  setSelected("Bill Settlement");
+                }}
+              >
+                <Card
+                  data={{
+                    label: "Water Bill Payment",
+                    icon: "ios-arrow-forward-outline",
+                  }}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{ marginBottom: RFValue(10) }}
+                onPress={() => {
+                  refRBSheet.current.close();
+                  setSelected("Bill Settlement");
+                }}
+              >
+                <Card
+                  data={{
+                    label: "Electricity Bill Payment",
+                    icon: "ios-arrow-forward-outline",
                   }}
                 />
               </TouchableOpacity>
