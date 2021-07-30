@@ -25,6 +25,7 @@ import StandingOrderCreateComponent from "./standing-order-create";
 import InvestmentBalance from "./investment-balance/main";
 import InvestResquest from "./investment-request/main";
 import Feedback from "./feedback/main";
+import Airtime from "./airtime-topup";
 import MicroSavings from "./micro-savings/micro-savings";
 
 const Stack = createStackNavigator();
@@ -427,6 +428,23 @@ export default function ActivityNavigator() {
         <Stack.Screen
           name={"standing-order-create"}
           component={StandingOrderCreateComponent}
+          options={{
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: Colors.secondary,
+              shadowOpacity: 0,
+              elevation: 0,
+            },
+            headerTitle: "",
+            headerTintColor: Colors.white,
+            headerLeftContainerStyle: {
+              marginLeft: RFValue(10),
+            },
+          }}
+        />
+        <Stack.Screen
+          name={"airtime-topup"}
+          component={Airtime}
           options={{
             headerBackTitleVisible: false,
             headerStyle: {
