@@ -10,6 +10,9 @@ import LoanDescriptionComponent from "./loan-description";
 import InvestmentMainComponent from "./investment";
 import FundTransfer from "./fund-transfer";
 import FundTransferRequest from "./fund-transfer-request";
+import BankAssuranceComponent from "./bank-assurance";
+import BankAssuranceQuotationComponent from './request-quotation';
+import BankAssuranceMakePaymentComponent from './make-payment-assurance';
 import AddBeneficiary from "./fund-transfer/add-beneficiary";
 import LoanRequestComponent from "./loan-request";
 import CardlessWithdrawalComponent from "./cardless-withdrawal";
@@ -93,6 +96,61 @@ export default function ActivityNavigator() {
         />
 
         <Stack.Screen
+                  name={"bank-assurance-main"}
+                  component={BankAssuranceComponent}
+                  options={{
+                    headerBackTitleVisible: false,
+                    headerStyle: {
+                      backgroundColor: Colors.secondary,
+                      shadowOpacity: 0,
+                      elevation: 0,
+                    },
+                    headerTitle: "",
+                    headerTintColor: Colors.white,
+                    headerLeftContainerStyle: {
+                      marginLeft: RFValue(10),
+                    },
+                  }}
+                />
+
+
+<Stack.Screen
+                  name={"request-quotation"}
+                  component={BankAssuranceQuotationComponent}
+                  options={{
+                    headerBackTitleVisible: false,
+                    headerStyle: {
+                      backgroundColor: Colors.secondary,
+                      shadowOpacity: 0,
+                      elevation: 0,
+                    },
+                    headerTitle: "",
+                    headerTintColor: Colors.white,
+                    headerLeftContainerStyle: {
+                      marginLeft: RFValue(10),
+                    },
+                  }}
+                />
+
+<Stack.Screen
+                  name={"make-payment-assurance"}
+                  component={BankAssuranceMakePaymentComponent}
+                  options={{
+                    headerBackTitleVisible: false,
+                    headerStyle: {
+                      backgroundColor: Colors.secondary,
+                      shadowOpacity: 0,
+                      elevation: 0,
+                    },
+                    headerTitle: "",
+                    headerTintColor: Colors.white,
+                    headerLeftContainerStyle: {
+                      marginLeft: RFValue(10),
+                    },
+                  }}
+                />
+
+<Stack.Screen
           name={"feeback"}
           component={Feedback}
           options={{

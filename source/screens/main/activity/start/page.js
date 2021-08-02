@@ -74,7 +74,10 @@ export default function Services({ navigation }) {
     {
       label: "Bancassurance",
       icon: "ios-shield-checkmark",
-      navigation: () => {},
+      navigation: () => {
+        navigation.push("bank-assurance-main")
+      },
+
     },
     {
       label: "Airtime Top-up",
