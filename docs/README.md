@@ -32,20 +32,45 @@ Before  | After
 --------  |---------
 ![Splash Screen Before](/docs/assets/O-Login.jpeg) | ![Splash Screen After](/docs/assets/N-Login.jpg)
 
-## Forgot Password Screen
-
-Before  | After
---------  |---------
-![Splash Screen Before](/docs/assets/O-Login.jpeg) | ![Splash Screen After](/docs/assets/N-Login.jpeg)
 
 ## Self Registration Screen
 
 Before  | After
 --------  |---------
-![Splash Screen Before](/docs/assets/O-SelfRegistration-Banking.jpeg) | ![Splash Screen After](/docs/assets/N-Login.jpeg)
+![Splash Screen Before](/docs/assets/O-SelfRegistration-Menu.jpg) | ![Splash Screen After](/docs/assets/N-SelfRegistration.jpg)
 
-## Login Screen
+## Self Registration - Mobile Banking Screen
 
 Before  | After
 --------  |---------
-![Splash Screen Before](/docs/assets/O-Login.jpeg) | ![Splash Screen After](/docs/assets/N-Login.jpeg)
+![Splash Screen Before](/docs/assets/O-SelfRegistration-Banking.jpeg) | ![Splash Screen After](/docs/assets/N-SelfRegistration-Banking.jpg)
+
+## Self Registration - Mobile Wallet Screen
+
+Before  | After
+--------  |---------
+![Splash Screen Before](/docs/assets/O-SelfRegistration-Mobile.jpeg) | ![Splash Screen After](/docs/assets/N-SelfRegistration-Mobile.jpg)
+
+## Self Registration - Mobile Wallet - Customer Screen
+
+Before  | After
+--------  |---------
+![Splash Screen Before](/docs/assets/O-SelfRegistration-Wallet.jpeg) | ![Splash Screen After](/docs/assets/N-SelfRegistration-Umb.jpg)
+
+## Self Registration - Mobile Wallet - Non Customer Screen
+
+Before  | After
+--------  |---------
+![Splash Screen Before](/docs/assets/O-SelfRegistrationMobile.jpeg) | ![Splash Screen After](/docs/assets/N-SelfRegistration-NonUmb.jpg)
+
+## Locate Us
+
+Before  | After
+--------  |---------
+![Splash Screen Before](/docs/assets/O-LocateUs.jpeg) | ![Splash Screen After](/docs/assets/N-LocateUs.jpg)
+
+## Contact Us
+
+Before  | After
+--------  |---------
+![Splash Screen Before](/docs/assets/O-ContactUs.jpeg) | ![Splash Screen After](/docs/assets/N-ContactUs.jpg)
