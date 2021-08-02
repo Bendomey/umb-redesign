@@ -71,29 +71,24 @@ const Services = ({}) => {
                 marginBottom: RFValue(10),
               }}
             >
-              {[
-                "3 Months",
-                "6 Months",
-                "1 Year",
-                "2 Years",
-                "3 Years",
-                "3 to 5 Years",
-              ].map((st, i) => (
-                <TouchableOpacity
-                  key={i}
-                  onPress={() => {
-                    refRBSheet.current.close();
-                  }}
-                  style={{ marginBottom: RFValue(10) }}
-                >
-                  <Card
-                    data={{
-                      label: st,
-                      icon: "ios-arrow-forward-outline",
+              {["30 Days", "60 Days", "91 Days", "182 Days", "360 Days"].map(
+                (st, i) => (
+                  <TouchableOpacity
+                    key={i}
+                    onPress={() => {
+                      refRBSheet.current.close();
                     }}
-                  />
-                </TouchableOpacity>
-              ))}
+                    style={{ marginBottom: RFValue(10) }}
+                  >
+                    <Card
+                      data={{
+                        label: st,
+                        icon: "ios-arrow-forward-outline",
+                      }}
+                    />
+                  </TouchableOpacity>
+                )
+              )}
             </ScrollView>
           </View>
         </>

@@ -16,7 +16,7 @@ const Investment = ({ navigation }) => {
       label: "To own UMB Account",
       icon: "ios-cash",
       onPress: (a) => {
-        setTile(a)
+        setTile(a);
         refRBSheet.current.open();
       },
     },
@@ -24,15 +24,15 @@ const Investment = ({ navigation }) => {
       label: "To other UMB Account",
       icon: "ios-cash",
       onPress: (a) => {
-        setTile(a)
+        setTile(a);
         refRBSheet.current.open();
       },
     },
     {
-      label: "Other Bank Account",
+      label: "To Other Bank Account",
       icon: "ios-cash",
       onPress: (a) => {
-        setTile(a)
+        setTile(a);
         refRBSheet.current.open();
       },
     },
@@ -40,15 +40,15 @@ const Investment = ({ navigation }) => {
       label: "To Wallet",
       icon: "ios-cash",
       onPress: (a) => {
-        setTile(a)
+        setTile(a);
         refRBSheet.current.open();
       },
     },
     {
-      label: "Telco Wallet to UMB Account",
+      label: "From Telco Wallet to UMB Account",
       icon: "ios-cash",
       onPress: (a) => {
-        setTile(a)
+        setTile(a);
         refRBSheet.current.open();
       },
     },
@@ -56,16 +56,16 @@ const Investment = ({ navigation }) => {
       label: "Add Beneficiary",
       icon: "ios-cash",
       onPress: (a) => {
-        setTile(a)
+        setTile(a);
         // refRBSheet.current.open();
-        navigation.push("add-beneficiary")
+        navigation.push("add-beneficiary");
       },
     },
     {
       label: "Delete Beneficiary",
       icon: "ios-cash",
       onPress: (a) => {
-        setTile(a)
+        setTile(a);
         refRBSheetDel.current.open();
       },
     },

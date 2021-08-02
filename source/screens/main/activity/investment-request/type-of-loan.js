@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Colors from "../../../../constants/colors.json";
-import Button from "../../../../components/Button";
 import Text from "../../../../components/Text";
 import BottomSheet from "../../../../components/BottomSheet";
 import { RFValue } from "react-native-responsive-fontsize";
@@ -51,7 +50,7 @@ const Services = ({}) => {
                 fontSize: RFValue(17),
               }}
             >
-              Loan Types
+              Type Of Investment
             </Text>
             <View style={{ margin: RFValue(20) }}>
               <Text
@@ -64,64 +63,23 @@ const Services = ({}) => {
               </Text>
             </View>
             <ScrollView style={{ flex: 1, marginHorizontal: RFValue(20) }}>
-              <TouchableOpacity
-                onPress={() => {
-                  refRBSheet.current.close();
-                }}
-                style={{ marginBottom: RFValue(10) }}
-              >
-                <Card
-                  data={{
-                    label: "Scheme",
-                    icon: "ios-arrow-forward-outline",
-                  }}
-                />
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                style={{ marginBottom: RFValue(10) }}
-                onPress={() => refRBSheet.current.close()}
-              >
-                <Card
-                  data={{
-                    label: "Personal",
-                    icon: "ios-arrow-forward-outline",
-                  }}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{ marginBottom: RFValue(10) }}
-                onPress={() => refRBSheet.current.close()}
-              >
-                <Card
-                  data={{
-                    label: "Auto",
-                    icon: "ios-arrow-forward-outline",
-                  }}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{ marginBottom: RFValue(10) }}
-                onPress={() => refRBSheet.current.close()}
-              >
-                <Card
-                  data={{
-                    label: "Auto",
-                    icon: "ios-arrow-forward-outline",
-                  }}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{ marginBottom: RFValue(10) }}
-                onPress={() => refRBSheet.current.close()}
-              >
-                <Card
-                  data={{
-                    label: "Salary Advance",
-                    icon: "ios-arrow-forward-outline",
-                  }}
-                />
-              </TouchableOpacity>
+              {["Tresury Bills", "Fixed Deposits", "Call Deposits"].map(
+                (item, itemIdx) => (
+                  <Fragment key={itemIdx}>
+                    <TouchableOpacity
+                      style={{ marginBottom: RFValue(10) }}
+                      onPress={() => refRBSheet.current.close()}
+                    >
+                      <Card
+                        data={{
+                          label: item,
+                          icon: "ios-arrow-forward-outline",
+                        }}
+                      />
+                    </TouchableOpacity>
+                  </Fragment>
+                )
+              )}
             </ScrollView>
           </View>
         </>
