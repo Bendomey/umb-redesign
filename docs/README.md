@@ -74,3 +74,69 @@ Before  | After
 Before  | After
 --------  |---------
 ![Splash Screen Before](/docs/assets/O-ContactUs.jpeg) | ![Splash Screen After](/docs/assets/N-ContactUs.jpg)
+
+## Home Page
+
+Before  | After
+--------  |---------
+![Splash Screen Before](/docs/assets/O-Menu.jpeg) | ![Splash Screen After](/docs/assets/N-HomeScreen.jpg)
+
+## Services Page
+
+Before  | After
+--------  |---------
+![Splash Screen Before](/docs/assets/O-Menu.jpeg) | ![Splash Screen After](/docs/assets/N-Services.jpg)
+
+## Loans Menu
+
+Before  | After
+--------  |---------
+![Splash Screen Before](/docs/assets/O-Loan.jpeg) | ![Splash Screen After](/docs/assets/N-Loan.jpg)
+
+## Loan Balance Page
+
+Before  | After
+--------  |---------
+![Splash Screen Before](/docs/assets/O-LoanBalance.jpeg) | ![Splash Screen After](/docs/assets/N-LoanBalance.jpg)
+
+## Loan Request Page
+
+Before  | After
+--------  |---------
+![Splash Screen Before](/docs/assets/O-LoanRequest-Form.jpeg) | ![Splash Screen After](/docs/assets/N-LoanRequest-Form.jpg)
+
+## Home Page
+
+Before  | After
+--------  |---------
+![Splash Screen Before](/docs/assets/O-Menu.jpeg) | ![Splash Screen After](/docs/assets/N-HomeScreen.jpg)
+
+## Home Page
+
+Before  | After
+--------  |---------
+![Splash Screen Before](/docs/assets/O-Menu.jpeg) | ![Splash Screen After](/docs/assets/N-HomeScreen.jpg)
+
+## Home Page
+
+Before  | After
+--------  |---------
+![Splash Screen Before](/docs/assets/O-Menu.jpeg) | ![Splash Screen After](/docs/assets/N-HomeScreen.jpg)
+
+## Home Page
+
+Before  | After
+--------  |---------
+![Splash Screen Before](/docs/assets/O-Menu.jpeg) | ![Splash Screen After](/docs/assets/N-HomeScreen.jpg)
+
+## Home Page
+
+Before  | After
+--------  |---------
+![Splash Screen Before](/docs/assets/O-Menu.jpeg) | ![Splash Screen After](/docs/assets/N-HomeScreen.jpg)
+
+## Home Page
+
+Before  | After
+--------  |---------
+![Splash Screen Before](/docs/assets/O-Menu.jpeg) | ![Splash Screen After](/docs/assets/N-HomeScreen.jpg)
