@@ -96,7 +96,7 @@ const Card = ({ data }) => {
         <View
           style={{
             backgroundColor: "#1c1c1c",
-            padding: RFValue(12),
+            padding: RFValue(13),
             borderRadius: 50,
             marginRight: RFValue(10),
           }}
@@ -110,13 +110,17 @@ const Card = ({ data }) => {
         <View>
           <Text
             type={"Light"}
-            style={{ color: Colors.gray, fontSize: RFValue(10) }}
+            style={{ color: Colors.gray, fontSize: RFValue(12) }}
           >
             {data?.label}
           </Text>
           <Text
             type={"Bold"}
-            style={{ color: Colors.white, marginTop: RFValue(4) }}
+            style={{
+              color: Colors.white,
+              marginTop: RFValue(4),
+              fontSize: RFValue(15),
+            }}
           >
             {data?.description}
           </Text>

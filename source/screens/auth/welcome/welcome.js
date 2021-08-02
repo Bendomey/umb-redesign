@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { SafeAreaView, View, StyleSheet } from "react-native";
+import { SafeAreaView, View, StyleSheet, Image } from "react-native";
 import Colors from "../../../constants/colors.json";
 import Text from "../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
