@@ -51,7 +51,7 @@ const Services = ({}) => {
                 fontSize: RFValue(17),
               }}
             >
-              Loan Types
+              Bank Names
             </Text>
             <View style={{ margin: RFValue(20) }}>
               <Text
@@ -64,64 +64,29 @@ const Services = ({}) => {
               </Text>
             </View>
             <ScrollView style={{ flex: 1, marginHorizontal: RFValue(20) }}>
-              <TouchableOpacity
-                onPress={() => {
-                  refRBSheet.current.close();
-                }}
-                style={{ marginBottom: RFValue(10) }}
-              >
-                <Card
-                  data={{
-                    label: "Scheme",
-                    icon: "ios-arrow-forward-outline",
+              {[
+                "Bank Of Ghana",
+                "Standard Chartered Bank",
+                "Absa Bank Ghana Limited",
+                "GCB Bank Limited",
+                "National Investment Bank",
+                "United & Bank Of Africa",
+              ].map((st, i) => (
+                <TouchableOpacity
+                  key={i}
+                  onPress={() => {
+                    refRBSheet.current.close();
                   }}
-                />
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                style={{ marginBottom: RFValue(10) }}
-                onPress={() => refRBSheet.current.close()}
-              >
-                <Card
-                  data={{
-                    label: "Personal",
-                    icon: "ios-arrow-forward-outline",
-                  }}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{ marginBottom: RFValue(10) }}
-                onPress={() => refRBSheet.current.close()}
-              >
-                <Card
-                  data={{
-                    label: "Auto",
-                    icon: "ios-arrow-forward-outline",
-                  }}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{ marginBottom: RFValue(10) }}
-                onPress={() => refRBSheet.current.close()}
-              >
-                <Card
-                  data={{
-                    label: "Auto",
-                    icon: "ios-arrow-forward-outline",
-                  }}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{ marginBottom: RFValue(10) }}
-                onPress={() => refRBSheet.current.close()}
-              >
-                <Card
-                  data={{
-                    label: "Salary Advance",
-                    icon: "ios-arrow-forward-outline",
-                  }}
-                />
-              </TouchableOpacity>
+                  style={{ marginBottom: RFValue(10) }}
+                >
+                  <Card
+                    data={{
+                      label: st,
+                      icon: "ios-arrow-forward-outline",
+                    }}
+                  />
+                </TouchableOpacity>
+              ))}
             </ScrollView>
           </View>
         </>

@@ -23,14 +23,14 @@ export default function Services({ navigation }) {
     },
     {
       label: "Investment",
-      icon: "pie-chart-sharp",
+      icon: "ios-hourglass",
       navigation: () => {
         navigation.push("investment-main");
       },
     },
     {
       label: "Cardless W.",
-      icon: "ios-calculator",
+      icon: "ios-layers",
       navigation: () => {
         navigation.push("cardless-withdrawal-main");
       },
@@ -44,49 +44,62 @@ export default function Services({ navigation }) {
     },
     {
       label: "Request",
-      icon: "ios-albums",
+      icon: "ios-reader",
       navigation: () => {
         navigation.push("request-main");
       },
     },
     {
       label: "Standing Order",
-      icon: "ios-document",
+      icon: "ios-receipt-outline",
       navigation: () => {
         navigation.push("standing-order-main");
       },
     },
     {
       label: "Forex Rates",
-      icon: "ios-document",
-      navigation: () => {},
+      icon: "ios-swap-vertical",
+      navigation: () => {
+        navigation?.push("forex-rates-main");
+      },
     },
+
     {
       label: "Bill Payment",
-      icon: "ios-document",
-      navigation: () => {},
-    },
-    {
-      label: "Bank Assurance",
-      icon: "ios-document",
+      icon: "ios-card",
       navigation: () => {
-        navigation.push("bank-assurance-main")
+        navigation?.push("bill-payment");
       },
     },
     {
+      label: "Bancassurance",
+      icon: "ios-shield-checkmark",
+      navigation: () => {
+        navigation.push("bank-assurance-main")
+      },
+
+    },
+    {
       label: "Airtime Top-up",
-      icon: "ios-document",
-      navigation: () => {},
+      icon: "ios-cloud-upload",
+      navigation: () => {
+        navigation.push("airtime-topup");
+      },
     },
     {
       label: "Feedback",
-      icon: "ios-document",
-      navigation: () => {},
+      icon: "ios-chatbox-ellipses-outline",
+      navigation: () => navigation.push("feeback"),
     },
     {
       label: "Micro Savings",
-      icon: "ios-document",
-      navigation: () => {},
+      icon: "ios-save-outline",
+      navigation: () => navigation.push("micro-savings"),
+    },
+    {
+      label: "Scan And Pay",
+      icon: "ios-qr-code",
+      navigation: () => navigation.push("scan-and-pay"),
     },
   ];
 

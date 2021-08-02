@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Colors from "../../../../constants/colors.json";
-import Button from "../../../../components/Button";
 import Text from "../../../../components/Text";
 import BottomSheet from "../../../../components/BottomSheet";
 import { RFValue } from "react-native-responsive-fontsize";

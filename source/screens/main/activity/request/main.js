@@ -4,42 +4,45 @@ import Text from "../../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
 import Colors from "../../../../constants/colors.json";
 import { Ionicons } from "@expo/vector-icons";
+import ChooseAccount from "../components/choose-account";
 
 const Loan = ({ navigation }) => {
+  const refRBSheet = useRef(null);
+
   const data = [
     {
       label: "Stop Cheque",
       icon: "ios-cash",
       onPress: () => {
-        navigation.push("request-stop-cheque");
+        navigation.push("loan-stop-cheque-main");
       },
     },
     {
       label: "Full Statement",
       icon: "ios-cash",
       onPress: () => {
-        navigation.push("request-atm");
+        // navigation.push("request-atm");
       },
     },
     {
-      label: "Cheque Book",
+      label: "Cheque Book Request",
       icon: "ios-book-outline",
       onPress: () => {
-        navigation.push("request-atm");
+        refRBSheet.current.open();
       },
     },
     {
       label: "Reset Internet Banking Password",
       icon: "ios-lock-open",
       onPress: () => {
-        navigation.push("request-atm");
+        navigation.push("request-reset-internet");
       },
     },
     {
       label: "Debit Card Request",
       icon: "ios-information-outline",
       onPress: () => {
-        navigation.push("cardless-withdrawal-atm");
+        navigation.push("request-card-request");
       },
     },
   ];
@@ -52,7 +55,7 @@ const Loan = ({ navigation }) => {
             type={"Bold"}
             style={{ color: Colors.white, fontSize: RFValue(25) }}
           >
-            Cardless Withdrawal
+            Request
           </Text>
           <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
             Select any of the options to proceed
@@ -68,6 +71,12 @@ const Loan = ({ navigation }) => {
           ))}
         </View>
       </View>
+      <ChooseAccount
+        refRBSheet={refRBSheet}
+        onNavigate={() => {
+          refRBSheet.current.close();
+        }}
+      />
     </Fragment>
   );
 };

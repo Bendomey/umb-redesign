@@ -51,7 +51,7 @@ const Services = ({}) => {
                 fontSize: RFValue(17),
               }}
             >
-              Select Period
+              Select Wallet Provider
             </Text>
             <View style={{ margin: RFValue(20) }}>
               <Text
@@ -72,12 +72,13 @@ const Services = ({}) => {
               }}
             >
               {[
-                "3 Months",
-                "6 Months",
-                "1 Year",
-                "2 Years",
-                "3 Years",
-                "3 to 5 Years",
+                "UMB",
+                "Airtel",
+                "AirtelTigo",
+                "GIP",
+                "MTN",
+                "Tigo",
+                "Vodafone",
               ].map((st, i) => (
                 <TouchableOpacity
                   key={i}

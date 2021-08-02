@@ -8,28 +8,20 @@ import Button from "../../../components/Button";
 
 const services = [
   {
-    label: "FAQ's",
+    label: "Products",
     icon: "ios-chatbubble",
+    page: "products",
   },
   {
     label: "Contact Us",
     icon: "ios-call",
+    page: "contact-us",
   },
-  {
-    label: "Currency C.",
-    icon: "ios-calculator",
-  },
+
   {
     label: "Our Locations",
     icon: "ios-location",
-  },
-  {
-    label: "Privacy Policy",
-    icon: "ios-albums",
-  },
-  {
-    label: "Ts & Cs",
-    icon: "ios-document",
+    page: "locations",
   },
 ];
 
@@ -61,7 +53,7 @@ const Welcome = ({ navigation }) => {
                   key={serviceIdx}
                   data={service}
                   onPress={() => {
-                    navigation.push("contact-us");
+                    navigation.push(service.page);
                   }}
                 />
               ))}

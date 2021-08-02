@@ -8,43 +8,132 @@ import TextInput from "../../../../components/TextInput";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Ionicons } from "@expo/vector-icons";
 import ChooseAccount from "./choose-account";
-import TypeOfLoan from "./type-of-loan";
+import BankName from "./type-of-loan";
 import Period from "./period";
 import { useRoute } from "@react-navigation/native";
+import PageHader from "../../../../components/PageHeader/PageHader";
 
 const Loan = () => {
-
-  const { params } = useRoute()
+  const { params } = useRoute();
 
   return (
     <Fragment>
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Text
-            type={"Bold"}
-            style={{ color: Colors.white, fontSize: RFValue(25) }}
-          >
-            Transfer {params?.tile}
-          </Text>
-          <Text style={{ color: Colors.gray, fontSize: RFValue(12) }}>
-            Request loan by filling the form below
-          </Text>
-        </View>
+        <PageHader
+          title={`Transfer ${params?.tile}`}
+          description="Transfer funds by filling the form below"
+        />
+
         <KeyboardAwareScrollView style={{ flex: 1 }}>
           <View style={styles.textInputContainer}>
-            <View>
-              <Text
-                type={"Light"}
-                style={{
-                  color: Colors.white,
-                  fontSize: RFValue(12),
-                  marginBottom: RFValue(5),
-                }}
-              >
-                Select Source Account *
-              </Text>
-              <ChooseAccount />
-            </View>
+            {params?.tile === "To own UMB Account" && (
+              <View style={{}}>
+                <Text
+                  type={"Light"}
+                  style={{
+                    color: Colors.white,
+                    fontSize: RFValue(12),
+                    marginBottom: RFValue(5),
+                  }}
+                >
+                  Select Destination Account *
+                </Text>
+                <ChooseAccount />
+              </View>
+            )}
+            {["Other Bank Account", "To other UMB Account"].includes(
+              params?.tile
+            ) && (
+              <View style={{}}>
+                <Text
+                  type={"Light"}
+                  style={{
+                    color: Colors.white,
+                    fontSize: RFValue(12),
+                    marginBottom: RFValue(5),
+                  }}
+                >
+                  To Account No. *
+                </Text>
+                <TextInput onChange={(text) => setAccountNumber(text)} />
+              </View>
+            )}
+            {params?.tile === "Other Bank Account" && (
+              <View style={{ marginTop: RFValue(20) }}>
+                <Text
+                  type={"Light"}
+                  style={{
+                    color: Colors.white,
+                    fontSize: RFValue(12),
+                    marginBottom: RFValue(5),
+                  }}
+                >
+                  Select Bank Name *
+                </Text>
+                <BankName />
+              </View>
+            )}
+
+            {params?.tile === "To Wallet" && (
+              <>
+                <View style={{ marginTop: RFValue(20) }}>
+                  <Text
+                    type={"Light"}
+                    style={{
+                      color: Colors.white,
+                      fontSize: RFValue(12),
+                      marginBottom: RFValue(5),
+                    }}
+                  >
+                    Select Wallet Provider *
+                  </Text>
+                  <Period />
+                </View>
+                <View style={{ marginTop: RFValue(20) }}>
+                  <Text
+                    type={"Light"}
+                    style={{
+                      color: Colors.white,
+                      fontSize: RFValue(12),
+                      marginBottom: RFValue(5),
+                    }}
+                  >
+                    Account Number *
+                  </Text>
+                  <TextInput onChange={(text) => setAccountNumber(text)} />
+                </View>
+              </>
+            )}
+            {params?.tile === "From Telco Wallet to UMB Account" && (
+              <>
+                <View style={{ marginTop: RFValue(20) }}>
+                  <Text
+                    type={"Light"}
+                    style={{
+                      color: Colors.white,
+                      fontSize: RFValue(12),
+                      marginBottom: RFValue(5),
+                    }}
+                  >
+                    Select Operator *
+                  </Text>
+                  <Period />
+                </View>
+                <View style={{ marginTop: RFValue(20) }}>
+                  <Text
+                    type={"Light"}
+                    style={{
+                      color: Colors.white,
+                      fontSize: RFValue(12),
+                      marginBottom: RFValue(5),
+                    }}
+                  >
+                    Account Number *
+                  </Text>
+                  <TextInput onChange={(text) => setAccountNumber(text)} />
+                </View>
+              </>
+            )}
             <View style={{ marginTop: RFValue(20) }}>
               <Text
                 type={"Light"}
@@ -54,23 +143,11 @@ const Loan = () => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Type of Loan *
-              </Text>
-              <TypeOfLoan />
-            </View>
-            <View style={{ marginTop: RFValue(20) }}>
-              <Text
-                type={"Light"}
-                style={{
-                  color: Colors.white,
-                  fontSize: RFValue(12),
-                  marginBottom: RFValue(5),
-                }}
-              >
-                Enter Amount *
+                Transfer Amount *
               </Text>
               <TextInput onChange={(text) => setAccountNumber(text)} />
             </View>
+
             <View style={{ marginTop: RFValue(20) }}>
               <Text
                 type={"Light"}
@@ -80,20 +157,7 @@ const Loan = () => {
                   marginBottom: RFValue(5),
                 }}
               >
-                Select Period *
-              </Text>
-              <Period />
-            </View>
-            <View style={{ marginTop: RFValue(20) }}>
-              <Text
-                type={"Light"}
-                style={{
-                  color: Colors.white,
-                  fontSize: RFValue(12),
-                  marginBottom: RFValue(5),
-                }}
-              >
-                Current Net Salary *
+                Purpose *
               </Text>
               <TextInput onChange={(text) => setAccountNumber(text)} />
             </View>
@@ -104,7 +168,7 @@ const Loan = () => {
                 onPress={() => {
                   // navigation?.push("Main");
                 }}
-                title={"Request Loan"}
+                title={"Transfer Funds"}
               />
             </View>
           </View>

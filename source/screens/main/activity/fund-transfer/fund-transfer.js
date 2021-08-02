@@ -5,16 +5,18 @@ import { RFValue } from "react-native-responsive-fontsize";
 import Colors from "../../../../constants/colors.json";
 import { Ionicons } from "@expo/vector-icons";
 import ChooseAccount from "../components/choose-account";
+import DeleteBeneficiary from "./delete-beneficiary";
 
 const Investment = ({ navigation }) => {
   const refRBSheet = useRef(null);
+  const refRBSheetDel = useRef(null);
   const [tile, setTile] = useState("");
   const data = [
     {
       label: "To own UMB Account",
       icon: "ios-cash",
       onPress: (a) => {
-        setTile(a)
+        setTile(a);
         refRBSheet.current.open();
       },
     },
@@ -22,15 +24,15 @@ const Investment = ({ navigation }) => {
       label: "To other UMB Account",
       icon: "ios-cash",
       onPress: (a) => {
-        setTile(a)
+        setTile(a);
         refRBSheet.current.open();
       },
     },
     {
-      label: "Other Bank Account",
+      label: "To Other Bank Account",
       icon: "ios-cash",
       onPress: (a) => {
-        setTile(a)
+        setTile(a);
         refRBSheet.current.open();
       },
     },
@@ -38,15 +40,15 @@ const Investment = ({ navigation }) => {
       label: "To Wallet",
       icon: "ios-cash",
       onPress: (a) => {
-        setTile(a)
+        setTile(a);
         refRBSheet.current.open();
       },
     },
     {
-      label: "Telco Wallet to UMB Account",
+      label: "From Telco Wallet to UMB Account",
       icon: "ios-cash",
       onPress: (a) => {
-        setTile(a)
+        setTile(a);
         refRBSheet.current.open();
       },
     },
@@ -54,16 +56,17 @@ const Investment = ({ navigation }) => {
       label: "Add Beneficiary",
       icon: "ios-cash",
       onPress: (a) => {
-        setTile(a)
-        refRBSheet.current.open();
+        setTile(a);
+        // refRBSheet.current.open();
+        navigation.push("add-beneficiary");
       },
     },
     {
       label: "Delete Beneficiary",
       icon: "ios-cash",
       onPress: (a) => {
-        setTile(a)
-        refRBSheet.current.open();
+        setTile(a);
+        refRBSheetDel.current.open();
       },
     },
   ];
@@ -99,6 +102,7 @@ const Investment = ({ navigation }) => {
           navigation.push("fund-transfer-request", { tile });
         }}
       />
+      <DeleteBeneficiary refRBSheet={refRBSheetDel} />
     </Fragment>
   );
 };

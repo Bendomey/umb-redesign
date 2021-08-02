@@ -10,6 +10,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 import Text from "../../../components/Text";
 import Button from "../../../components/Button";
 import TextInput from "../../../components/TextInput";
+import DatePicker from "../../../components/Datepicker";
 import Colors from "../../../constants/colors.json";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
@@ -82,6 +83,19 @@ const Register = ({ navigation }) => {
               </Text>
               <TextInput keyboardType={"number-pad"} />
             </View>
+            <View style={{ marginTop: RFValue(15) }}>
+              <Text
+                type={"Light"}
+                style={{
+                  color: Colors.white,
+                  fontSize: RFValue(12),
+                  marginBottom: RFValue(5),
+                }}
+              >
+                DOB
+              </Text>
+              <DatePicker />
+            </View>
           </View>
           <View style={styles.forgotPasswordContainer}>
             <Switch value={true} />
@@ -119,6 +133,7 @@ const Register = ({ navigation }) => {
                 screen: "login",
               });
             }}
+            style={{ paddingVertical: RFValue(10) }}
           >
             <Text style={{ color: Colors.white }}>
               Don't have an account?{" "}

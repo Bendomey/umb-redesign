@@ -1,4 +1,4 @@
-import React, { Fragment, useRef } from "react";
+import React, { Fragment } from "react";
 import { View, StyleSheet } from "react-native";
 import Text from "../../../../components/Text";
 import { RFValue } from "react-native-responsive-fontsize";
@@ -6,12 +6,12 @@ import Colors from "../../../../constants/colors.json";
 import Button from "../../../../components/Button";
 import TextInput from "../../../../components/TextInput";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import { Ionicons } from "@expo/vector-icons";
 import ChooseAccount from "./choose-account";
 import TypeOfLoan from "./type-of-loan";
 import Period from "./period";
 
 const Loan = () => {
+  const [, setAmount] = React.useState("");
   return (
     <Fragment>
       <View style={styles.container}>
@@ -65,7 +65,10 @@ const Loan = () => {
               >
                 Enter Amount *
               </Text>
-              <TextInput onChange={(text) => setAccountNumber(text)} />
+              <TextInput
+                keyboardType={"decimal-pad"}
+                onChange={(text) => setAmount(text)}
+              />
             </View>
             <View style={{ marginTop: RFValue(20) }}>
               <Text
@@ -110,39 +113,6 @@ const Loan = () => {
   );
 };
 
-const Card = ({ data }) => {
-  return (
-    <Fragment>
-      <View style={styles.card}>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Ionicons
-            name={data?.icon}
-            size={RFValue(20)}
-            color={Colors.primary}
-          />
-          <Text
-            type={"Light"}
-            style={{
-              color: Colors.white,
-              marginLeft: RFValue(10),
-              fontSize: RFValue(13),
-            }}
-          >
-            {data?.label}
-          </Text>
-        </View>
-        <View>
-          <Ionicons
-            name={"ios-chevron-down"}
-            size={RFValue(15)}
-            color={Colors.white}
-          />
-        </View>
-      </View>
-    </Fragment>
-  );
-};
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -152,12 +122,12 @@ const styles = StyleSheet.create({
     marginTop: RFValue(10),
     marginHorizontal: RFValue(20),
   },
-  textInputContainer: {
-    marginTop: RFValue(30),
-    marginHorizontal: RFValue(20),
-    backgroundColor: "#1e1e1f",
-    borderRadius: 10,
-  },
+  // textInputContainer: {
+  //   marginTop: RFValue(30),
+  //   marginHorizontal: RFValue(20),
+  //   backgroundColor: "#1e1e1f",
+  //   borderRadius: 10,
+  // },
   card: {
     backgroundColor: "#1c1c1c",
     paddingHorizontal: RFValue(15),
